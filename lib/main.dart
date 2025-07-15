@@ -1,8 +1,11 @@
 import 'package:appli_edt_univ/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:icalendar_parser/icalendar_parser.dart';
+import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,37 +25,58 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, required this.calendar});
 
-  final String title;
+  final ICalendar calendar;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  CalendarFormat _calendarFormat = CalendarFormat.month;
+  DateTime _focusedDay = DateTime.now();
+  DateTime? _selectedDay;
+
+  List<Event> _getEventsForDay(DateTime day) {
+    return events[day] ?? [];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text("Accueil"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: TableCalendar(
+          locale: "fr_FR",
+          firstDay: DateTime.utc(DateTime.now().year),
+          lastDay: DateTime.utc(DateTime.now().year + 1),
+          focusedDay: _focusedDay,
+          selectedDayPredicate: (day) {
+            return isSameDay(_selectedDay, day);
+          },
+          onDaySelected: (selectedDay, focusedDay) {
+            setState(() {
+              _selectedDay = selectedDay;
+              _focusedDay = focusedDay;
+            });
+          },
+          calendarFormat: _calendarFormat,
+          onFormatChanged: (format) {
+            setState(() {
+              _calendarFormat = format;
+            });
+          },
+          onPageChanged: (focusedDay) {
+            _focusedDay = focusedDay;
+          },
+          eventLoader: (day) {
+            return _getEventsForDay(day);
+          },
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: null,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }

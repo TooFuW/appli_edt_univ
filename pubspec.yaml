@@ -11,8 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
-  http: ^1.4.0
+  cupertino_icons: ^1.0.8 # https://pub.dev/packages/cupertino_icons
+  http: ^1.4.0 # https://pub.dev/packages/http
+  icalendar_parser: ^2.1.0 # https://pub.dev/packages/icalendar_parser
+  table_calendar: ^3.2.0 # https://pub.dev/packages/table_calendar
+  intl: ^0.20.2 # https://pub.dev/packages/intl
 
 dev_dependencies:
   flutter_test:

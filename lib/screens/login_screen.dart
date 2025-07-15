@@ -1,6 +1,8 @@
 import 'package:appli_edt_univ/main.dart';
+import 'package:appli_edt_univ/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:icalendar_parser/icalendar_parser.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -46,34 +48,34 @@ class _LoginScreenState extends State<LoginScreen> {
                     image: iconLogin,
                     height: 200,
                   ),
-                  Text(
-                    "Connectez-vous",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  SizedBox(height: 30),
+                  textH1(text: "CONNECTEZ-VOUS"),
+                  sizedBoxGrosse(),
                   // Champs d'email
-                  TextFormField(
+                  textFormField(
                     controller: _idController,
                     autofillHints: const [AutofillHints.username],
-                    textInputAction: TextInputAction.next,
+                    hintText: "Identifiant universitaire",
+                    prefixIcon: const Icon(Icons.person),
+                    textInputAction: TextInputAction.done,
                     onFieldSubmitted: (value) {
                       _submitForm(context);
                     },
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'ID',
-                    ),
+                    keyboardType: TextInputType.name,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Veuillez entrer votre identifiant universitaire.';
                       }
                       return null;
-                    },
-                  )
+                    }
+                  ),
+                  sizedBoxPetite(),
+                  elevatedButton(
+                    onPressed: () => _submitForm(context),
+                    text: "Se connecter",
+                    isLoading: _isLoading
+                  ),
+                  if (loginError.isNotEmpty)
+                    textError(text: loginError)
                 ],
               ),
             ),
@@ -92,16 +94,16 @@ void _submitForm(BuildContext context) async {
       });
       loginError = "";
       // ENVOI DE LA REQUETE DE RECUPERATION DE L'EDT
-      var url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default')
-        .replace(queryParameters: {'login': '${_idController.text}%2Fical'});
+      var url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${_idController.text}/ical'});
       try {
         // RECEPTION DE LA REPONSE
         var response = await http.get(url);
         // Si la réponse est bonne
         if (response.statusCode == 200) {
+          final iCalendar = ICalendar.fromString(response.body);
           if (context.mounted) {
             Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => MyHomePage(title: "title")),
+              MaterialPageRoute(builder: (context) => MyHomePage(calendar: iCalendar)),
               (Route<dynamic> route) => false
             );
           }
