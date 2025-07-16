@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     textH2(text: "Connexion en cours..."),
+                    SizedBox(height: 5,),
                     SizedBox(
                       height: 50,
                       width: 50,
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
                         backgroundColor: Color.fromARGB(255, 36, 155, 252),
                       ),
                     ),
+                    SizedBox(height: 5,),
                     FutureBuilder<int>(
                       future: Future.delayed(const Duration(seconds: 5), () => 5),
                       builder: (context, snapshot) {
@@ -56,6 +58,7 @@ class MyApp extends StatelessWidget {
                         return const SizedBox.shrink();
                       },
                     ),
+                    SizedBox(height: 5,),
                     FutureBuilder<int>(
                       future: Future.delayed(const Duration(seconds: 10), () => 10),
                       builder: (context, snapshot) {
@@ -184,18 +187,18 @@ class _MyHomePageState extends State<MyHomePage> {
       final start = dtStartUtc?.toLocal();
       final end = dtEndUtc?.toLocal();
       String categorie;
-      if ((e['summary'] as String?)?.split(' ').first == "Cm" || (e['summary'] as String?)?.split(' ').first == "Td" || (e['summary'] as String?)?.split(' ').first == "Tp") {
-        categorie = (e['summary'] as String).split(' ').first;
+      if ((e['summary'] as String?)?.split(' ').first == "Cm" || (e['summary'] as String?)?.split(' ').first == "Td" || (e['summary'] as String?)?.split(' ').first == "Tp" || (e['summary'] as String?)?.split(' ').first == "Cc") {
+        categorie = (e['summary'] as String).split(' ').first.toUpperCase();
       }
       else {
         categorie = "";
       }
       String title;
       if ((e['summary'] as String?)?.split('(').length == 1) {
-        title = (e['summary'] as String).split('\\n').first;
+        title = (e['summary'] as String).split('\\n').first.substring(0,2).toUpperCase() + (e['summary'] as String).split('\\n').first.substring(2);
       }
       else {
-        title = (e['summary'] as String).split('(').first;
+        title = (e['summary'] as String).split('(').first.substring(0,2).toUpperCase() + (e['summary'] as String).split('(').first.substring(2);
       }
       String professeur;
       if ((e['summary'] as String?)?.split('\\n').length == 1) {
@@ -311,7 +314,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(Icons.logout, color: Colors.red,),
                 title: Text('Se déconnecter', style: TextStyle(color: Colors.red),),
-                onTap: () {},
+                onTap: () {
+                  eraseStorage();
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                    (Route<dynamic> route) => false
+                  );
+                },
               ),
             ],
           ),
@@ -322,7 +333,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             _CalendarHeader(
-              focusedDay: _focusedDay,
+              focusedDay: _focusedDay.toLocal(),
               onTodayButtonTap: () {
                 setState(() {
                   _onDaySelected(DateTime.now(), DateTime.now());
@@ -459,40 +470,69 @@ class _MyHomePageState extends State<MyHomePage> {
                               alignment: Alignment.centerLeft,
                               padding: EdgeInsets.all(8.0),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                              backgroundColor: ev.categorie == 'Td'
+                              backgroundColor: ev.categorie == 'TD'
                                 ? Colors.green
-                                : ev.categorie == 'Tp'
+                                : ev.categorie == 'TP'
                                   ? Colors.orange
-                                  : Colors.blue,
+                                  : ev.categorie == 'CM'
+                                    ? Colors.blue
+                                    : Colors.red
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            child: Stack(
                               children: [
-                                textMoyenP1(
-                                  text: ev.title,
-                                  textAlign: TextAlign.left
-                                ),
-                                Row(
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Icon(Icons.access_time, size: 18, color: Colors.black),
-                                    SizedBox(width: 5),
-                                    textPetitP(text: time),
+                                    textMoyenP1(
+                                      text: ev.title,
+                                      textAlign: TextAlign.left
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.access_time, size: 18, color: Colors.black),
+                                        SizedBox(width: 5),
+                                        textPetitP(text: time),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.person, size: 18, color: Colors.black),
+                                        SizedBox(width: 5),
+                                        textPetitP(text: ev.professeur),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.place, size: 18, color: Colors.black),
+                                        SizedBox(width: 5),
+                                        textPetitP(text: ev.salle),
+                                      ],
+                                    ),
                                   ],
                                 ),
-                                Row(
-                                  children: [
-                                    Icon(Icons.person, size: 18, color: Colors.black),
-                                    SizedBox(width: 5),
-                                    textPetitP(text: ev.professeur),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(Icons.place, size: 18, color: Colors.black),
-                                    SizedBox(width: 5),
-                                    textPetitP(text: ev.salle),
-                                  ],
-                                ),
+                                if (ev.categorie.isNotEmpty)
+                                  Positioned(
+                                    top: 0,
+                                    right: 0,
+                                    child: Container(
+                                      width: 30,
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          ev.categorie,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
+                                          textAlign: TextAlign.center
+                                        ),
+                                      ),
+                                    )
+                                  )
                               ],
                             )
                           ),
@@ -519,7 +559,7 @@ class _CalendarHeader extends StatelessWidget {
   final VoidCallback onSwapButtonTap;
   final VoidCallback onCheckButtonTap;
 
-  const _CalendarHeader({
+  _CalendarHeader({
     required this.focusedDay,
     required this.onLeftArrowTap,
     required this.onRightArrowTap,
@@ -528,9 +568,18 @@ class _CalendarHeader extends StatelessWidget {
     required this.onCheckButtonTap,
   });
 
+  final List<String> _months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
   @override
   Widget build(BuildContext context) {
-    final headerText = DateFormat.yMMM().format(focusedDay);
+    String month;
+    if (_months[focusedDay.month - 1].length < 4) {
+      month = _months[focusedDay.month - 1].substring(0, 3);
+    }
+    else {
+      month = _months[focusedDay.month - 1].substring(0, 4);
+    }
+    final year = focusedDay.year.toString();
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -540,7 +589,7 @@ class _CalendarHeader extends StatelessWidget {
           SizedBox(
             width: 120.0,
             child: Text(
-              headerText,
+              "$month $year",
               style: const TextStyle(fontSize: 26.0),
             ),
           ),
