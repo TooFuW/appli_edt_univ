@@ -16,6 +16,7 @@ dependencies:
   icalendar_parser: ^2.1.0 # https://pub.dev/packages/icalendar_parser
   table_calendar: ^3.2.0 # https://pub.dev/packages/table_calendar
   intl: ^0.20.2 # https://pub.dev/packages/intl
+  shared_preferences: ^2.5.3 # https://pub.dev/packages/shared_preferences
 
 dev_dependencies:
   flutter_test:

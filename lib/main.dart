@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:convert';
 import 'package:appli_edt_univ/screens/login_screen.dart';
 import 'package:appli_edt_univ/theme.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,12 @@ import 'package:icalendar_parser/icalendar_parser.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:http/http.dart' as http;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting();
+  await initStorage();
   runApp(MyApp());
 }
 
@@ -23,8 +27,84 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 36, 155, 252)),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: FutureBuilder<Widget?>(
+        future: _autoConnect(context),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Scaffold(
+              backgroundColor: Colors.white,
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    textH2(text: "Connexion en cours..."),
+                    SizedBox(
+                      height: 50,
+                      width: 50,
+                      child: CircularProgressIndicator.adaptive(
+                        strokeWidth: 2,
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                        backgroundColor: Color.fromARGB(255, 36, 155, 252),
+                      ),
+                    ),
+                    FutureBuilder<int>(
+                      future: Future.delayed(const Duration(seconds: 5), () => 5),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          return textMoyenP1(text: "Encore en chargement...", bold: true);
+                        }
+                        return const SizedBox.shrink();
+                      },
+                    ),
+                    FutureBuilder<int>(
+                      future: Future.delayed(const Duration(seconds: 10), () => 10),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          return textMoyenP1(text: "Nous avons du mal à nous connecter...", bold: true);
+                        }
+                        return const SizedBox.shrink();
+                      },
+                    ),
+                  ],
+                ),
+              )
+            );
+          } else if (snapshot.hasError) {
+            eraseStorage();
+            return LoginScreen();
+          } else {
+            return snapshot.data ?? LoginScreen();
+          }
+        },
+      ),
     );
+  }
+
+  Future<Widget> _autoConnect(BuildContext context) async {
+    String? userId = await getId();
+    if (userId != null) {
+      var url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '$userId/ical'});
+      try {
+        // RECEPTION DE LA REPONSE
+        var response = await http.get(url);
+        // Si la réponse est bonne
+        if (response.statusCode == 200) {
+          final bytes = response.bodyBytes;
+          final icsString = utf8.decode(bytes);
+          final iCalendar = ICalendar.fromString(icsString);
+          return MyHomePage(calendar: iCalendar, id: userId);
+        }
+        // Sinon
+        else {
+          return LoginScreen();
+        }
+      }
+      // On gére le cas où il n'y a pas d'internet
+      catch (e) {
+        return LoginScreen();
+      }
+    }
+    return LoginScreen();
   }
 }
 
@@ -63,9 +143,10 @@ List<DateTime> _daysInRange(DateTime first, DateTime last) {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.calendar});
+  const MyHomePage({super.key, required this.calendar, required this.id});
 
   final ICalendar calendar;
+  final String id;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -218,7 +299,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('EDT Université'),
+        title: Text('EDT de ${widget.id}'),
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
       ),

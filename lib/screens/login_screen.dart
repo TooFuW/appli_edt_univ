@@ -34,51 +34,56 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.white,
       ),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: AutofillGroup(
-            child: Form(
-              // Associe la clé au formulaire
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Image(
-                    image: iconLogin,
-                    height: 200,
-                  ),
-                  textH1(text: "CONNECTEZ-VOUS"),
-                  sizedBoxGrosse(),
-                  // Champs d'email
-                  textFormField(
-                    controller: _idController,
-                    autofillHints: const [AutofillHints.username],
-                    hintText: "Identifiant universitaire",
-                    prefixIcon: const Icon(Icons.person),
-                    textInputAction: TextInputAction.done,
-                    onFieldSubmitted: (value) {
-                      _submitForm(context);
-                    },
-                    keyboardType: TextInputType.name,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Veuillez entrer votre identifiant universitaire.';
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: AutofillGroup(
+              child: Form(
+                // Associe la clé au formulaire
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Image(
+                      image: iconLogin,
+                      height: 200,
+                    ),
+                    textH1(text: "CONNECTEZ-VOUS"),
+                    sizedBoxPetite(),
+                    textMoyenP2(text: "Il vous suffit de rentrer votre identifiant universitaire pour vous connecter."),
+                    textMoyenP2(text: "Votre identifiant correspond normalement à la première lettre de votre prénom suivi de votre nom."),
+                    sizedBoxGrosse(),
+                    // Champs d'email
+                    textFormField(
+                      controller: _idController,
+                      autofillHints: const [AutofillHints.username],
+                      hintText: "Identifiant universitaire",
+                      prefixIcon: const Icon(Icons.person),
+                      textInputAction: TextInputAction.done,
+                      onFieldSubmitted: (value) {
+                        _submitForm(context);
+                      },
+                      keyboardType: TextInputType.name,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Veuillez entrer votre identifiant universitaire.';
+                        }
+                        return null;
                       }
-                      return null;
-                    }
-                  ),
-                  sizedBoxPetite(),
-                  elevatedButton(
-                    onPressed: () => _submitForm(context),
-                    text: "Se connecter",
-                    isLoading: _isLoading
-                  ),
-                  sizedBoxPetite(),
-                  if (loginError.isNotEmpty)
-                    textError(text: loginError)
-                ],
+                    ),
+                    sizedBoxPetite(),
+                    elevatedButton(
+                      onPressed: () => _submitForm(context),
+                      text: "Se connecter",
+                      isLoading: _isLoading
+                    ),
+                    sizedBoxPetite(),
+                    if (loginError.isNotEmpty)
+                      textError(text: loginError)
+                  ],
+                ),
               ),
             ),
           ),
@@ -105,9 +110,12 @@ void _submitForm(BuildContext context) async {
           final bytes = response.bodyBytes;
           final icsString = utf8.decode(bytes);
           final iCalendar = ICalendar.fromString(icsString);
+          if (mounted) {
+            await saveId(_idController.text);
+          }
           if (context.mounted) {
             Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => MyHomePage(calendar: iCalendar)),
+              MaterialPageRoute(builder: (context) => MyHomePage(calendar: iCalendar, id: _idController.text)),
               (Route<dynamic> route) => false
             );
           }

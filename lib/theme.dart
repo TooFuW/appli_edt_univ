@@ -1,6 +1,32 @@
-// Texte de titre au format H1
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+late SharedPreferences _prefs;
+
+// Initialisation du storage
+Future<void> initStorage() async {
+  _prefs = await SharedPreferences.getInstance();
+}
+
+// Récupération de l'id
+Future<String?> getId() async {
+  //SharedPreferences _prefs = await SharedPreferences.getInstance();
+  return _prefs.getString("id");
+}
+
+// Suppression de tout ce qui est enregistré
+Future<void> eraseStorage() async {
+  //SharedPreferences _prefs = await SharedPreferences.getInstance();
+  await _prefs.clear();
+}
+
+// Sauvegarde locale de l'id
+Future<void> saveId(String id) async {
+  //SharedPreferences _prefs = await SharedPreferences.getInstance();
+  await _prefs.setString("id", id);
+}
+
+// Texte de titre au format H1
 Text textH1 (
   {required String text,
   TextAlign? textAlign}
@@ -290,9 +316,9 @@ ElevatedButton elevatedButton (
     ),
     child: isLoading
       ? SizedBox(
-        height: 20,
-        width: 20,
-        child: CircularProgressIndicator.adaptive(
+          height: 20,
+          width: 20,
+          child: CircularProgressIndicator.adaptive(
             strokeWidth: 2,
             valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             backgroundColor: Color.fromARGB(255, 36, 155, 252),
@@ -323,9 +349,9 @@ ElevatedButton elevatedButtonOutlined (
     ),
     child: isLoading
       ? SizedBox(
-        height: 20,
-        width: 20,
-        child: CircularProgressIndicator.adaptive(
+          height: 20,
+          width: 20,
+          child: CircularProgressIndicator.adaptive(
             strokeWidth: 2,
             valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             backgroundColor: Color.fromARGB(255, 36, 155, 252),
@@ -356,9 +382,9 @@ ElevatedButton elevatedButtonWarning (
     ),
     child: isLoading
       ? SizedBox(
-        height: 20,
-        width: 20,
-        child: CircularProgressIndicator.adaptive(
+          height: 20,
+          width: 20,
+          child: CircularProgressIndicator.adaptive(
             strokeWidth: 2,
             valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
             backgroundColor: Color.fromARGB(255, 36, 155, 252),
