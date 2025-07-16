@@ -1,5 +1,5 @@
 name: appli_edt_univ
-description: "A new Flutter project."
+description: "Application de visionnage de l'emploi du temps de l'UNC."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -22,8 +22,28 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: "^0.14.3" # https://pub.dev/packages/flutter_launcher_icons
+  change_app_package_name: ^1.5.0 # https://pub.dev/packages/change_app_package_name
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  min_sdk_android: 16 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/app_icon.png"
+    background_color: "#FFFFFF"
+    theme_color: "#1800AD"
+  windows:
+    generate: true
+    image_path: "assets/images/app_icon.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/app_icon.png"
