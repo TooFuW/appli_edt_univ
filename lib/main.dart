@@ -108,13 +108,19 @@ class _MyHomePageState extends State<MyHomePage> {
       else {
         categorie = "";
       }
-      final title = (e['summary'] as String?)?.split('(').first ?? 'Sans titre';
+      String title;
+      if ((e['summary'] as String?)?.split('(').length == 1) {
+        title = (e['summary'] as String).split('\\n').first;
+      }
+      else {
+        title = (e['summary'] as String).split('(').first;
+      }
       String professeur;
       if ((e['summary'] as String?)?.split('\\n').length == 1) {
         professeur = "Professeur inconnu";
       }
       else {
-        professeur = (e['summary'] as String).split('\\n')[1];
+        professeur = (e['summary'] as String).split('\\n')[1].split("[").first;
       }
       String salle;
       if ((e['summary'] as String?)?.split(': ').last.split("[").first != null) {
@@ -317,16 +323,28 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   backgroundColor: Colors.white,
-                                  title: Text(ev.title),
+                                  title: Text(
+                                    ev.title,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold
+                                    ),
+                                    textAlign: TextAlign.center
+                                  ),
                                   content: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      if (ev.categorie.isNotEmpty) Text('Categorie: ${ev.categorie}'),
-                                      Text('Professeur: ${ev.professeur}'),
-                                      Text('Salle: ${ev.salle}'),
-                                      Text('Du ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.start!)}'),
-                                      Text('Au ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.end!)}'),
+                                      if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
+                                      SizedBox(height: 5),
+                                      textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
+                                      SizedBox(height: 5),
+                                      textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
+                                      SizedBox(height: 5),
+                                      textMoyenP2(text: 'Du ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
+                                      SizedBox(height: 5),
+                                      textMoyenP2(text: 'Au ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
                                     ],
                                   ),
                                   actions: [
