@@ -115,9 +115,19 @@ class _MyHomePageState extends State<MyHomePage> {
       }
       else {
         professeur = (e['summary'] as String).split('\\n')[1];
-
       }
-      final salle = (e['summary'] as String?)?.split(': ').last.split("[").first ?? 'Salle inconnue';
+      String salle;
+      if ((e['summary'] as String?)?.split(': ').last.split("[").first != null) {
+        if ((e['summary'] as String).split(': ').last.split("[").first.length >= 2 && (e['summary'] as String).split(': ').last.split("[").first.length <= 17) {
+          salle = (e['summary'] as String).split(': ').last.split("[").first;
+        }
+        else {
+          salle = "Salle inconnue";
+        }
+      }
+      else {
+        salle = "Salle inconnue";
+      }
       if (start == null) continue;
       final day = DateTime(start.year, start.month, start.day);
       final ev = Event(
@@ -143,12 +153,28 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Event> _getEventsForDay(DateTime day) {
-    return _events[day] ?? [];
+    final events = _events[day] ?? [];
+    // Trier les événements par heure de début
+    events.sort((a, b) {
+      if (a.start == null && b.start == null) return 0;
+      if (a.start == null) return 1;
+      if (b.start == null) return -1;
+      return a.start!.compareTo(b.start!);
+    });
+    return events;
   }
 
   List<Event> _getEventsForRange(DateTime start, DateTime end) {
     final days = _daysInRange(start, end);
-    return [for (final d in days) ..._getEventsForDay(d)];
+    final allEvents = [for (final d in days) ..._getEventsForDay(d)];
+    // Trier tous les événements de la plage par heure de début
+    allEvents.sort((a, b) {
+      if (a.start == null && b.start == null) return 0;
+      if (a.start == null) return 1;
+      if (b.start == null) return -1;
+      return a.start!.compareTo(b.start!);
+    });
+    return allEvents;
   }
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
@@ -184,7 +210,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('EDT Universitaire')),      
+      appBar: AppBar(
+        title: const Text('EDT Universitaire'),
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+      ),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           _CalendarHeader(
@@ -192,6 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onTodayButtonTap: () {
               setState(() {
                 _focusedDay = DateTime.now().toLocal();
+                _selectedDay = _focusedDay;
               });
             },
             onSwapButtonTap: () {
@@ -201,6 +233,15 @@ class _MyHomePageState extends State<MyHomePage> {
               else {
                 setState(() => _calendarFormat = CalendarFormat.week);
               }
+            },
+            onCheckButtonTap: () {
+              setState(() {
+                if (_rangeSelectionMode == RangeSelectionMode.toggledOff) {
+                  _onRangeSelected(_selectedDay, null, _focusedDay);
+                } else {
+                  _onDaySelected(_focusedDay, _focusedDay);
+                }
+              });
             },
             onLeftArrowTap: () {
               _pageController.previousPage(
@@ -218,6 +259,13 @@ class _MyHomePageState extends State<MyHomePage> {
           TableCalendar<Event>(
             onCalendarCreated: (controller) => _pageController = controller,
             headerVisible: false,
+            calendarStyle: CalendarStyle(
+              markerMargin: const EdgeInsets.only(left: 0.3, right: 0.3, top: 2),
+              selectedDecoration: const BoxDecoration(color: Color.fromARGB(255, 67, 95, 255), shape: BoxShape.circle),
+              todayDecoration: const BoxDecoration(color: Color.fromARGB(255, 151, 160, 209), shape: BoxShape.circle),
+              rangeStartDecoration: BoxDecoration(color: Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: Color.fromARGB(255, 0, 0, 0), width: 1)),
+              rangeEndDecoration: BoxDecoration(color: Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: Color.fromARGB(255, 0, 0, 0), width: 1)),
+            ),
             locale: 'fr_FR',
             firstDay: DateTime.utc(_focusedDay.year, 1, 1),
             lastDay: DateTime.utc(_focusedDay.year + 1, 12, 31),
@@ -274,11 +322,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     mainAxisSize: MainAxisSize.min,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text('Categorie: ${ev.categorie}'),
+                                      if (ev.categorie.isNotEmpty) Text('Categorie: ${ev.categorie}'),
                                       Text('Professeur: ${ev.professeur}'),
                                       Text('Salle: ${ev.salle}'),
-                                      Text('Start: ${ev.start}'),
-                                      Text('End: ${ev.end}'),
+                                      Text('Du ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.start!)}'),
+                                      Text('Au ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.end!)}'),
                                     ],
                                   ),
                                   actions: [
@@ -306,7 +354,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              textMoyenP1(text: ev.title),
+                              textMoyenP1(
+                                text: ev.title,
+                                textAlign: TextAlign.left
+                              ),
                               Row(
                                 children: [
                                   Icon(Icons.access_time, size: 18, color: Colors.black),
@@ -351,6 +402,7 @@ class _CalendarHeader extends StatelessWidget {
   final VoidCallback onRightArrowTap;
   final VoidCallback onTodayButtonTap;
   final VoidCallback onSwapButtonTap;
+  final VoidCallback onCheckButtonTap;
 
   const _CalendarHeader({
     required this.focusedDay,
@@ -358,6 +410,7 @@ class _CalendarHeader extends StatelessWidget {
     required this.onRightArrowTap,
     required this.onTodayButtonTap,
     required this.onSwapButtonTap,
+    required this.onCheckButtonTap,
   });
 
   @override
@@ -380,20 +433,30 @@ class _CalendarHeader extends StatelessWidget {
             icon: const Icon(Icons.calendar_today, size: 20.0),
             visualDensity: VisualDensity.compact,
             onPressed: onTodayButtonTap,
+            tooltip: "Aujourd'hui",
           ),
           IconButton(
             icon: const Icon(Icons.swap_horiz, size: 20.0),
             visualDensity: VisualDensity.compact,
             onPressed: onSwapButtonTap,
+            tooltip: "Changer de vue",
+          ),
+          IconButton(
+            icon: const Icon(Icons.check_box, size: 20.0),
+            visualDensity: VisualDensity.compact,
+            onPressed: onCheckButtonTap,
+            tooltip: "Changer de mode de sélection",
           ),
           const Spacer(),
           IconButton(
             icon: const Icon(Icons.chevron_left),
             onPressed: onLeftArrowTap,
+            tooltip: "Page précédente",
           ),
           IconButton(
             icon: const Icon(Icons.chevron_right),
             onPressed: onRightArrowTap,
+            tooltip: "Page suivante",
           ),
         ],
       ),

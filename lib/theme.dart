@@ -289,10 +289,14 @@ ElevatedButton elevatedButton (
       elevation: elevation ? 5 : 0,
     ),
     child: isLoading
-      ? CircularProgressIndicator.adaptive(
-          strokeWidth: 2,
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          backgroundColor: Color.fromARGB(255, 36, 155, 252),
+      ? SizedBox(
+        height: 20,
+        width: 20,
+        child: CircularProgressIndicator.adaptive(
+            strokeWidth: 2,
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            backgroundColor: Color.fromARGB(255, 36, 155, 252),
+          ),
         )
       : textGrosP(
         text: text
@@ -318,10 +322,14 @@ ElevatedButton elevatedButtonOutlined (
       elevation: 5,
     ),
     child: isLoading
-      ? const CircularProgressIndicator.adaptive(
-          strokeWidth: 1,
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          backgroundColor: Color.fromARGB(255, 36, 155, 252),
+      ? SizedBox(
+        height: 20,
+        width: 20,
+        child: CircularProgressIndicator.adaptive(
+            strokeWidth: 2,
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            backgroundColor: Color.fromARGB(255, 36, 155, 252),
+          ),
         )
       : textGrosP(
         text: text
@@ -347,10 +355,14 @@ ElevatedButton elevatedButtonWarning (
       elevation: 5,
     ),
     child: isLoading
-      ? const CircularProgressIndicator.adaptive(
-          strokeWidth: 1,
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          backgroundColor: Colors.red,
+      ? SizedBox(
+        height: 20,
+        width: 20,
+        child: CircularProgressIndicator.adaptive(
+            strokeWidth: 2,
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+            backgroundColor: Color.fromARGB(255, 36, 155, 252),
+          ),
         )
       : Text(
       text,
