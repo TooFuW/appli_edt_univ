@@ -404,144 +404,157 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 8),
             Expanded(
-              child: ValueListenableBuilder<List<Event>>(
-                valueListenable: _selectedEvents,
-                builder: (context, value, _) {
-                  if (value.isEmpty) {
-                    return Center(child: Text('Aucun événement pour le ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}'));
+              child: GestureDetector(
+                onHorizontalDragEnd: (DragEndDetails details) {
+                  final v = details.primaryVelocity ?? 0;
+                  if (v > 0) {
+                    _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1));
+                  } else if (v < 0) {
+                    _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1));
                   }
-                  return ListView.builder(
-                    padding: EdgeInsets.all(16),
-                    itemCount: value.length,
-                    itemBuilder: (context, index) {
-                      final ev = value[index];
-                      final time = ev.start != null && ev.end != null
-                          ? '${DateFormat('HH:mm').format(ev.start!)} - '
-                            '${DateFormat('HH:mm').format(ev.end!)}'
-                          : '';
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              showDialog(
-                                barrierColor: const Color.fromARGB(150, 0, 0, 0),
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    backgroundColor: Colors.white,
-                                    title: Text(
-                                      ev.title,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold
+                },
+                child: ValueListenableBuilder<List<Event>>(
+                  valueListenable: _selectedEvents,
+                  builder: (context, value, _) {
+                    if (value.isEmpty) {
+                      return Center(child: Text('Aucun événement pour le ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}'));
+                    }
+                    return ListView.builder(
+                      padding: EdgeInsets.all(16),
+                      itemCount: value.length,
+                      itemBuilder: (context, index) {
+                        final ev = value[index];
+                        final time = ev.start != null && ev.end != null
+                            ? '${DateFormat('HH:mm').format(ev.start!)} - '
+                              '${DateFormat('HH:mm').format(ev.end!)}'
+                            : '';
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                showDialog(
+                                  barrierColor: const Color.fromARGB(150, 0, 0, 0),
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      backgroundColor: Colors.white,
+                                      title: Text(
+                                        ev.title,
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold
+                                        ),
+                                        textAlign: TextAlign.center
                                       ),
-                                      textAlign: TextAlign.center
-                                    ),
-                                    content: Column(
-                                      mainAxisSize: MainAxisSize.min,
+                                      content: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
+                                          SizedBox(height: 5),
+                                          textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
+                                          SizedBox(height: 5),
+                                          textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
+                                          SizedBox(height: 5),
+                                          textMoyenP2(text: 'Du ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
+                                          SizedBox(height: 5),
+                                          textMoyenP2(text: 'Au ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
+                                        ],
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('Fermer'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                alignment: Alignment.centerLeft,
+                                padding: EdgeInsets.all(8.0),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                                backgroundColor: ev.categorie == 'TD'
+                                  ? Colors.green
+                                  : ev.categorie == 'TP'
+                                    ? Colors.orange
+                                    : ev.categorie == 'CM'
+                                      ? Colors.blue
+                                      : Colors.red
+                              ),
+                              child: Stack(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 30),
+                                    child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
-                                        SizedBox(height: 5),
-                                        textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
-                                        SizedBox(height: 5),
-                                        textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
-                                        SizedBox(height: 5),
-                                        textMoyenP2(text: 'Du ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
-                                        SizedBox(height: 5),
-                                        textMoyenP2(text: 'Au ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
-                                      ],
-                                    ),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text('Fermer'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              alignment: Alignment.centerLeft,
-                              padding: EdgeInsets.all(8.0),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                              backgroundColor: ev.categorie == 'TD'
-                                ? Colors.green
-                                : ev.categorie == 'TP'
-                                  ? Colors.orange
-                                  : ev.categorie == 'CM'
-                                    ? Colors.blue
-                                    : Colors.red
-                            ),
-                            child: Stack(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    textMoyenP1(
-                                      text: ev.title,
-                                      textAlign: TextAlign.left
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(Icons.access_time, size: 18, color: Colors.black),
-                                        SizedBox(width: 5),
-                                        textPetitP(text: time),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(Icons.person, size: 18, color: Colors.black),
-                                        SizedBox(width: 5),
-                                        textPetitP(text: ev.professeur),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(Icons.place, size: 18, color: Colors.black),
-                                        SizedBox(width: 5),
-                                        textPetitP(text: ev.salle),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                if (ev.categorie.isNotEmpty)
-                                  Positioned(
-                                    top: 0,
-                                    right: 0,
-                                    child: Container(
-                                      width: 30,
-                                      height: 25,
-                                      decoration: BoxDecoration(
-                                        color: Colors.black,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          ev.categorie,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16,
-                                          ),
-                                          textAlign: TextAlign.center
+                                        textMoyenP1(
+                                          text: ev.title,
+                                          textAlign: TextAlign.left
                                         ),
-                                      ),
+                                        Row(
+                                          children: [
+                                            Icon(Icons.access_time, size: 18, color: Colors.black),
+                                            SizedBox(width: 5),
+                                            textPetitP(text: time),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(Icons.person, size: 18, color: Colors.black),
+                                            SizedBox(width: 5),
+                                            textPetitP(text: ev.professeur),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(Icons.place, size: 18, color: Colors.black),
+                                            SizedBox(width: 5),
+                                            textPetitP(text: ev.salle),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  if (ev.categorie.isNotEmpty)
+                                    Positioned(
+                                      top: 0,
+                                      right: 0,
+                                      child: Container(
+                                        width: 30,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            ev.categorie,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                            ),
+                                            textAlign: TextAlign.center
+                                          ),
+                                        ),
+                                      )
                                     )
-                                  )
-                              ],
-                            )
-                          ),
-                          SizedBox(height: 10),
-                        ],
-                      );
-                    },
-                  );
-                },
+                                ],
+                              )
+                            ),
+                            SizedBox(height: 10),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
             ),
           ],
