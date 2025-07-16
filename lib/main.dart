@@ -405,6 +405,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 8),
             Expanded(
               child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
                 onHorizontalDragEnd: (DragEndDetails details) {
                   final v = details.primaryVelocity ?? 0;
                   if (v > 0) {
