@@ -1,0 +1,5029 @@
+BEGIN:VCALENDAR
+
+PRODID:-//Serveur de planning Cocktail 0.9//iCal4j 1.0
+
+VERSION:2.0
+
+CALSCALE:GREGORIAN
+
+METHOD:PUBLISH
+
+X-WR-CALNAME:MUET EYRIAN
+
+X-WR-TIMEZONE:Pacific/Noumea
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-1
+
+DTSTART:20250512T023000Z
+
+DTEND:20250512T043000Z
+
+SUMMARY:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-2
+
+DTSTART:20250320T023000Z
+
+DTEND:20250320T063000Z
+
+SUMMARY:Cm : Admin des Réseaux (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Réseaux (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-3
+
+DTSTART:20250528T044500Z
+
+DTEND:20250528T064500Z
+
+SUMMARY:Cm : Admin des Réseaux (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Réseaux (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-4
+
+DTSTART:20250514T023000Z
+
+DTEND:20250514T043000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-5
+
+DTSTART:20250604T023000Z
+
+DTEND:20250604T043000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-6
+
+DTSTART:20250423T023000Z
+
+DTEND:20250423T043000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-7
+
+DTSTART:20250319T023000Z
+
+DTEND:20250319T043000Z
+
+SUMMARY:Cm : Développement Web & Composants Web (CM_INFO_L3_T5_S5)\,  (CM_I
+
+ NFO_T7_S5) \nA.Tessier  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Développement Web & Composants Web (CM_INFO_L3_T5_S5)\,  (
+
+ CM_INFO_T7_S5) \nA.Tessier  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-8
+
+DTSTART:20250415T023000Z
+
+DTEND:20250415T043000Z
+
+SUMMARY:Cm : Logique et Programmation Logique (CM_INFO_T7_S5)\,  (CM_INFO_M
+
+ IAGE_L4_T7_S7)\,  (CM_INFO_L3_T5_S5) \nT.Richmond  \nAte : A4 [Edt-Ens]
+
+DESCRIPTION:Cm : Logique et Programmation Logique (CM_INFO_T7_S5)\,  (CM_IN
+
+ FO_MIAGE_L4_T7_S7)\,  (CM_INFO_L3_T5_S5) \nT.Richmond  \nAte : A4 [Edt-Ens
+
+ ]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-9
+
+DTSTART:20250606T023000Z
+
+DTEND:20250606T063000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_L3_T5_S5)\,  (TP_I
+
+ NFO_T7_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_L3_T5_S5)\,  (
+
+ TP_INFO_T7_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-10
+
+DTSTART:20250506T023000Z
+
+DTEND:20250506T043000Z
+
+SUMMARY:Td : Logique et Programmation Logique (TD_INFO_L3_T5_S5)\,  (TD_INF
+
+ O_T7_S5)\,  (TD_INFO_MIAGE_L4_T7_S7) \nT.Richmond  \nAte : A3 [Edt-Ens]
+
+DESCRIPTION:Td : Logique et Programmation Logique (TD_INFO_L3_T5_S5)\,  (TD
+
+ _INFO_T7_S5)\,  (TD_INFO_MIAGE_L4_T7_S7) \nT.Richmond  \nAte : A3 [Edt-Ens
+
+ ]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-11
+
+DTSTART:20250324T023000Z
+
+DTEND:20250324T043000Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-12
+
+DTSTART:20250519T023000Z
+
+DTEND:20250519T043000Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-13
+
+DTSTART:20250513T023000Z
+
+DTEND:20250513T043000Z
+
+SUMMARY:Cm : Logique et Programmation Logique (CM_INFO_L3_T5_S5)\,  (CM_INF
+
+ O_T7_S5)\,  (CM_INFO_MIAGE_L4_T7_S7) - CC2 \nT.Richmond  \nLls : L24infofc
+
+  [Edt-Ens]
+
+DESCRIPTION:Cm : Logique et Programmation Logique (CM_INFO_L3_T5_S5)\,  (CM
+
+ _INFO_T7_S5)\,  (CM_INFO_MIAGE_L4_T7_S7) - CC2 \nT.Richmond  \nLls : L24in
+
+ fofc [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-14
+
+DTSTART:20250320T230000Z
+
+DTEND:20250321T010000Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \nT.K
+
+ napik  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \
+
+ nT.Knapik  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-15
+
+DTSTART:20250506T044500Z
+
+DTEND:20250506T064500Z
+
+SUMMARY:Cm : Génie Logiciel (CM_INFO_MIAGE_L4_T7_S7)\,  (CM_INFO_L3_T5_S5)\
+
+ ,  (CM_INFO_T7_S5) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+DESCRIPTION:Cm : Génie Logiciel (CM_INFO_MIAGE_L4_T7_S7)\,  (CM_INFO_L3_T5_
+
+ S5)\,  (CM_INFO_T7_S5) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-16
+
+DTSTART:20250428T230000Z
+
+DTEND:20250429T010000Z
+
+SUMMARY:Cm : Progr Avancée en c et Complexité (CM_INFO_T5_S3)\,  (CM_INFO_T
+
+ 7_S5) \nT.Richmond  \nBtf : F4 [Edt-Ens]
+
+DESCRIPTION:Cm : Progr Avancée en c et Complexité (CM_INFO_T5_S3)\,  (CM_IN
+
+ FO_T7_S5) \nT.Richmond  \nBtf : F4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-17
+
+DTSTART:20250402T220000Z
+
+DTEND:20250403T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_INFO_T
+
+ 5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_IN
+
+ FO_T5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-18
+
+DTSTART:20250514T044500Z
+
+DTEND:20250514T064500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T7_S5)\,  (TD_INF
+
+ O_T5_S3) \nN.Selmaoui  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T7_S5)\,  (TD
+
+ _INFO_T5_S3) \nN.Selmaoui  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-19
+
+DTSTART:20250805T023000Z
+
+DTEND:20250805T043000Z
+
+SUMMARY:Cm : Cybersécurité 2 (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.Richmon
+
+ d  \nAte : A9 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 2 (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.Ric
+
+ hmond  \nAte : A9 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-20
+
+DTSTART:20250724T023000Z
+
+DTEND:20250724T043000Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-21
+
+DTSTART:20250723T230000Z
+
+DTEND:20250724T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-22
+
+DTSTART:20250827T204500Z
+
+DTEND:20250827T224500Z
+
+SUMMARY:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41) \nL
+
+ .Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41)
+
+  \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-23
+
+DTSTART:20250903T204500Z
+
+DTEND:20250903T224500Z
+
+SUMMARY:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-24
+
+DTSTART:20250709T204500Z
+
+DTEND:20250709T224500Z
+
+SUMMARY:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-25
+
+DTSTART:20250925T204500Z
+
+DTEND:20250925T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-26
+
+DTSTART:20250806T023000Z
+
+DTEND:20250806T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-27
+
+DTSTART:20250918T230000Z
+
+DTEND:20250919T010000Z
+
+SUMMARY:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD_T7_
+
+ INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD
+
+ _T7_INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-28
+
+DTSTART:20250317T023000Z
+
+DTEND:20250317T043000Z
+
+SUMMARY:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-29
+
+DTSTART:20250311T023000Z
+
+DTEND:20250311T043000Z
+
+SUMMARY:Td : Logique et Programmation Logique (TD_INFO_L3_T5_S5)\,  (TD_INF
+
+ O_T7_S5)\,  (TD_INFO_MIAGE_L4_T7_S7) \nT.Richmond  \nBte : E5 [Edt-Ens]
+
+DESCRIPTION:Td : Logique et Programmation Logique (TD_INFO_L3_T5_S5)\,  (TD
+
+ _INFO_T7_S5)\,  (TD_INFO_MIAGE_L4_T7_S7) \nT.Richmond  \nBte : E5 [Edt-Ens
+
+ ]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-30
+
+DTSTART:20250227T023000Z
+
+DTEND:20250227T063000Z
+
+SUMMARY:Cm : Admin des Réseaux (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Réseaux (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-31
+
+DTSTART:20250313T023000Z
+
+DTEND:20250313T063000Z
+
+SUMMARY:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-32
+
+DTSTART:20250327T023000Z
+
+DTEND:20250327T063000Z
+
+SUMMARY:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-33
+
+DTSTART:20250522T023000Z
+
+DTEND:20250522T063000Z
+
+SUMMARY:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-34
+
+DTSTART:20250424T023000Z
+
+DTEND:20250424T063000Z
+
+SUMMARY:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-35
+
+DTSTART:20250401T023000Z
+
+DTEND:20250401T043000Z
+
+SUMMARY:Td : Logique et Programmation Logique (TD_INFO_L3_T5_S5)\,  (TD_INF
+
+ O_MIAGE_L4_T7_S7)\,  (TD_INFO_T7_S5) \nT.Richmond  \nBts : S1 Info [Edt-En
+
+ s]
+
+DESCRIPTION:Td : Logique et Programmation Logique (TD_INFO_L3_T5_S5)\,  (TD
+
+ _INFO_MIAGE_L4_T7_S7)\,  (TD_INFO_T7_S5) \nT.Richmond  \nBts : S1 Info [Ed
+
+ t-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-36
+
+DTSTART:20250605T210000Z
+
+DTEND:20250606T010000Z
+
+SUMMARY:Cm : Développement Web & Composants Web (CM_INFO_T7_S5)\,  (CM_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Développement Web & Composants Web (CM_INFO_T7_S5)\,  (CM_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-37
+
+DTSTART:20250430T023000Z
+
+DTEND:20250430T043000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-38
+
+DTSTART:20250326T023000Z
+
+DTEND:20250326T043000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-39
+
+DTSTART:20250327T204500Z
+
+DTEND:20250327T224500Z
+
+SUMMARY:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.Rich
+
+ mond  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.
+
+ Richmond  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-40
+
+DTSTART:20250304T023000Z
+
+DTEND:20250304T043000Z
+
+SUMMARY:Td : Logique et Programmation Logique (TD_INFO_MIAGE_L4_T7_S7)\,  (
+
+ TD_INFO_T7_S5)\,  (TD_INFO_L3_T5_S5) \nT.Richmond  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Td : Logique et Programmation Logique (TD_INFO_MIAGE_L4_T7_S7)\
+
+ ,  (TD_INFO_T7_S5)\,  (TD_INFO_L3_T5_S5) \nT.Richmond  \nAte : A2 [Edt-Ens
+
+ ]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-41
+
+DTSTART:20250422T023000Z
+
+DTEND:20250422T043000Z
+
+SUMMARY:Td : Logique et Programmation Logique (TD_INFO_L3_T5_S5)\,  (TD_INF
+
+ O_T7_S5)\,  (TD_INFO_MIAGE_L4_T7_S7) \nT.Richmond  \nAte : A3 [Edt-Ens]
+
+DESCRIPTION:Td : Logique et Programmation Logique (TD_INFO_L3_T5_S5)\,  (TD
+
+ _INFO_T7_S5)\,  (TD_INFO_MIAGE_L4_T7_S7) \nT.Richmond  \nAte : A3 [Edt-Ens
+
+ ]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-42
+
+DTSTART:20250527T044500Z
+
+DTEND:20250527T064500Z
+
+SUMMARY:Cm : Génie Logiciel (CM_INFO_L3_T5_S5)\,  (CM_INFO_T7_S5)\,  (CM_IN
+
+ FO_MIAGE_L4_T7_S7) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+DESCRIPTION:Cm : Génie Logiciel (CM_INFO_L3_T5_S5)\,  (CM_INFO_T7_S5)\,  (C
+
+ M_INFO_MIAGE_L4_T7_S7) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-43
+
+DTSTART:20250413T230000Z
+
+DTEND:20250414T010000Z
+
+SUMMARY:Cm : Progr Avancée en c et Complexité (CM_INFO_T7_S5)\,  (CM_INFO_T
+
+ 5_S3) - CC 1 \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Cm : Progr Avancée en c et Complexité (CM_INFO_T7_S5)\,  (CM_IN
+
+ FO_T5_S3) - CC 1 \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-44
+
+DTSTART:20250423T220000Z
+
+DTEND:20250424T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_INFO_T
+
+ 5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_IN
+
+ FO_T5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-45
+
+DTSTART:20250310T230000Z
+
+DTEND:20250311T010000Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_T5_S3)\,  (CM_INF
+
+ O_MIAGE_T7_S5)\,  (CM_INFO_T7_S5) \nN.Selmaoui  \nLls : L12info40 [Edt-Ens
+
+ ]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_T5_S3)\,  (CM
+
+ _INFO_MIAGE_T7_S5)\,  (CM_INFO_T7_S5) \nN.Selmaoui  \nLls : L12info40 [Edt
+
+ -Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-46
+
+DTSTART:20250716T204500Z
+
+DTEND:20250716T224500Z
+
+SUMMARY:Td : Bases de Données Av. 2 (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - C
+
+ C1 \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Td : Bases de Données Av. 2 (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6)
+
+  - CC1 \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-47
+
+DTSTART:20250917T230000Z
+
+DTEND:20250918T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-48
+
+DTSTART:20250924T230000Z
+
+DTEND:20250925T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-49
+
+DTSTART:20250827T230000Z
+
+DTEND:20250828T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-50
+
+DTSTART:20250806T204500Z
+
+DTEND:20250806T224500Z
+
+SUMMARY:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-51
+
+DTSTART:20251001T204500Z
+
+DTEND:20251001T224500Z
+
+SUMMARY:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-52
+
+DTSTART:20250911T204500Z
+
+DTEND:20250911T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-53
+
+DTSTART:20250731T204500Z
+
+DTEND:20250731T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-54
+
+DTSTART:20250710T230000Z
+
+DTEND:20250711T010000Z
+
+SUMMARY:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_T5_I
+
+ NFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_
+
+ T5_INFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-55
+
+DTSTART:20250911T230000Z
+
+DTEND:20250912T010000Z
+
+SUMMARY:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD_T7_
+
+ INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD
+
+ _T7_INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-56
+
+DTSTART:20250521T220000Z
+
+DTEND:20250522T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_INFO_T
+
+ 5_S3) - CC3 \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_IN
+
+ FO_T5_S3) - CC3 \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-57
+
+DTSTART:20250428T023000Z
+
+DTEND:20250428T043000Z
+
+SUMMARY:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-58
+
+DTSTART:20250414T023000Z
+
+DTEND:20250414T043000Z
+
+SUMMARY:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-59
+
+DTSTART:20250423T044500Z
+
+DTEND:20250423T064500Z
+
+SUMMARY:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO_T5_
+
+ S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _T5_S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-60
+
+DTSTART:20250430T044500Z
+
+DTEND:20250430T064500Z
+
+SUMMARY:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO_T5_
+
+ S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _T5_S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-61
+
+DTSTART:20250309T230000Z
+
+DTEND:20250310T010000Z
+
+SUMMARY:Td : Progr Avancée en c et Complexité (TD_INFO_T5_S3)\,  (TD_INFO_T
+
+ 7_S5) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Progr Avancée en c et Complexité (TD_INFO_T5_S3)\,  (TD_IN
+
+ FO_T7_S5) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-62
+
+DTSTART:20250403T023000Z
+
+DTEND:20250403T063000Z
+
+SUMMARY:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-63
+
+DTSTART:20250605T023000Z
+
+DTEND:20250605T043000Z
+
+SUMMARY:Tp : Admin des Réseaux (TP_INFO_T5_S3)\,  (TP_INFO_T7_S5) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Réseaux (TP_INFO_T5_S3)\,  (TP_INFO_T7_S5) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-64
+
+DTSTART:20250324T044500Z
+
+DTEND:20250324T064500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) \nN.Selmaoui  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) \nN.Selmaoui  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-65
+
+DTSTART:20250403T230000Z
+
+DTEND:20250404T010000Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_T5_S3)\,  (CM_INF
+
+ O_T7_S5)\,  (CM_INFO_MIAGE_T7_S5) - CC \nN.Selmaoui  \nBts : S1 Info [Edt-
+
+ Ens]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_T5_S3)\,  (CM
+
+ _INFO_T7_S5)\,  (CM_INFO_MIAGE_T7_S5) - CC \nN.Selmaoui  \nBts : S1 Info [
+
+ Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-66
+
+DTSTART:20250528T023000Z
+
+DTEND:20250528T043000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-67
+
+DTSTART:20250417T204500Z
+
+DTEND:20250417T224500Z
+
+SUMMARY:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.Rich
+
+ mond  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.
+
+ Richmond  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-68
+
+DTSTART:20250306T230000Z
+
+DTEND:20250307T010000Z
+
+SUMMARY:Cm : Admin des Syst. d'Exploitation (CM_INFO_T5_S3)\,  (CM_INFO_T7_
+
+ S5) \nA.d'Ambra  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Syst. d'Exploitation (CM_INFO_T5_S3)\,  (CM_INFO
+
+ _T7_S5) \nA.d'Ambra  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-69
+
+DTSTART:20250421T204500Z
+
+DTEND:20250421T224500Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T5_S3)\,  (TD_INFO_T7_S5) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T5_S3)\,  (TD_INFO_T7_S5) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-70
+
+DTSTART:20250505T023000Z
+
+DTEND:20250505T043000Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-71
+
+DTSTART:20250605T044500Z
+
+DTEND:20250605T064500Z
+
+SUMMARY:Td : Génie Logiciel (TD_INFO_MIAGE_L4_T7_S7)\,  (TD_INFO_T7_S5)\,
+
+ (TD_INFO_L3_T5_S5) \nA.Tessier  \nBts : S2 InfoBts : S3 Info [Edt-Ens]
+
+DESCRIPTION:Td : Génie Logiciel (TD_INFO_MIAGE_L4_T7_S7)\,  (TD_INFO_T7_S5)
+
+ \,  (TD_INFO_L3_T5_S5) \nA.Tessier  \nBts : S2 InfoBts : S3 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-72
+
+DTSTART:20250511T230000Z
+
+DTEND:20250512T010000Z
+
+SUMMARY:Td : Progr Avancée en c et Complexité (TD_INFO_T7_S5)\,  (TD_INFO_T
+
+ 5_S3) - CC 2 \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Progr Avancée en c et Complexité (TD_INFO_T7_S5)\,  (TD_IN
+
+ FO_T5_S3) - CC 2 \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-73
+
+DTSTART:20250331T230000Z
+
+DTEND:20250401T010000Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_MIAGE_T7_S5)\,  (
+
+ CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.Selmaoui  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_MIAGE_T7_S5)\
+
+ ,  (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.Selmaoui  \nBts : S1 Info [Edt-E
+
+ ns]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-74
+
+DTSTART:20250312T220000Z
+
+DTEND:20250313T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_INFO_T
+
+ 5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_IN
+
+ FO_T5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-75
+
+DTSTART:20250319T220000Z
+
+DTEND:20250320T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_INFO_T
+
+ 5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_IN
+
+ FO_T5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-76
+
+DTSTART:20250428T044500Z
+
+DTEND:20250428T064500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) \nN.Selmaoui  \nLls : L17 [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) \nN.Selmaoui  \nLls : L17 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-77
+
+DTSTART:20250716T230000Z
+
+DTEND:20250717T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-78
+
+DTSTART:20250730T204500Z
+
+DTEND:20250730T224500Z
+
+SUMMARY:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41) \nL
+
+ .Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41)
+
+  \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-79
+
+DTSTART:20250828T204500Z
+
+DTEND:20250828T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-80
+
+DTSTART:20250724T204500Z
+
+DTEND:20250724T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-81
+
+DTSTART:20250709T023000Z
+
+DTEND:20250709T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-82
+
+DTSTART:20250626T230000Z
+
+DTEND:20250627T010000Z
+
+SUMMARY:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_T5_I
+
+ NFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_
+
+ T5_INFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-83
+
+DTSTART:20250731T230000Z
+
+DTEND:20250801T010000Z
+
+SUMMARY:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD_T7_
+
+ INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD
+
+ _T7_INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-84
+
+DTSTART:20250525T230000Z
+
+DTEND:20250526T010000Z
+
+SUMMARY:Cm : Automates et Langages (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nT.K
+
+ napik  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Cm : Automates et Langages (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \
+
+ nT.Knapik  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-85
+
+DTSTART:20250515T023000Z
+
+DTEND:20250515T063000Z
+
+SUMMARY:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-86
+
+DTSTART:20250601T204500Z
+
+DTEND:20250602T004500Z
+
+SUMMARY:Cm : Admin des Réseaux (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Réseaux (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-87
+
+DTSTART:20250401T230000Z
+
+DTEND:20250402T010000Z
+
+SUMMARY:Tp : Génie Logiciel (TP_INFO_T7_S5) - G2 \nA.Tessier  \nBtf : F2 In
+
+ fo [Edt-Ens]
+
+DESCRIPTION:Tp : Génie Logiciel (TP_INFO_T7_S5) - G2 \nA.Tessier  \nBtf : F
+
+ 2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-88
+
+DTSTART:20250521T023000Z
+
+DTEND:20250521T043000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-89
+
+DTSTART:20250507T023000Z
+
+DTEND:20250507T043000Z
+
+SUMMARY:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Développement Web & Composants Web (TP_INFO_T7_S5)\,  (TP_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-90
+
+DTSTART:20250402T023000Z
+
+DTEND:20250402T043000Z
+
+SUMMARY:Cm : Développement Web & Composants Web (CM_INFO_L3_T5_S5)\,  (CM_I
+
+ NFO_T7_S5) \nA.Tessier  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Développement Web & Composants Web (CM_INFO_L3_T5_S5)\,  (
+
+ CM_INFO_T7_S5) \nA.Tessier  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-91
+
+DTSTART:20250427T230000Z
+
+DTEND:20250428T010000Z
+
+SUMMARY:Cm : Progr Avancée en c et Complexité (CM_INFO_T5_S3)\,  (CM_INFO_T
+
+ 7_S5) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Cm : Progr Avancée en c et Complexité (CM_INFO_T5_S3)\,  (CM_IN
+
+ FO_T7_S5) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-92
+
+DTSTART:20250505T204500Z
+
+DTEND:20250505T224500Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T5_S3)\,  (TD_INFO_T7_S5) \nT.K
+
+ napik  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T5_S3)\,  (TD_INFO_T7_S5) \
+
+ nT.Knapik  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-93
+
+DTSTART:20250424T230000Z
+
+DTEND:20250425T010000Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) - CC
+
+ \nT.Knapik  \nAte : A3 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) -
+
+  CC \nT.Knapik  \nAte : A3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-94
+
+DTSTART:20250416T220000Z
+
+DTEND:20250417T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_INFO_T
+
+ 5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_IN
+
+ FO_T5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-95
+
+DTSTART:20250505T044500Z
+
+DTEND:20250505T064500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) \nN.Selmaoui  \nLls : L17 [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) \nN.Selmaoui  \nLls : L17 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-96
+
+DTSTART:20250316T204500Z
+
+DTEND:20250316T224500Z
+
+SUMMARY:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.Rich
+
+ mond  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.
+
+ Richmond  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-97
+
+DTSTART:20250812T023000Z
+
+DTEND:20250812T043000Z
+
+SUMMARY:Cm : Concurrence et Réseaux (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.
+
+ Knapik  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Concurrence et Réseaux (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6)
+
+ \nT.Knapik  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-98
+
+DTSTART:20250902T023000Z
+
+DTEND:20250902T043000Z
+
+SUMMARY:Cm : Cybersécurité 2 (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.Richmon
+
+ d  \nAte : A9 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 2 (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.Ric
+
+ hmond  \nAte : A9 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-99
+
+DTSTART:20250717T023000Z
+
+DTEND:20250717T043000Z
+
+SUMMARY:Cm : Cybersécurité 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-100
+
+DTSTART:20250709T230000Z
+
+DTEND:20250710T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-101
+
+DTSTART:20250623T204500Z
+
+DTEND:20250623T224500Z
+
+SUMMARY:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-102
+
+DTSTART:20250804T204500Z
+
+DTEND:20250804T224500Z
+
+SUMMARY:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-103
+
+DTSTART:20250924T204500Z
+
+DTEND:20250924T224500Z
+
+SUMMARY:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41) \nL
+
+ .Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41)
+
+  \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-104
+
+DTSTART:20250722T023000Z
+
+DTEND:20250722T043000Z
+
+SUMMARY:Cm : Cybersécurité 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nT.Richmon
+
+ d  \nAte : A8 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nT.Ric
+
+ hmond  \nAte : A8 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-105
+
+DTSTART:20250918T204500Z
+
+DTEND:20250918T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-106
+
+DTSTART:20251002T204500Z
+
+DTEND:20251002T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-107
+
+DTSTART:20250903T023000Z
+
+DTEND:20250903T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-108
+
+DTSTART:20250318T023000Z
+
+DTEND:20250318T043000Z
+
+SUMMARY:Td : Logique et Programmation Logique (TD_INFO_MIAGE_L4_T7_S7)\,  (
+
+ TD_INFO_T7_S5)\,  (TD_INFO_L3_T5_S5) - CC \nT.Richmond  \nLls : L24infofc
+
+ [Edt-Ens]
+
+DESCRIPTION:Td : Logique et Programmation Logique (TD_INFO_MIAGE_L4_T7_S7)\
+
+ ,  (TD_INFO_T7_S5)\,  (TD_INFO_L3_T5_S5) - CC \nT.Richmond  \nLls : L24inf
+
+ ofc [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-109
+
+DTSTART:20250331T023000Z
+
+DTEND:20250331T043000Z
+
+SUMMARY:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-110
+
+DTSTART:20250312T044500Z
+
+DTEND:20250312T064500Z
+
+SUMMARY:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO_T5_
+
+ S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _T5_S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-111
+
+DTSTART:20250316T230000Z
+
+DTEND:20250317T010000Z
+
+SUMMARY:Cm : Progr Avancée en c et Complexité (CM_INFO_T7_S5)\,  (CM_INFO_T
+
+ 5_S3) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Cm : Progr Avancée en c et Complexité (CM_INFO_T7_S5)\,  (CM_IN
+
+ FO_T5_S3) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-112
+
+DTSTART:20250526T204500Z
+
+DTEND:20250526T224500Z
+
+SUMMARY:Cm : Admin des Réseaux (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nN.Cleme
+
+ ntz  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Réseaux (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nN.C
+
+ lementz  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-113
+
+DTSTART:20250520T204500Z
+
+DTEND:20250520T224500Z
+
+SUMMARY:Tp : Génie Logiciel (TP_INFO_T7_S5) - GP2 \nA.Tessier  \nBtf : F2 I
+
+ nfo [Edt-Ens]
+
+DESCRIPTION:Tp : Génie Logiciel (TP_INFO_T7_S5) - GP2 \nA.Tessier  \nBtf :
+
+ F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-114
+
+DTSTART:20250414T230000Z
+
+DTEND:20250415T010000Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_T7_S5)\,  (CM_INF
+
+ O_MIAGE_T7_S5)\,  (CM_INFO_T5_S3) \nN.Selmaoui  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_T7_S5)\,  (CM
+
+ _INFO_MIAGE_T7_S5)\,  (CM_INFO_T5_S3) \nN.Selmaoui  \nBts : S1 Info [Edt-E
+
+ ns]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-115
+
+DTSTART:20250421T230000Z
+
+DTEND:20250422T010000Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_MIAGE_T7_S5)\,  (
+
+ CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nN.Selmaoui  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_MIAGE_T7_S5)\
+
+ ,  (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nN.Selmaoui  \nBtf : F1 Info [Edt-E
+
+ ns]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-116
+
+DTSTART:20250602T023000Z
+
+DTEND:20250602T043000Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) - CC
+
+ \nT.Knapik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) -
+
+  CC \nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-117
+
+DTSTART:20250527T023000Z
+
+DTEND:20250527T043000Z
+
+SUMMARY:Cm : Logique et Programmation Logique (CM_INFO_MIAGE_L4_T7_S7)\,  (
+
+ CM_INFO_T7_S5)\,  (CM_INFO_L3_T5_S5) - CC3 \nT.Richmond  \nLls : L24infofc
+
+  [Edt-Ens]
+
+DESCRIPTION:Cm : Logique et Programmation Logique (CM_INFO_MIAGE_L4_T7_S7)\
+
+ ,  (CM_INFO_T7_S5)\,  (CM_INFO_L3_T5_S5) - CC3 \nT.Richmond  \nLls : L24in
+
+ fofc [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-118
+
+DTSTART:20250504T204500Z
+
+DTEND:20250504T224500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) \nN.Selmaoui  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) \nN.Selmaoui  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-119
+
+DTSTART:20250701T023000Z
+
+DTEND:20250701T043000Z
+
+SUMMARY:Cm : Concurrence et Réseaux (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.
+
+ Knapik  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Concurrence et Réseaux (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6)
+
+ \nT.Knapik  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-120
+
+DTSTART:20250908T204500Z
+
+DTEND:20250908T224500Z
+
+SUMMARY:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-121
+
+DTSTART:20250707T204500Z
+
+DTEND:20250707T224500Z
+
+SUMMARY:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-122
+
+DTSTART:20250723T204500Z
+
+DTEND:20250723T224500Z
+
+SUMMARY:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Bases de Données Av. 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-123
+
+DTSTART:20250826T023000Z
+
+DTEND:20250826T043000Z
+
+SUMMARY:Cm : Cybersécurité 2 (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.Richmon
+
+ d  \nAte : A3 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 2 (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.Ric
+
+ hmond  \nAte : A3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-124
+
+DTSTART:20250716T023000Z
+
+DTEND:20250716T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-125
+
+DTSTART:20250723T023000Z
+
+DTEND:20250723T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-126
+
+DTSTART:20250910T023000Z
+
+DTEND:20250910T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-127
+
+DTSTART:20250724T230000Z
+
+DTEND:20250725T010000Z
+
+SUMMARY:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_T5_I
+
+ NFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_
+
+ T5_INFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-128
+
+DTSTART:20250520T044500Z
+
+DTEND:20250520T064500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) - CC2 \nN.Selmaoui  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) - CC2 \nN.Selmaoui  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-129
+
+DTSTART:20250319T044500Z
+
+DTEND:20250319T064500Z
+
+SUMMARY:Cm : Admin des Syst. d'Exploitation (CM_INFO_T5_S3)\,  (CM_INFO_T7_
+
+ S5) \nA.d'Ambra  \nBte : E6 [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Syst. d'Exploitation (CM_INFO_T5_S3)\,  (CM_INFO
+
+ _T7_S5) \nA.d'Ambra  \nBte : E6 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-130
+
+DTSTART:20250507T044500Z
+
+DTEND:20250507T064500Z
+
+SUMMARY:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO_T5_
+
+ S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _T5_S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-131
+
+DTSTART:20250226T044500Z
+
+DTEND:20250226T064500Z
+
+SUMMARY:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO_T5_
+
+ S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _T5_S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-132
+
+DTSTART:20250521T044500Z
+
+DTEND:20250521T064500Z
+
+SUMMARY:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO_T5_
+
+ S3) - TP \nA.d'Ambra  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _T5_S3) - TP \nA.d'Ambra  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-133
+
+DTSTART:20250512T230000Z
+
+DTEND:20250513T010000Z
+
+SUMMARY:Cm : Logique et Programmation Logique (CM_INFO_L3_T5_S5)\,  (CM_INF
+
+ O_MIAGE_L4_T7_S7)\,  (CM_INFO_T7_S5) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Cm : Logique et Programmation Logique (CM_INFO_L3_T5_S5)\,  (CM
+
+ _INFO_MIAGE_L4_T7_S7)\,  (CM_INFO_T7_S5) \nT.Richmond  \nBte : E4 [Edt-Ens
+
+ ]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-134
+
+DTSTART:20250331T044500Z
+
+DTEND:20250331T064500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) \nN.Selmaoui  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) \nN.Selmaoui  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-135
+
+DTSTART:20250520T230000Z
+
+DTEND:20250521T010000Z
+
+SUMMARY:Tp : Génie Logiciel (TP_INFO_T7_S5) - G2 \nA.Tessier  \nBtf : F2 In
+
+ fo [Edt-Ens]
+
+DESCRIPTION:Tp : Génie Logiciel (TP_INFO_T7_S5) - G2 \nA.Tessier  \nBtf : F
+
+ 2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-136
+
+DTSTART:20250325T023000Z
+
+DTEND:20250325T043000Z
+
+SUMMARY:Cm : Logique et Programmation Logique (CM_INFO_T7_S5)\,  (CM_INFO_M
+
+ IAGE_L4_T7_S7)\,  (CM_INFO_L3_T5_S5) \nT.Richmond  \nAte : A4 [Edt-Ens]
+
+DESCRIPTION:Cm : Logique et Programmation Logique (CM_INFO_T7_S5)\,  (CM_IN
+
+ FO_MIAGE_L4_T7_S7)\,  (CM_INFO_L3_T5_S5) \nT.Richmond  \nAte : A4 [Edt-Ens
+
+ ]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-137
+
+DTSTART:20250429T023000Z
+
+DTEND:20250429T043000Z
+
+SUMMARY:Cm : Logique et Programmation Logique (CM_INFO_T7_S5)\,  (CM_INFO_M
+
+ IAGE_L4_T7_S7)\,  (CM_INFO_L3_T5_S5) \nT.Richmond  \nAte : A4 [Edt-Ens]
+
+DESCRIPTION:Cm : Logique et Programmation Logique (CM_INFO_T7_S5)\,  (CM_IN
+
+ FO_MIAGE_L4_T7_S7)\,  (CM_INFO_L3_T5_S5) \nT.Richmond  \nAte : A4 [Edt-Ens
+
+ ]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-138
+
+DTSTART:20250515T204500Z
+
+DTEND:20250515T224500Z
+
+SUMMARY:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.Rich
+
+ mond  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.
+
+ Richmond  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-139
+
+DTSTART:20250428T204500Z
+
+DTEND:20250428T224500Z
+
+SUMMARY:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A3 [Edt-Ens]
+
+DESCRIPTION:Td : Automates et Langages (TD_INFO_T7_S5)\,  (TD_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-140
+
+DTSTART:20250325T044500Z
+
+DTEND:20250325T064500Z
+
+SUMMARY:Td : Génie Logiciel (TD_INFO_T7_S5)\,  (TD_INFO_L3_T5_S5)\,  (TD_IN
+
+ FO_MIAGE_L4_T7_S7) \nA.Tessier  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Génie Logiciel (TD_INFO_T7_S5)\,  (TD_INFO_L3_T5_S5)\,  (T
+
+ D_INFO_MIAGE_L4_T7_S7) \nA.Tessier  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-141
+
+DTSTART:20250422T044500Z
+
+DTEND:20250422T064500Z
+
+SUMMARY:Td : Génie Logiciel (TD_INFO_T7_S5)\,  (TD_INFO_L3_T5_S5)\,  (TD_IN
+
+ FO_MIAGE_L4_T7_S7) \nA.Tessier  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Génie Logiciel (TD_INFO_T7_S5)\,  (TD_INFO_L3_T5_S5)\,  (T
+
+ D_INFO_MIAGE_L4_T7_S7) \nA.Tessier  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-142
+
+DTSTART:20250603T044500Z
+
+DTEND:20250603T064500Z
+
+SUMMARY:Td : Génie Logiciel (TD_INFO_L3_T5_S5)\,  (TD_INFO_T7_S5)\,  (TD_IN
+
+ FO_MIAGE_L4_T7_S7) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+DESCRIPTION:Td : Génie Logiciel (TD_INFO_L3_T5_S5)\,  (TD_INFO_T7_S5)\,  (T
+
+ D_INFO_MIAGE_L4_T7_S7) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-143
+
+DTSTART:20250414T204500Z
+
+DTEND:20250414T224500Z
+
+SUMMARY:Cm : Progr Avancée en c et Complexité (CM_INFO_T7_S5)\,  (CM_INFO_T
+
+ 5_S3) \nT.Richmond  \nBtf : F4 [Edt-Ens]
+
+DESCRIPTION:Cm : Progr Avancée en c et Complexité (CM_INFO_T7_S5)\,  (CM_IN
+
+ FO_T5_S3) \nT.Richmond  \nBtf : F4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-144
+
+DTSTART:20250505T230000Z
+
+DTEND:20250506T010000Z
+
+SUMMARY:Td : Progr Avancée en c et Complexité (TD_INFO_T7_S5)\,  (TD_INFO_T
+
+ 5_S3) \nT.Richmond  \nBte : E6 [Edt-Ens]
+
+DESCRIPTION:Td : Progr Avancée en c et Complexité (TD_INFO_T7_S5)\,  (TD_IN
+
+ FO_T5_S3) \nT.Richmond  \nBte : E6 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-145
+
+DTSTART:20250514T220000Z
+
+DTEND:20250515T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_INFO_T
+
+ 5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_IN
+
+ FO_T5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-146
+
+DTSTART:20250602T230000Z
+
+DTEND:20250603T010000Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_MIAGE_T7_S5)\,  (
+
+ CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) - CC3 seconde chance \nN.Selmaoui  \nBtf
+
+  : F4 [Edt-Ens]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_MIAGE_T7_S5)\
+
+ ,  (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) - CC3 seconde chance \nN.Selmaoui  \
+
+ nBtf : F4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-147
+
+DTSTART:20250730T230000Z
+
+DTEND:20250731T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-148
+
+DTSTART:20251001T230000Z
+
+DTEND:20251002T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-149
+
+DTSTART:20250903T230000Z
+
+DTEND:20250904T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-150
+
+DTSTART:20250721T204500Z
+
+DTEND:20250721T224500Z
+
+SUMMARY:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-151
+
+DTSTART:20250702T204500Z
+
+DTEND:20250702T224500Z
+
+SUMMARY:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41) \nL
+
+ .Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41)
+
+  \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-152
+
+DTSTART:20250917T204500Z
+
+DTEND:20250917T224500Z
+
+SUMMARY:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41) \nL
+
+ .Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41)
+
+  \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-153
+
+DTSTART:20250717T204500Z
+
+DTEND:20250717T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-154
+
+DTSTART:20250904T230000Z
+
+DTEND:20250905T010000Z
+
+SUMMARY:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_T5_I
+
+ NFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_
+
+ T5_INFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-155
+
+DTSTART:20250703T230000Z
+
+DTEND:20250704T010000Z
+
+SUMMARY:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD_T7_
+
+ INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD
+
+ _T7_INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-156
+
+DTSTART:20250303T023000Z
+
+DTEND:20250303T043000Z
+
+SUMMARY:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nT.K
+
+ napik  \nAte : A2 [Edt-Ens]
+
+DESCRIPTION:Cm : Automates et Langages (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \
+
+ nT.Knapik  \nAte : A2 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-157
+
+DTSTART:20250402T044500Z
+
+DTEND:20250402T064500Z
+
+SUMMARY:Cm : Admin des Syst. d'Exploitation (CM_INFO_T5_S3)\,  (CM_INFO_T7_
+
+ S5) \nA.d'Ambra  \nBte : E6 [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Syst. d'Exploitation (CM_INFO_T5_S3)\,  (CM_INFO
+
+ _T7_S5) \nA.d'Ambra  \nBte : E6 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-158
+
+DTSTART:20250416T044500Z
+
+DTEND:20250416T064500Z
+
+SUMMARY:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO_T5_
+
+ S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _T5_S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-159
+
+DTSTART:20250306T023000Z
+
+DTEND:20250306T063000Z
+
+SUMMARY:Cm : Admin des Réseaux (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Admin des Réseaux (CM_INFO_T5_S3)\,  (CM_INFO_T7_S5) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-160
+
+DTSTART:20250522T204500Z
+
+DTEND:20250522T224500Z
+
+SUMMARY:Tp : Génie Logiciel (TP_INFO_T7_S5) - GP2 \nA.Tessier  \nBtf : F2 I
+
+ nfo [Edt-Ens]
+
+DESCRIPTION:Tp : Génie Logiciel (TP_INFO_T7_S5) - GP2 \nA.Tessier  \nBtf :
+
+ F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-161
+
+DTSTART:20250330T230000Z
+
+DTEND:20250331T010000Z
+
+SUMMARY:Td : Progr Avancée en c et Complexité (TD_INFO_T7_S5)\,  (TD_INFO_T
+
+ 5_S3) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Progr Avancée en c et Complexité (TD_INFO_T7_S5)\,  (TD_IN
+
+ FO_T5_S3) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-162
+
+DTSTART:20250522T230000Z
+
+DTEND:20250523T010000Z
+
+SUMMARY:Cm : Génie Logiciel (CM_INFO_T7_S5)\,  (CM_INFO_MIAGE_L4_T7_S7)\,
+
+ (CM_INFO_L3_T5_S5) \nA.Tessier  \nLls : L35info36 [Edt-Ens]
+
+DESCRIPTION:Cm : Génie Logiciel (CM_INFO_T7_S5)\,  (CM_INFO_MIAGE_L4_T7_S7)
+
+ \,  (CM_INFO_L3_T5_S5) \nA.Tessier  \nLls : L35info36 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-163
+
+DTSTART:20250415T044500Z
+
+DTEND:20250415T064500Z
+
+SUMMARY:Cm : Génie Logiciel (CM_INFO_MIAGE_L4_T7_S7)\,  (CM_INFO_T7_S5)\,
+
+ (CM_INFO_L3_T5_S5) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+DESCRIPTION:Cm : Génie Logiciel (CM_INFO_MIAGE_L4_T7_S7)\,  (CM_INFO_T7_S5)
+
+ \,  (CM_INFO_L3_T5_S5) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-164
+
+DTSTART:20250513T044500Z
+
+DTEND:20250513T064500Z
+
+SUMMARY:Td : Génie Logiciel (TD_INFO_T7_S5)\,  (TD_INFO_MIAGE_L4_T7_S7)\,
+
+ (TD_INFO_L3_T5_S5) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+DESCRIPTION:Td : Génie Logiciel (TD_INFO_T7_S5)\,  (TD_INFO_MIAGE_L4_T7_S7)
+
+ \,  (TD_INFO_L3_T5_S5) \nA.Tessier  \nLls : L12info40 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-165
+
+DTSTART:20250414T044500Z
+
+DTEND:20250414T064500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) \nN.Selmaoui  \nLls : L17 [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) \nN.Selmaoui  \nLls : L17 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-166
+
+DTSTART:20250310T044500Z
+
+DTEND:20250310T064500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) \nN.Selmaoui  \nLls : L17 [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) \nN.Selmaoui  \nLls : L17 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-167
+
+DTSTART:20250418T044500Z
+
+DTEND:20250418T064500Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_MIAGE_T7_S5)\,  (
+
+ CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.Selmaoui  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_MIAGE_T7_S5)\
+
+ ,  (CM_INFO_T7_S5)\,  (CM_INFO_T5_S3) \nN.Selmaoui  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-168
+
+DTSTART:20250729T023000Z
+
+DTEND:20250729T043000Z
+
+SUMMARY:Cm : Concurrence et Réseaux (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.
+
+ Knapik  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Concurrence et Réseaux (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6)
+
+ \nT.Knapik  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-169
+
+DTSTART:20250715T023000Z
+
+DTEND:20250715T043000Z
+
+SUMMARY:Cm : Concurrence et Réseaux (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6) \nT.
+
+ Knapik  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Concurrence et Réseaux (CM_T5_INFO_S4)\,  (CM_T7_INFO_S6)
+
+ \nT.Knapik  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-170
+
+DTSTART:20250806T230000Z
+
+DTEND:20250807T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-171
+
+DTSTART:20250825T204500Z
+
+DTEND:20250825T224500Z
+
+SUMMARY:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-172
+
+DTSTART:20250910T204500Z
+
+DTEND:20250910T224500Z
+
+SUMMARY:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41) \nL
+
+ .Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41)
+
+  \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-173
+
+DTSTART:20250813T204500Z
+
+DTEND:20250813T224500Z
+
+SUMMARY:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41) \nL
+
+ .Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Td : Bases de Données Av. 2 (TD_T7_INFO_S6)\,  (TD_T5_INFO_S41)
+
+  \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-174
+
+DTSTART:20250813T023000Z
+
+DTEND:20250813T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-175
+
+DTSTART:20250827T023000Z
+
+DTEND:20250827T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-176
+
+DTSTART:20250917T023000Z
+
+DTEND:20250917T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-177
+
+DTSTART:20250717T230000Z
+
+DTEND:20250718T010000Z
+
+SUMMARY:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD_T7_
+
+ INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD
+
+ _T7_INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-178
+
+DTSTART:20251002T230000Z
+
+DTEND:20251003T010000Z
+
+SUMMARY:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD_T7_
+
+ INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD
+
+ _T7_INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-179
+
+DTSTART:20250828T230000Z
+
+DTEND:20250829T010000Z
+
+SUMMARY:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD_T7_
+
+ INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD
+
+ _T7_INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-180
+
+DTSTART:20250925T230000Z
+
+DTEND:20250926T010000Z
+
+SUMMARY:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD_T7_
+
+ INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Td : Cybersécurité 1 (TD_T7_MATH_S6)\,  (TD_T5_INFO_S41)\,  (TD
+
+ _T7_INFO_S6)\,  (TD_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-181
+
+DTSTART:20250326T044500Z
+
+DTEND:20250326T064500Z
+
+SUMMARY:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO_T5_
+
+ S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Syst. d'Exploitation (TP_INFO_T7_S5)\,  (TP_INFO
+
+ _T5_S3) \nA.d'Ambra  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-182
+
+DTSTART:20250323T230000Z
+
+DTEND:20250324T010000Z
+
+SUMMARY:Td : Progr Avancée en c et Complexité (TD_INFO_T5_S3)\,  (TD_INFO_T
+
+ 7_S5) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Progr Avancée en c et Complexité (TD_INFO_T5_S3)\,  (TD_IN
+
+ FO_T7_S5) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-183
+
+DTSTART:20250417T023000Z
+
+DTEND:20250417T063000Z
+
+SUMMARY:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.Cleme
+
+ ntz  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Admin des Réseaux (TP_INFO_T7_S5)\,  (TP_INFO_T5_S3) \nN.C
+
+ lementz  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-184
+
+DTSTART:20250324T230000Z
+
+DTEND:20250325T010000Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_T5_S3)\,  (CM_INF
+
+ O_MIAGE_T7_S5)\,  (CM_INFO_T7_S5) \nN.Selmaoui  \nBts : S2 InfoBts : S3 In
+
+ fo [Edt-Ens]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_T5_S3)\,  (CM
+
+ _INFO_MIAGE_T7_S5)\,  (CM_INFO_T7_S5) \nN.Selmaoui  \nBts : S2 InfoBts : S
+
+ 3 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-185
+
+DTSTART:20250429T230000Z
+
+DTEND:20250430T010000Z
+
+SUMMARY:Tp : Génie Logiciel (TP_INFO_T7_S5) - G2 \nA.Tessier  \nBtf : F2 In
+
+ fo [Edt-Ens]
+
+DESCRIPTION:Tp : Génie Logiciel (TP_INFO_T7_S5) - G2 \nA.Tessier  \nBtf : F
+
+ 2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-186
+
+DTSTART:20250227T204500Z
+
+DTEND:20250227T224500Z
+
+SUMMARY:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.Rich
+
+ mond  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G2 \nT.
+
+ Richmond  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-187
+
+DTSTART:20250416T023000Z
+
+DTEND:20250416T043000Z
+
+SUMMARY:Cm : Développement Web & Composants Web (CM_INFO_T7_S5)\,  (CM_INFO
+
+ _L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Développement Web & Composants Web (CM_INFO_T7_S5)\,  (CM_
+
+ INFO_L3_T5_S5) \nA.Tessier  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-188
+
+DTSTART:20250504T230000Z
+
+DTEND:20250505T010000Z
+
+SUMMARY:Td : Progr Avancée en c et Complexité (TD_INFO_T7_S5)\,  (TD_INFO_T
+
+ 5_S3) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+DESCRIPTION:Td : Progr Avancée en c et Complexité (TD_INFO_T7_S5)\,  (TD_IN
+
+ FO_T5_S3) \nT.Richmond  \nBtf : F3 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-189
+
+DTSTART:20250427T204500Z
+
+DTEND:20250427T224500Z
+
+SUMMARY:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G1 \nT.Rich
+
+ mond  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Logique et Programmation Logique (TP_INFO_T7_S5) - G1 \nT.
+
+ Richmond  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-190
+
+DTSTART:20250302T230000Z
+
+DTEND:20250303T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T5_S3)\,  (TP_INFO_T
+
+ 7_S5) \nL.Salmon  \nBtf : F3Btf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T5_S3)\,  (TP_IN
+
+ FO_T7_S5) \nL.Salmon  \nBtf : F3Btf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-191
+
+DTSTART:20250506T230000Z
+
+DTEND:20250507T010000Z
+
+SUMMARY:Cm : Génie Logiciel (CM_INFO_L3_T5_S5)\,  (CM_INFO_T7_S5)\,  (CM_IN
+
+ FO_MIAGE_L4_T7_S7) \nA.Tessier  \nBts : S2 InfoBts : S3 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Génie Logiciel (CM_INFO_L3_T5_S5)\,  (CM_INFO_T7_S5)\,  (C
+
+ M_INFO_MIAGE_L4_T7_S7) \nA.Tessier  \nBts : S2 InfoBts : S3 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-192
+
+DTSTART:20250326T220000Z
+
+DTEND:20250327T010000Z
+
+SUMMARY:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_INFO_T
+
+ 5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Progr Avancée en c et Complexité (TP_INFO_T7_S5)\,  (TP_IN
+
+ FO_T5_S3) \nL.Salmon  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-193
+
+DTSTART:20250317T230000Z
+
+DTEND:20250318T010000Z
+
+SUMMARY:Cm : Introduction à l'Analyse de Données (CM_INFO_T5_S3)\,  (CM_INF
+
+ O_MIAGE_T7_S5)\,  (CM_INFO_T7_S5) \nN.Selmaoui  \nLls : L12info40 [Edt-Ens
+
+ ]
+
+DESCRIPTION:Cm : Introduction à l'Analyse de Données (CM_INFO_T5_S3)\,  (CM
+
+ _INFO_MIAGE_T7_S5)\,  (CM_INFO_T7_S5) \nN.Selmaoui  \nLls : L12info40 [Edt
+
+ -Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-194
+
+DTSTART:20250429T204500Z
+
+DTEND:20250429T224500Z
+
+SUMMARY:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD_INF
+
+ O_T7_S5) \nN.Selmaoui  \nBtf : F2 Info [Edt-Ens]
+
+DESCRIPTION:Td : Introduction à l'Analyse de Données (TD_INFO_T5_S3)\,  (TD
+
+ _INFO_T7_S5) \nN.Selmaoui  \nBtf : F2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-195
+
+DTSTART:20250702T230000Z
+
+DTEND:20250703T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-196
+
+DTSTART:20250813T230000Z
+
+DTEND:20250814T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-197
+
+DTSTART:20250910T230000Z
+
+DTEND:20250911T010000Z
+
+SUMMARY:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6) \nT.
+
+ Knapik  \nBts : S2 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Concurrence et Réseaux (TP_T5_INFO_S4)\,  (TP_T7_INFO_S6)
+
+ \nT.Knapik  \nBts : S2 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-198
+
+DTSTART:20250922T204500Z
+
+DTEND:20250922T224500Z
+
+SUMMARY:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4) \nL.
+
+ Salmon  \nBtf : F6 Info [Edt-Ens]
+
+DESCRIPTION:Cm : Bases de Données Av. 2 (CM_T7_INFO_S6)\,  (CM_T5_INFO_S4)
+
+ \nL.Salmon  \nBtf : F6 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-199
+
+DTSTART:20250904T204500Z
+
+DTEND:20250904T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-200
+
+DTSTART:20250807T204500Z
+
+DTEND:20250807T224500Z
+
+SUMMARY:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Richmon
+
+ d  \nBtf : F1 Info [Edt-Ens]
+
+DESCRIPTION:Tp : Cybersécurité 2 (TP_T7_INFO_S6)\,  (TP_T5_INFO_S4) \nT.Ric
+
+ hmond  \nBtf : F1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-201
+
+DTSTART:20250730T023000Z
+
+DTEND:20250730T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-202
+
+DTSTART:20250924T023000Z
+
+DTEND:20250924T063000Z
+
+SUMMARY:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet tut
+
+ oré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+DESCRIPTION:Td : Projet Tutoré (TD_T5_INFO_S41)\,  (TD_T7_INFO_S6) - projet
+
+  tutoré \nC.Leschi  \nBts : S1 Info [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-203
+
+DTSTART:20250807T230000Z
+
+DTEND:20250808T010000Z
+
+SUMMARY:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_T5_I
+
+ NFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+DESCRIPTION:Cm : Cybersécurité 1 (CM_T7_MATH_S6)\,  (CM_T7_INFO_S6)\,  (CM_
+
+ T5_INFO_S4)\,  (CM_T5_MATH_S4) \nT.Richmond  \nBte : E4 [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-204
+
+DTSTART:20250409T204500Z
+
+DTEND:20250410T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-205
+
+DTSTART:20250617T204500Z
+
+DTEND:20250618T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-206
+
+DTSTART:20250618T204500Z
+
+DTEND:20250619T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-207
+
+DTSTART:20250620T204500Z
+
+DTEND:20250621T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-208
+
+DTSTART:20250502T200000Z
+
+DTEND:20250503T070000Z
+
+SUMMARY:Pont/Férié  -  -  [Edt-Ens]
+
+DESCRIPTION:Pont/Férié  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-209
+
+DTSTART:20250609T204500Z
+
+DTEND:20250610T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-210
+
+DTSTART:20250610T204500Z
+
+DTEND:20250611T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-211
+
+DTSTART:20250529T204500Z
+
+DTEND:20250530T070000Z
+
+SUMMARY:Férié - (Ascension)  -  -  [Edt-Ens]
+
+DESCRIPTION:Férié - (Ascension)  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-212
+
+DTSTART:20250501T200000Z
+
+DTEND:20250502T070000Z
+
+SUMMARY:Pont/Férié  -  -  [Edt-Ens]
+
+DESCRIPTION:Pont/Férié  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-213
+
+DTSTART:20250408T204500Z
+
+DTEND:20250409T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-214
+
+DTSTART:20250509T200000Z
+
+DTEND:20250510T070000Z
+
+SUMMARY:Férié - (victoire 1945)  -  -  [Edt-Ens]
+
+DESCRIPTION:Férié - (victoire 1945)  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-215
+
+DTSTART:20250615T204500Z
+
+DTEND:20250616T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-216
+
+DTSTART:20250612T204500Z
+
+DTEND:20250613T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-217
+
+DTSTART:20250613T204500Z
+
+DTEND:20250614T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-218
+
+DTSTART:20250530T204500Z
+
+DTEND:20250531T070000Z
+
+SUMMARY:Férié - (Ascension)  -  -  [Edt-Ens]
+
+DESCRIPTION:Férié - (Ascension)  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-219
+
+DTSTART:20250508T200000Z
+
+DTEND:20250509T070000Z
+
+SUMMARY:Férié (Victoire 1945)  -  -  [Edt-Ens]
+
+DESCRIPTION:Férié (Victoire 1945)  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-220
+
+DTSTART:20250410T204500Z
+
+DTEND:20250411T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-221
+
+DTSTART:20250611T204500Z
+
+DTEND:20250612T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-222
+
+DTSTART:20250407T204500Z
+
+DTEND:20250408T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-223
+
+DTSTART:20250619T204500Z
+
+DTEND:20250620T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-224
+
+DTSTART:20250406T204500Z
+
+DTEND:20250407T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-225
+
+DTSTART:20250411T204500Z
+
+DTEND:20250412T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-226
+
+DTSTART:20250616T204500Z
+
+DTEND:20250617T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-227
+
+DTSTART:20250409T204500Z
+
+DTEND:20250410T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-228
+
+DTSTART:20250617T204500Z
+
+DTEND:20250618T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-229
+
+DTSTART:20250618T204500Z
+
+DTEND:20250619T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-230
+
+DTSTART:20250620T204500Z
+
+DTEND:20250621T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-231
+
+DTSTART:20250502T200000Z
+
+DTEND:20250503T070000Z
+
+SUMMARY:Pont/Férié  -  -  [Edt-Ens]
+
+DESCRIPTION:Pont/Férié  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-232
+
+DTSTART:20250609T204500Z
+
+DTEND:20250610T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-233
+
+DTSTART:20250610T204500Z
+
+DTEND:20250611T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-234
+
+DTSTART:20250529T204500Z
+
+DTEND:20250530T070000Z
+
+SUMMARY:Férié - (Ascension)  -  -  [Edt-Ens]
+
+DESCRIPTION:Férié - (Ascension)  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-235
+
+DTSTART:20250501T200000Z
+
+DTEND:20250502T070000Z
+
+SUMMARY:Pont/Férié  -  -  [Edt-Ens]
+
+DESCRIPTION:Pont/Férié  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-236
+
+DTSTART:20250408T204500Z
+
+DTEND:20250409T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-237
+
+DTSTART:20250509T200000Z
+
+DTEND:20250510T070000Z
+
+SUMMARY:Férié - (victoire 1945)  -  -  [Edt-Ens]
+
+DESCRIPTION:Férié - (victoire 1945)  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-238
+
+DTSTART:20250615T204500Z
+
+DTEND:20250616T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-239
+
+DTSTART:20250612T204500Z
+
+DTEND:20250613T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-240
+
+DTSTART:20250613T204500Z
+
+DTEND:20250614T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-241
+
+DTSTART:20250530T204500Z
+
+DTEND:20250531T070000Z
+
+SUMMARY:Férié - (Ascension)  -  -  [Edt-Ens]
+
+DESCRIPTION:Férié - (Ascension)  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-242
+
+DTSTART:20250508T200000Z
+
+DTEND:20250509T070000Z
+
+SUMMARY:Férié (Victoire 1945)  -  -  [Edt-Ens]
+
+DESCRIPTION:Férié (Victoire 1945)  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-243
+
+DTSTART:20250410T204500Z
+
+DTEND:20250411T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-244
+
+DTSTART:20250611T204500Z
+
+DTEND:20250612T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-245
+
+DTSTART:20250407T204500Z
+
+DTEND:20250408T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-246
+
+DTSTART:20250619T204500Z
+
+DTEND:20250620T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-247
+
+DTSTART:20250406T204500Z
+
+DTEND:20250407T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-248
+
+DTSTART:20250411T204500Z
+
+DTEND:20250412T070000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-249
+
+DTSTART:20250616T204500Z
+
+DTEND:20250617T060000Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-250
+
+DTSTART:20250818T204500Z
+
+DTEND:20250819T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-251
+
+DTSTART:20251016T204500Z
+
+DTEND:20251017T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-252
+
+DTSTART:20250819T204500Z
+
+DTEND:20250820T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-253
+
+DTSTART:20251015T204500Z
+
+DTEND:20251016T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-254
+
+DTSTART:20250821T204500Z
+
+DTEND:20250822T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-255
+
+DTSTART:20250817T204500Z
+
+DTEND:20250818T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-256
+
+DTSTART:20251013T204500Z
+
+DTEND:20251014T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-257
+
+DTSTART:20251014T204500Z
+
+DTEND:20251015T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-258
+
+DTSTART:20251012T204500Z
+
+DTEND:20251013T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -  [Edt-Ens]
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+DTSTAMP:20250715T231427Z
+
+UID:195834--1477129948-259
+
+DTSTART:20250820T204500Z
+
+DTEND:20250821T064500Z
+
+SUMMARY:VACANCES SCOLAIRES  -  -     [Edt-Ens]
+
+DESCRIPTION:VACANCES SCOLAIRES  -  -     [Edt-Ens]
+
+END:VEVENT
+
+END:VCALENDAR

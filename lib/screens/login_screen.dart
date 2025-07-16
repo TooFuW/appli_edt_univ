@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:appli_edt_univ/main.dart';
 import 'package:appli_edt_univ/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:icalendar_parser/icalendar_parser.dart';
 
@@ -74,6 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: "Se connecter",
                     isLoading: _isLoading
                   ),
+                  sizedBoxPetite(),
                   if (loginError.isNotEmpty)
                     textError(text: loginError)
                 ],
@@ -86,6 +90,14 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
 void _submitForm(BuildContext context) async {
+    //final icsString = await rootBundle.loadString('assets/images/test.txt');
+    //final iCalendar = ICalendar.fromString(icsString);
+    //if (context.mounted) {
+    //  Navigator.of(context).pushAndRemoveUntil(
+    //    MaterialPageRoute(builder: (context) => MyHomePage(calendar: iCalendar)),
+    //    (Route<dynamic> route) => false
+    //  );
+    //}
     // Vérification du formulaire
     if (_formKey.currentState!.validate() && !_isLoading) {
       // Si le formulaire est valide
@@ -100,7 +112,9 @@ void _submitForm(BuildContext context) async {
         var response = await http.get(url);
         // Si la réponse est bonne
         if (response.statusCode == 200) {
-          final iCalendar = ICalendar.fromString(response.body);
+          final bytes = response.bodyBytes;
+          final icsString = utf8.decode(bytes);
+          final iCalendar = ICalendar.fromString(icsString);
           if (context.mounted) {
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => MyHomePage(calendar: iCalendar)),
