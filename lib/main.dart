@@ -101,6 +101,15 @@ class MyApp extends StatelessWidget {
         }
         // Sinon
         else {
+          // On essaie de charger le calendrier enregistré
+          String? calendar = await getInfo("calendar");
+          if (calendar != null) {
+            final iCalendar = ICalendar.fromString(calendar);
+            final lastConnexionString = await getInfo('lastSave');
+            final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
+            return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
+          }
+          // Sinon page de login
           return LoginScreen();
         }
       }
