@@ -84,7 +84,7 @@ class MyApp extends StatelessWidget {
   }
 
   Future<Widget> _autoConnect(BuildContext context) async {
-    String? userId = await getId();
+    String? userId = await getInfo("id");
     if (userId != null) {
       var url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '$userId/ical'});
       try {
@@ -95,6 +95,7 @@ class MyApp extends StatelessWidget {
           final bytes = response.bodyBytes;
           final icsString = utf8.decode(bytes);
           final iCalendar = ICalendar.fromString(icsString);
+          await saveInfo('calendar', icsString);
           return MyHomePage(calendar: iCalendar, id: userId);
         }
         // Sinon
@@ -104,6 +105,13 @@ class MyApp extends StatelessWidget {
       }
       // On gére le cas où il n'y a pas d'internet
       catch (e) {
+        // On essaie de charger le calendrier enregistré
+        String? calendar = await getInfo("calendar");
+        if (calendar != null) {
+          final iCalendar = ICalendar.fromString(calendar);
+          return MyHomePage(calendar: iCalendar, id: userId, offline: true);
+        }
+        // Sinon page de login
         return LoginScreen();
       }
     }
@@ -146,10 +154,11 @@ List<DateTime> _daysInRange(DateTime first, DateTime last) {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.calendar, required this.id});
+  const MyHomePage({super.key, required this.calendar, required this.id, this.offline = false});
 
   final ICalendar calendar;
   final String id;
+  final bool offline;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -332,6 +341,16 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         child: Column(
           children: [
+            Container(
+              color: Colors.red,
+              width: double.infinity,
+              padding: EdgeInsets.all(5),
+              child: Text(
+                'Vous êtes hors-ligne',
+                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+            ),
             _CalendarHeader(
               focusedDay: _focusedDay.toLocal(),
               onTodayButtonTap: () {
