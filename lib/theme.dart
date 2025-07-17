@@ -169,22 +169,6 @@ Text textError (
   );
 }
 
-// Texte de validation
-Text textValidation (
-  {required String text,
-  TextAlign? textAlign}
-  ) {
-  return Text(
-    text,
-    style: const TextStyle(
-      color: Colors.green,
-      fontSize: 14,
-      fontWeight: FontWeight.bold
-    ),
-    textAlign: textAlign ?? TextAlign.center
-  );
-}
-
 // Petite SizedBox
 SizedBox sizedBoxPetite () {
   return const SizedBox(height: 15);
@@ -317,83 +301,12 @@ ElevatedButton elevatedButton (
           width: 20,
           child: CircularProgressIndicator.adaptive(
             strokeWidth: 2,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-            backgroundColor: Color.fromARGB(255, 36, 155, 252),
+            valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
+            backgroundColor: Colors.grey[300],
           ),
         )
       : textGrosP(
         text: text
       ),
-  );
-}
-
-// Gros boutons outlined
-ElevatedButton elevatedButtonOutlined (
-  {required Function() onPressed,
-  required String text,
-  bool isLoading = false}
-) {
-  return ElevatedButton(
-    onPressed: onPressed,
-    style: ElevatedButton.styleFrom(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
-        side: const BorderSide(color: Color.fromARGB(255, 36, 155, 252), width: 2)
-      ),
-      backgroundColor: Colors.white,
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-      elevation: 5,
-    ),
-    child: isLoading
-      ? SizedBox(
-          height: 20,
-          width: 20,
-          child: CircularProgressIndicator.adaptive(
-            strokeWidth: 2,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-            backgroundColor: Color.fromARGB(255, 36, 155, 252),
-          ),
-        )
-      : textGrosP(
-        text: text
-      ),
-  );
-}
-
-// Gros boutons warning
-ElevatedButton elevatedButtonWarning (
-  {required Function() onPressed,
-  required String text,
-  bool isLoading = false}
-) {
-  return ElevatedButton(
-    onPressed: onPressed,
-    style: ElevatedButton.styleFrom(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
-        side: const BorderSide(color: Colors.red, width: 2)
-      ),
-      backgroundColor: Colors.white,
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-      elevation: 5,
-    ),
-    child: isLoading
-      ? SizedBox(
-          height: 20,
-          width: 20,
-          child: CircularProgressIndicator.adaptive(
-            strokeWidth: 2,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-            backgroundColor: Color.fromARGB(255, 36, 155, 252),
-          ),
-        )
-      : Text(
-      text,
-      style: const TextStyle(
-        color: Colors.red,
-        fontSize: 20,
-      ),
-      textAlign: TextAlign.center
-    ),
   );
 }

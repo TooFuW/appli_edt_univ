@@ -43,9 +43,9 @@ class MyApp extends StatelessWidget {
                       height: 50,
                       width: 50,
                       child: CircularProgressIndicator.adaptive(
-                        strokeWidth: 2,
-                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                        backgroundColor: Color.fromARGB(255, 36, 155, 252),
+                        strokeWidth: 3,
+                        valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
+                        backgroundColor: Colors.grey[300],
                       ),
                     ),
                     SizedBox(height: 5,),
@@ -196,6 +196,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<String> _months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
+  bool _isRefreshLoading = false;
+
   @override
   void initState() {
     super.initState();
@@ -334,9 +336,69 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: SafeArea(
         child: Drawer(
+          backgroundColor: Colors.white,
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
+              ListTile(
+                leading: Icon(Icons.refresh, color: Colors.blue,),
+                title: Text('Recharger', style: TextStyle(color: Colors.blue),),
+                trailing: _isRefreshLoading
+                  ? SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator.adaptive(
+                        strokeWidth: 3,
+                        valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
+                        backgroundColor: Colors.grey[300],
+                      ),
+                    )
+                  : null,
+                onTap: () async {
+                  if (!_isRefreshLoading) {
+                    setState(() {
+                      _isRefreshLoading = true;
+                    });
+                    var url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${widget.id}/ical'});
+                    try {
+                      // RECEPTION DE LA REPONSE
+                      var response = await http.get(url);
+                      // Si la réponse est bonne
+                      if (response.statusCode == 200) {
+                        final bytes = response.bodyBytes;
+                        final icsString = utf8.decode(bytes);
+                        final iCalendar = ICalendar.fromString(icsString);
+                        final idx = icsString.lastIndexOf('R');
+                        final toSave = (idx != -1 && idx < icsString.length - 1)
+                          ? icsString.substring(0, idx + 1)
+                          : icsString;
+                        await saveInfo('calendar', toSave);
+                        await saveInfo('lastSave', DateTime.now().toLocal().toString());
+                        if (context.mounted) {
+                          Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                              builder: (context) => MyHomePage(calendar: iCalendar, id: widget.id),
+                            ),
+                            (Route<dynamic> route) => false
+                          );
+                        }
+                      }
+                      else {
+                        // Sinon rien
+                      }
+                    }
+                    catch (e) {
+                      // Sinon rien
+                    }
+                    setState(() {
+                      _isRefreshLoading = false;
+                    });
+                  }
+                },
+              ),
+              Divider(
+                thickness: 1,
+              ),
               ListTile(
                 leading: Icon(Icons.logout, color: Colors.red,),
                 title: Text('Se déconnecter', style: TextStyle(color: Colors.red),),
