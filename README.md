@@ -12,4 +12,4 @@
 
 ## Licence
 
-Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus d’informations.
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE.md) pour plus d’informations.
