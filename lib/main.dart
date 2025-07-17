@@ -74,9 +74,9 @@ class MyApp extends StatelessWidget {
             );
           } else if (snapshot.hasError) {
             eraseStorage();
-            return LoginScreen(debug: snapshot.error.toString());
+            return LoginScreen();
           } else {
-            return snapshot.data ?? LoginScreen(debug: "1",);
+            return snapshot.data ?? LoginScreen();
           }
         },
       ),
@@ -114,15 +114,13 @@ class MyApp extends StatelessWidget {
             return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
           }
           // Sinon page de login
-          return LoginScreen(debug: "2",);
+          return LoginScreen();
         }
       }
       // On gére le cas où il n'y a pas d'internet
       catch (e) {
         // On essaie de charger le calendrier enregistré
         final calendar = await getInfo("calendar");
-        debugPrint("→ Stored calendar endsWith END:VCALENDAR ? ${calendar?.trim().endsWith("END:VCALENDAR")}");
-        debugPrint("→ Last 100 chars:\n${calendar?.substring(calendar.length - 100)}");
         if (calendar != null) {
           final iCalendar = ICalendar.fromString(calendar);
           final lastConnexionString = await getInfo('lastSave');
@@ -130,10 +128,10 @@ class MyApp extends StatelessWidget {
           return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
         }
         // Sinon page de login
-        return LoginScreen(debug: "3",);
+        return LoginScreen();
       }
     }
-    return LoginScreen(debug: "4",);
+    return LoginScreen();
   }
 }
 
