@@ -13,7 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting();
   await initStorage();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -38,17 +38,17 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     textH2(text: "Connexion en cours..."),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     SizedBox(
                       height: 50,
                       width: 50,
                       child: CircularProgressIndicator.adaptive(
                         strokeWidth: 3,
-                        valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
+                        valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
                         backgroundColor: Colors.grey[300],
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     FutureBuilder<int>(
                       future: Future.delayed(const Duration(seconds: 5), () => 5),
                       builder: (context, snapshot) {
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
                         return const SizedBox.shrink();
                       },
                     ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     FutureBuilder<int>(
                       future: Future.delayed(const Duration(seconds: 10), () => 10),
                       builder: (context, snapshot) {
@@ -74,9 +74,9 @@ class MyApp extends StatelessWidget {
             );
           } else if (snapshot.hasError) {
             eraseStorage();
-            return LoginScreen();
+            return const LoginScreen();
           } else {
-            return snapshot.data ?? LoginScreen();
+            return snapshot.data ?? const LoginScreen();
           }
         },
       ),
@@ -114,7 +114,7 @@ class MyApp extends StatelessWidget {
             return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
           }
           // Sinon page de login
-          return LoginScreen();
+          return const LoginScreen();
         }
       }
       // On gére le cas où il n'y a pas d'internet
@@ -128,10 +128,10 @@ class MyApp extends StatelessWidget {
           return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
         }
         // Sinon page de login
-        return LoginScreen();
+        return const LoginScreen();
       }
     }
-    return LoginScreen();
+    return const LoginScreen();
   }
 }
 
@@ -341,15 +341,15 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.zero,
             children: [
               ListTile(
-                leading: Icon(Icons.refresh, color: Colors.blue,),
-                title: Text('Recharger', style: TextStyle(color: Colors.blue),),
+                leading: const Icon(Icons.refresh, color: Colors.blue,),
+                title: const Text('Recharger', style: TextStyle(color: Colors.blue),),
                 trailing: _isRefreshLoading
                   ? SizedBox(
                       height: 20,
                       width: 20,
                       child: CircularProgressIndicator.adaptive(
                         strokeWidth: 3,
-                        valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
+                        valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
                         backgroundColor: Colors.grey[300],
                       ),
                     )
@@ -396,17 +396,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   }
                 },
               ),
-              Divider(
+              const Divider(
                 thickness: 1,
               ),
               ListTile(
-                leading: Icon(Icons.logout, color: Colors.red,),
-                title: Text('Se déconnecter', style: TextStyle(color: Colors.red),),
+                leading: const Icon(Icons.logout, color: Colors.red,),
+                title: const Text('Se déconnecter', style: TextStyle(color: Colors.red),),
                 onTap: () {
                   eraseStorage();
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                      builder: (context) => LoginScreen(),
+                      builder: (context) => const LoginScreen(),
                     ),
                     (Route<dynamic> route) => false
                   );
@@ -424,12 +424,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 color: Colors.red,
                 width: double.infinity,
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 child: Text(
                   widget.lastConnexion != null
                     ? 'Vous êtes hors-ligne depuis le ${widget.lastConnexion!.day}/${widget.lastConnexion!.month}/${widget.lastConnexion!.year} à ${widget.lastConnexion!.hour}:${widget.lastConnexion!.minute}'
                     : 'Vous êtes hors-ligne',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -477,8 +477,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 markerMargin: const EdgeInsets.only(left: 0.3, right: 0.3, top: 2),
                 selectedDecoration: const BoxDecoration(color: Color.fromARGB(255, 67, 95, 255), shape: BoxShape.circle),
                 todayDecoration: const BoxDecoration(color: Color.fromARGB(255, 151, 160, 209), shape: BoxShape.circle),
-                rangeStartDecoration: BoxDecoration(color: Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: Color.fromARGB(255, 0, 0, 0), width: 1)),
-                rangeEndDecoration: BoxDecoration(color: Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: Color.fromARGB(255, 0, 0, 0), width: 1)),
+                rangeStartDecoration: BoxDecoration(color: const Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 1)),
+                rangeEndDecoration: BoxDecoration(color: const Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 1)),
               ),
               locale: 'fr_FR',
               firstDay: DateTime.utc(_focusedDay.year, 1, 1),
@@ -522,7 +522,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       return Center(child: Text('Aucun événement pour le ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}'));
                     }
                     return ListView.builder(
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       itemCount: value.length,
                       itemBuilder: (context, index) {
                         final ev = value[index];
@@ -543,7 +543,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       backgroundColor: Colors.white,
                                       title: Text(
                                         ev.title,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           color: Colors.black,
                                           fontSize: 25,
                                           fontWeight: FontWeight.bold
@@ -555,13 +555,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
-                                          SizedBox(height: 5),
+                                          const SizedBox(height: 5),
                                           textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
-                                          SizedBox(height: 5),
+                                          const SizedBox(height: 5),
                                           textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
-                                          SizedBox(height: 5),
+                                          const SizedBox(height: 5),
                                           textMoyenP2(text: 'Du ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
-                                          SizedBox(height: 5),
+                                          const SizedBox(height: 5),
                                           textMoyenP2(text: 'Au ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
                                         ],
                                       ),
@@ -570,7 +570,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           onPressed: () {
                                             Navigator.of(context).pop();
                                           },
-                                          child: Text('Fermer'),
+                                          child: const Text('Fermer'),
                                         ),
                                       ],
                                     );
@@ -579,7 +579,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                               style: ElevatedButton.styleFrom(
                                 alignment: Alignment.centerLeft,
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                 backgroundColor: ev.categorie == 'TD'
                                   ? Colors.green
@@ -602,22 +602,22 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                         Row(
                                           children: [
-                                            Icon(Icons.access_time, size: 18, color: Colors.black),
-                                            SizedBox(width: 5),
+                                            const Icon(Icons.access_time, size: 18, color: Colors.black),
+                                            const SizedBox(width: 5),
                                             textPetitP(text: time),
                                           ],
                                         ),
                                         Row(
                                           children: [
-                                            Icon(Icons.person, size: 18, color: Colors.black),
-                                            SizedBox(width: 5),
+                                            const Icon(Icons.person, size: 18, color: Colors.black),
+                                            const SizedBox(width: 5),
                                             textPetitP(text: ev.professeur),
                                           ],
                                         ),
                                         Row(
                                           children: [
-                                            Icon(Icons.place, size: 18, color: Colors.black),
-                                            SizedBox(width: 5),
+                                            const Icon(Icons.place, size: 18, color: Colors.black),
+                                            const SizedBox(width: 5),
                                             textPetitP(text: ev.salle),
                                           ],
                                         ),
@@ -638,7 +638,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         child: Center(
                                           child: Text(
                                             ev.categorie,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 16,
                                             ),
@@ -650,7 +650,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ],
                               )
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                           ],
                         );
                       },

@@ -240,7 +240,7 @@ StatefulBuilder textFormField({
                   passwordVisible!
                   ? Icons.visibility
                   : Icons.visibility_off,
-                  color: Color.fromARGB(255, 36, 155, 252),
+                  color: const Color.fromARGB(255, 36, 155, 252),
                   size: 25,
                   ),
                 hoverColor: Colors.transparent,
@@ -289,7 +289,7 @@ ElevatedButton elevatedButton (
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
       ),
-      backgroundColor: Color.fromARGB(255, 36, 155, 252),
+      backgroundColor: const Color.fromARGB(255, 36, 155, 252),
       padding: bigger
         ? const EdgeInsets.symmetric(vertical: 10, horizontal: 10)
         : const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -301,7 +301,7 @@ ElevatedButton elevatedButton (
           width: 20,
           child: CircularProgressIndicator.adaptive(
             strokeWidth: 2,
-            valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
+            valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 36, 155, 252)),
             backgroundColor: Colors.grey[300],
           ),
         )
