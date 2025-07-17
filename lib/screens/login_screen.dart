@@ -6,7 +6,10 @@ import 'package:http/http.dart' as http;
 import 'package:icalendar_parser/icalendar_parser.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({super.key, this.debug});
+
+  final String? debug;
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -22,7 +25,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
   bool _isLoading = false;
 
-  String loginError = '';
+  String loginError = "";
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.debug != null) {
+      loginError = widget.debug!;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +122,11 @@ void _submitForm(BuildContext context) async {
           final icsString = utf8.decode(bytes);
           final iCalendar = ICalendar.fromString(icsString);
           await saveInfo('id', _idController.text);
-          await saveInfo('calendar', icsString);
+          final idx = icsString.lastIndexOf('R');
+          final toSave = (idx != -1 && idx < icsString.length - 1)
+            ? icsString.substring(0, idx + 1)
+            : icsString;
+          await saveInfo('calendar', toSave);
           await saveInfo('lastSave', DateTime.now().toLocal().toString());
           if (context.mounted) {
             Navigator.of(context).pushAndRemoveUntil(

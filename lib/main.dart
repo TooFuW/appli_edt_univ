@@ -74,9 +74,9 @@ class MyApp extends StatelessWidget {
             );
           } else if (snapshot.hasError) {
             eraseStorage();
-            return LoginScreen();
+            return LoginScreen(debug: snapshot.error.toString());
           } else {
-            return snapshot.data ?? LoginScreen();
+            return snapshot.data ?? LoginScreen(debug: "1",);
           }
         },
       ),
@@ -95,7 +95,11 @@ class MyApp extends StatelessWidget {
           final bytes = response.bodyBytes;
           final icsString = utf8.decode(bytes);
           final iCalendar = ICalendar.fromString(icsString);
-          await saveInfo('calendar', icsString);
+          final idx = icsString.lastIndexOf('R');
+          final toSave = (idx != -1 && idx < icsString.length - 1)
+            ? icsString.substring(0, idx + 1)
+            : icsString;
+          await saveInfo('calendar', toSave);
           await saveInfo('lastSave', DateTime.now().toLocal().toString());
           return MyHomePage(calendar: iCalendar, id: userId);
         }
@@ -110,13 +114,15 @@ class MyApp extends StatelessWidget {
             return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
           }
           // Sinon page de login
-          return LoginScreen();
+          return LoginScreen(debug: "2",);
         }
       }
       // On gére le cas où il n'y a pas d'internet
       catch (e) {
         // On essaie de charger le calendrier enregistré
-        String? calendar = await getInfo("calendar");
+        final calendar = await getInfo("calendar");
+        debugPrint("→ Stored calendar endsWith END:VCALENDAR ? ${calendar?.trim().endsWith("END:VCALENDAR")}");
+        debugPrint("→ Last 100 chars:\n${calendar?.substring(calendar.length - 100)}");
         if (calendar != null) {
           final iCalendar = ICalendar.fromString(calendar);
           final lastConnexionString = await getInfo('lastSave');
@@ -124,10 +130,10 @@ class MyApp extends StatelessWidget {
           return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
         }
         // Sinon page de login
-        return LoginScreen();
+        return LoginScreen(debug: "3",);
       }
     }
-    return LoginScreen();
+    return LoginScreen(debug: "4",);
   }
 }
 
