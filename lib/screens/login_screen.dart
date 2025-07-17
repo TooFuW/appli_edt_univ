@@ -112,6 +112,7 @@ void _submitForm(BuildContext context) async {
           final iCalendar = ICalendar.fromString(icsString);
           await saveInfo('id', _idController.text);
           await saveInfo('calendar', icsString);
+          await saveInfo('lastSave', DateTime.now().toLocal().toString());
           if (context.mounted) {
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => MyHomePage(calendar: iCalendar, id: _idController.text)),

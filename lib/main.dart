@@ -96,6 +96,7 @@ class MyApp extends StatelessWidget {
           final icsString = utf8.decode(bytes);
           final iCalendar = ICalendar.fromString(icsString);
           await saveInfo('calendar', icsString);
+          await saveInfo('lastSave', DateTime.now().toLocal().toString());
           return MyHomePage(calendar: iCalendar, id: userId);
         }
         // Sinon
@@ -109,7 +110,9 @@ class MyApp extends StatelessWidget {
         String? calendar = await getInfo("calendar");
         if (calendar != null) {
           final iCalendar = ICalendar.fromString(calendar);
-          return MyHomePage(calendar: iCalendar, id: userId, offline: true);
+          final lastConnexionString = await getInfo('lastSave');
+          final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
+          return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
         }
         // Sinon page de login
         return LoginScreen();
@@ -154,11 +157,12 @@ List<DateTime> _daysInRange(DateTime first, DateTime last) {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.calendar, required this.id, this.offline = false});
+  const MyHomePage({super.key, required this.calendar, required this.id, this.offline = false, this.lastConnexion});
 
   final ICalendar calendar;
   final String id;
   final bool offline;
+  final DateTime? lastConnexion;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -341,16 +345,19 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              color: Colors.red,
-              width: double.infinity,
-              padding: EdgeInsets.all(5),
-              child: Text(
-                'Vous êtes hors-ligne',
-                style: TextStyle(color: Colors.white),
-                textAlign: TextAlign.center,
+            if (widget.offline)
+              Container(
+                color: Colors.red,
+                width: double.infinity,
+                padding: EdgeInsets.all(5),
+                child: Text(
+                  widget.lastConnexion != null
+                    ? 'Vous êtes hors-ligne depuis le ${widget.lastConnexion!.day}/${widget.lastConnexion!.month}/${widget.lastConnexion!.year} à ${widget.lastConnexion!.hour}:${widget.lastConnexion!.minute}'
+                    : 'Vous êtes hors-ligne',
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
             _CalendarHeader(
               focusedDay: _focusedDay.toLocal(),
               onTodayButtonTap: () {
