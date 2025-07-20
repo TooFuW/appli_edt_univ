@@ -1,4 +1,4 @@
-package com.example.appli_edt_univ
+package nc.edt_unc.appli_edt_univ
 
 import io.flutter.embedding.android.FlutterActivity
 
