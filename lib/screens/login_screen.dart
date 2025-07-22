@@ -192,7 +192,9 @@ void _submitForm(BuildContext context) async {
           await saveInfo('lastSave_${_idController.text}', DateTime.now().toLocal().toString());
           String? accounts = await getInfo('accounts');
           if (accounts == null) {
-            await saveInfo('accounts', '[]');
+            List<dynamic> accountsList = [];
+            accountsList.add(_idController.text);
+            await saveInfo('accounts', json.encode(accountsList));
           }
           else {
             List<dynamic> accountsList = json.decode(accounts);
