@@ -6,6 +6,11 @@
 
 **EDT UNC** est une application Flutter open-source qui permet de consulter l'emploi du temps de l'Université de Nouvelle-Calédonie directement depuis un fichier ICS fourni par le service Web de l’Université en entrant simplement son identifiant.
 
+## Téléchargement
+
+Play Store uniquement :
+https://play.google.com/store/apps/details?id=nc.edt_unc.appli_edt_univ
+
 ## Fonctionnalités
 
 * Récupération automatique de l'EDT.
