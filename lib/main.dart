@@ -604,7 +604,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                               style: ElevatedButton.styleFrom(
                                 alignment: Alignment.centerLeft,
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8),
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                 backgroundColor: ev.categorie == 'TD'
                                   ? Colors.green
@@ -722,31 +722,31 @@ class _CalendarHeader extends StatelessWidget {
     final year = focusedDay.year.toString();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
-          const SizedBox(width: 16.0),
+          const SizedBox(width: 16),
           SizedBox(
-            width: 120.0,
+            width: 125,
             child: Text(
               "$month $year",
-              style: const TextStyle(fontSize: 26.0),
+              style: const TextStyle(fontSize: 26),
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.calendar_today, size: 20.0),
+            icon: const Icon(Icons.calendar_today, size: 20),
             visualDensity: VisualDensity.compact,
             onPressed: onTodayButtonTap,
             tooltip: "Aujourd'hui",
           ),
           IconButton(
-            icon: const Icon(Icons.swap_horiz, size: 20.0),
+            icon: const Icon(Icons.swap_horiz, size: 20),
             visualDensity: VisualDensity.compact,
             onPressed: onSwapButtonTap,
             tooltip: "Changer de vue",
           ),
           IconButton(
-            icon: const Icon(Icons.check_box, size: 20.0),
+            icon: const Icon(Icons.check_box, size: 20),
             visualDensity: VisualDensity.compact,
             onPressed: onCheckButtonTap,
             tooltip: "Changer de mode de sélection",
