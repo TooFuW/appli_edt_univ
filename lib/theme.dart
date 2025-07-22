@@ -8,7 +8,7 @@ Future<void> initStorage() async {
   _prefs = await SharedPreferences.getInstance();
 }
 
-// Récupération de l'id
+// Récupération d'une info
 Future<String?> getInfo(String key) async {
   return _prefs.getString(key);
 }
@@ -18,9 +18,14 @@ Future<void> eraseStorage() async {
   await _prefs.clear();
 }
 
-// Sauvegarde locale de l'id
+// Sauvegarde locale d'une info
 Future<void> saveInfo(String key, String data) async {
   await _prefs.setString(key, data);
+}
+
+// Suppression d'une info
+Future<void> deleteInfo(String key) async {
+  await _prefs.remove(key);
 }
 
 // Texte de titre au format H1

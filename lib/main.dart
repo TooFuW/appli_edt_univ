@@ -99,17 +99,17 @@ class MyApp extends StatelessWidget {
           final toSave = (idx != -1 && idx < icsString.length - 1)
             ? icsString.substring(0, idx + 1)
             : icsString;
-          await saveInfo('calendar', toSave);
-          await saveInfo('lastSave', DateTime.now().toLocal().toString());
+          await saveInfo('calendar_$userId', toSave);
+          await saveInfo('lastSave_$userId', DateTime.now().toLocal().toString());
           return MyHomePage(calendar: iCalendar, id: userId);
         }
         // Sinon
         else {
           // On essaie de charger le calendrier enregistré
-          String? calendar = await getInfo("calendar");
+          String? calendar = await getInfo("calendar_$userId");
           if (calendar != null) {
             final iCalendar = ICalendar.fromString(calendar);
-            final lastConnexionString = await getInfo('lastSave');
+            final lastConnexionString = await getInfo('lastSave_$userId');
             final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
             return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
           }
@@ -120,10 +120,10 @@ class MyApp extends StatelessWidget {
       // On gére le cas où il n'y a pas d'internet
       catch (e) {
         // On essaie de charger le calendrier enregistré
-        final calendar = await getInfo("calendar");
+        final calendar = await getInfo("calendar_$userId");
         if (calendar != null) {
           final iCalendar = ICalendar.fromString(calendar);
-          final lastConnexionString = await getInfo('lastSave');
+          final lastConnexionString = await getInfo('lastSave_$userId');
           final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
           return MyHomePage(calendar: iCalendar, id: userId, offline: true, lastConnexion: lastConnexion);
         }
@@ -400,16 +400,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 thickness: 1,
               ),
               ListTile(
-                leading: const Icon(Icons.logout, color: Colors.red,),
-                title: const Text('Se déconnecter', style: TextStyle(color: Colors.red),),
+                leading: const Icon(Icons.account_circle, color: Colors.orange,),
+                title: const Text('Changer de compte', style: TextStyle(color: Colors.orange),),
                 onTap: () {
-                  eraseStorage();
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
                       builder: (context) => const LoginScreen(),
                     ),
                     (Route<dynamic> route) => false
                   );
+                },
+              ),
+              const Divider(
+                thickness: 1,
+              ),
+              ListTile(
+                leading: const Icon(Icons.logout, color: Colors.red,),
+                title: const Text('Se déconnecter', style: TextStyle(color: Colors.red),),
+                onTap: () async {
+                  await deleteInfo('id_${widget.id}');
+                  await deleteInfo('calendar_${widget.id}');
+                  await deleteInfo('lastSave_${widget.id}');
+                  String? accounts = await getInfo('accounts');
+                  if (accounts != null)  {
+                    List<dynamic> accountsList = json.decode(accounts);
+                    accountsList.removeWhere((account) => account == widget.id);
+                    await saveInfo('accounts', json.encode(accountsList));
+                  }
+                  if (context.mounted) {
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                      (Route<dynamic> route) => false
+                    );
+                  }
                 },
               ),
             ],
@@ -427,7 +452,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.all(5),
                 child: Text(
                   widget.lastConnexion != null
-                    ? 'Vous êtes hors-ligne depuis le ${widget.lastConnexion!.day}/${widget.lastConnexion!.month}/${widget.lastConnexion!.year} à ${widget.lastConnexion!.hour}:${widget.lastConnexion!.minute}'
+                    ? 'Vous êtes hors-ligne depuis le ${DateFormat('dd/MM/yyyy à HH:mm').format(widget.lastConnexion!)}'
                     : 'Vous êtes hors-ligne',
                   style: const TextStyle(color: Colors.white),
                   textAlign: TextAlign.center,

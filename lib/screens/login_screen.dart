@@ -27,11 +27,27 @@ class _LoginScreenState extends State<LoginScreen> {
 
   String loginError = "";
 
+  List<dynamic> accounts = [];
+
   @override
   void initState() {
     super.initState();
     if (widget.debug != null) {
       loginError = widget.debug!;
+    }
+    _loadAccounts();
+  }
+
+  Future<void> _loadAccounts() async {
+    String? accountsRaw = await getInfo('accounts');
+    if (accountsRaw != null) {
+      setState(() {
+        accounts = jsonDecode(accountsRaw);
+      });
+    } else {
+      setState(() {
+        accounts = [];
+      });
     }
   }
 
@@ -92,7 +108,53 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     sizedBoxPetite(),
                     if (loginError.isNotEmpty)
-                      textError(text: loginError)
+                      textError(text: loginError),
+                    if (loginError.isNotEmpty)
+                      sizedBoxPetite(),
+                    if (accounts.isNotEmpty)
+                      textMoyenP2(
+                        text: "Autres comptes (fonctionnent sans connexion) :",
+                        textAlign: TextAlign.left
+                      ),
+                    if (accounts.isNotEmpty)
+                      sizedBoxPetite(),
+                    SizedBox(
+                      height: 70,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: accounts.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: () {
+                              _idController.text = accounts[index];
+                              _submitForm(context);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    child: Text(accounts[index][0]),
+                                  ),
+                                  SizedBox(
+                                    width: 60,
+                                    child: Text(
+                                      accounts[index],
+                                      style: const TextStyle(fontSize: 14),
+                                      textAlign: TextAlign.center,
+                                      overflow: TextOverflow.ellipsis
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -126,8 +188,19 @@ void _submitForm(BuildContext context) async {
           final toSave = (idx != -1 && idx < icsString.length - 1)
             ? icsString.substring(0, idx + 1)
             : icsString;
-          await saveInfo('calendar', toSave);
-          await saveInfo('lastSave', DateTime.now().toLocal().toString());
+          await saveInfo('calendar_${_idController.text}', toSave);
+          await saveInfo('lastSave_${_idController.text}', DateTime.now().toLocal().toString());
+          String? accounts = await getInfo('accounts');
+          if (accounts == null) {
+            await saveInfo('accounts', '[]');
+          }
+          else {
+            List<dynamic> accountsList = json.decode(accounts);
+            if (!accountsList.contains(_idController.text)) {
+              accountsList.add(_idController.text);
+              await saveInfo('accounts', json.encode(accountsList));
+            }
+          }
           if (context.mounted) {
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => MyHomePage(calendar: iCalendar, id: _idController.text)),
@@ -145,10 +218,25 @@ void _submitForm(BuildContext context) async {
       }
       // On gére le cas où il n'y a pas d'internet
       catch (e) {
-        loginError = "Veuillez vérifier votre connexion internet et réessayez.";
+        String? accounts = await getInfo('accounts');
+        if (accounts != null && json.decode(accounts).contains(_idController.text)) {
+          String? calendar = await getInfo("calendar_${_idController.text}");
+          if (calendar != null) {
+            final iCalendar = ICalendar.fromString(calendar);
+            final lastConnexionString = await getInfo('lastSave_${_idController.text}');
+            final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
+            if (context.mounted) {
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => MyHomePage(calendar: iCalendar, id: _idController.text, offline: true, lastConnexion: lastConnexion)),
+                (Route<dynamic> route) => false
+              );
+            }
+          }
+        }
         setState(() {
           _isLoading = false;
         });
+        loginError = "Veuillez vérifier votre connexion internet et réessayez.";
       }
       
     }
