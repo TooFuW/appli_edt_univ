@@ -8,7 +8,7 @@
 
 ## Téléchargement
 
-Play Store uniquement :
+Play Store uniquement (application en test fermé pour le moment, envoyez le mail de votre compte google connecté à votre Play Store pour y être ajouté) :
 https://play.google.com/store/apps/details?id=nc.edt_unc.appli_edt_univ
 
 ## Fonctionnalités
@@ -18,6 +18,7 @@ https://play.google.com/store/apps/details?id=nc.edt_unc.appli_edt_univ
 * Mouvements de navigation (swipe droite/gauche).
 * Vue détaillée des créneaux horaires pour chaque jour (début/fin des cours).
 * Mode hors-ligne : mise en cache du dernier calendrier consulté pour une consultation sans connexion.
+* Multi-comptes : connexions à plusieurs compte en simultané pour passer rapidement d'un compte à l'autre même sans connexion
 
 ## Licence
 
