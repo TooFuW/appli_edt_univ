@@ -330,11 +330,29 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('EDT de ${widget.id}'),
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
-      ),
+      appBar: Platform.isWindows
+        ? widget.offline
+          ? AppBar(
+            toolbarHeight: 30,
+            flexibleSpace: Container(
+              color: Colors.red,
+              width: double.infinity,
+              padding: const EdgeInsets.all(5),
+              child: Text(
+                widget.lastConnexion != null
+                  ? 'Vous êtes hors-ligne depuis le ${DateFormat('dd/MM/yyyy à HH:mm').format(widget.lastConnexion!)}'
+                  : 'Vous êtes hors-ligne',
+                style: const TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          )
+          : null
+        : AppBar(
+            title: Text('EDT de ${widget.id}'),
+            backgroundColor: Colors.white,
+            surfaceTintColor: Colors.white,
+          ),
       drawer: Platform.isWindows ? null : SafeArea(
         child: Drawer(
           backgroundColor: Colors.white,
@@ -453,6 +471,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.zero,
                   children: [
                     ListTile(
+                      enabled: false,
+                      title: Text('EDT de ${widget.id}', style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)
+                    ),
+                    ListTile(
                       leading: const Icon(Icons.refresh, color: Colors.blue,),
                       title: const Text('Recharger', style: TextStyle(color: Colors.blue),),
                       trailing: _isRefreshLoading
@@ -556,7 +578,7 @@ class _MyHomePageState extends State<MyHomePage> {
               flex: 8,
               child: Column(
                 children: [
-                  if (widget.offline)
+                  if (widget.offline && !Platform.isWindows)
                     Container(
                       color: Colors.red,
                       width: double.infinity,
