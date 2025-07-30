@@ -47,3 +47,6 @@ flutter_launcher_icons:
   macos:
     generate: true
     image_path: "assets/images/app_icon_transparent.png"
+
+# flutter build apk --release --obfuscate --split-debug-info=/Users/Utilisateur/Documents/appli_edt_univ/debug_temp
+# flutter build windows --release --obfuscate --split-debug-info=/Users/Utilisateur/Documents/appli_edt_univ/debug_temp
