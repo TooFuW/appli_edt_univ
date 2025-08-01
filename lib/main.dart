@@ -1,7 +1,6 @@
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
-import 'dart:math';
 import 'package:appli_edt_univ/screens/login_screen.dart';
 import 'package:appli_edt_univ/theme.dart';
 import 'package:flutter/material.dart';
@@ -197,6 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late PageController _pageController;
 
   final List<String> _months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+  bool _weekVue = Platform.isWindows ? true : false;
 
   bool _isRefreshLoading = false;
 
@@ -264,7 +264,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 2. Initialiser la sélection
     _selectedDay = _focusedDay;
-    _selectedEvents = ValueNotifier(_getEventsForDay(_selectedDay!));
+    _selectedEvents = ValueNotifier(Platform.isWindows ? _getEventsForWeek(_selectedDay!) : _getEventsForDay(_selectedDay!));
   }
 
   @override
@@ -307,7 +307,12 @@ class _MyHomePageState extends State<MyHomePage> {
         _rangeEnd = null;
         _rangeSelectionMode = RangeSelectionMode.toggledOff;
       });
-      _selectedEvents.value = _getEventsForDay(selectedDay);
+      if (!_weekVue) {
+        _selectedEvents.value = _getEventsForDay(selectedDay);
+      }
+      else {
+        _selectedEvents.value = _getEventsForWeek(selectedDay);
+      }
     }
   }
 
@@ -328,6 +333,49 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  DateTime _getStartOfWeek(DateTime date) {
+    // Calcule le lundi de la semaine du jour donné
+    int daysFromMonday = date.weekday - 1;
+    return DateTime(date.year, date.month, date.day - daysFromMonday);
+  }
+
+  DateTime _getEndOfWeek(DateTime date) {
+    // Calcule le dimanche de la semaine du jour donné
+    int daysToSunday = 7 - date.weekday;
+    return DateTime(date.year, date.month, date.day + daysToSunday);
+  }
+
+  List<Event> _getEventsForWeek(DateTime selectedDay) {
+    final startOfWeek = _getStartOfWeek(selectedDay);
+    final endOfWeek = _getEndOfWeek(selectedDay);
+    
+    final days = _daysInRange(startOfWeek, endOfWeek);
+    final allEvents = <Event>[];
+    
+    for (final day in days) {
+      final dayEvents = _getEventsForDay(day);
+      allEvents.addAll(dayEvents);
+    }
+    
+    // Trier tous les événements de la semaine par date puis par heure
+    allEvents.sort((a, b) {
+      if (a.start == null && b.start == null) return 0;
+      if (a.start == null) return 1;
+      if (b.start == null) return -1;
+      
+      // Comparer d'abord par date
+      final dateComparison = DateTime(a.start!.year, a.start!.month, a.start!.day)
+          .compareTo(DateTime(b.start!.year, b.start!.month, b.start!.day));
+      
+      if (dateComparison != 0) return dateComparison;
+      
+      // Si même date, comparer par heure
+      return a.start!.compareTo(b.start!);
+    });
+    
+    return allEvents;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -335,6 +383,27 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('EDT de ${widget.id}'),
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
+        actions: Platform.isWindows ? [
+          IconButton(
+            icon: const Icon(Icons.table_chart, color: Colors.black,),
+            tooltip: 'Mode semaine',
+            onPressed: () {
+              setState(() {
+                _weekVue = !_weekVue;
+                _rangeStart = null;
+                _rangeEnd = null;
+                _rangeSelectionMode = RangeSelectionMode.toggledOff;
+                if (!_weekVue) {
+                  _selectedEvents.value = _getEventsForDay(_focusedDay);
+                }
+                else {
+                  _selectedEvents.value = _getEventsForWeek(_focusedDay);
+                }
+              });
+            }
+          ),
+        ]
+        : null
       ),
       drawer: SafeArea(
         child: Drawer(
@@ -477,7 +546,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               onCheckButtonTap: () {
                 setState(() {
-                  if (_rangeSelectionMode == RangeSelectionMode.toggledOff) {
+                  if (!_weekVue && _rangeSelectionMode == RangeSelectionMode.toggledOff) {
                     _onRangeSelected(_selectedDay, null, _focusedDay);
                   } else {
                     _onDaySelected(_focusedDay, _focusedDay);
@@ -532,164 +601,371 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 8),
             Expanded(
-              child: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onHorizontalDragEnd: (DragEndDetails details) {
-                  final v = details.primaryVelocity ?? 0;
-                  if (v > 0) {
-                    _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1));
-                  } else if (v < 0) {
-                    _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1));
-                  }
-                },
-                child: ValueListenableBuilder<List<Event>>(
-                  valueListenable: _selectedEvents,
-                  builder: (context, value, _) {
-                    if (value.isEmpty) {
-                      return Center(child: Text('Aucun événement pour le ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}'));
-                    }
-                    return ListView.builder(
-                      padding: const EdgeInsets.all(16),
-                      itemCount: value.length,
-                      itemBuilder: (context, index) {
-                        final ev = value[index];
-                        final time = ev.start != null && ev.end != null
-                            ? '${DateFormat('HH:mm').format(ev.start!)} - '
-                              '${DateFormat('HH:mm').format(ev.end!)}'
-                            : '';
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                showDialog(
-                                  barrierColor: const Color.fromARGB(150, 0, 0, 0),
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog(
-                                      backgroundColor: Colors.white,
-                                      title: Text(
-                                        ev.title,
-                                        style: const TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold
-                                        ),
-                                        textAlign: TextAlign.center
-                                      ),
-                                      content: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
-                                          const SizedBox(height: 5),
-                                          textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
-                                          const SizedBox(height: 5),
-                                          textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
-                                          const SizedBox(height: 5),
-                                          textMoyenP2(text: 'Du ${DateFormat('dd').format(ev.start!) } ${_months[int.parse(DateFormat('MM').format(ev.start!)) - 1]} ${DateFormat('yyyy').format(ev.start!)}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
-                                          const SizedBox(height: 5),
-                                          textMoyenP2(text: 'Au ${DateFormat('dd').format(ev.end!) } ${_months[int.parse(DateFormat('MM').format(ev.end!)) - 1]} ${DateFormat('yyyy').format(ev.end!)}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
-                                        ],
-                                      ),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                          child: const Text('Fermer'),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
-                              style: ElevatedButton.styleFrom(
-                                alignment: Alignment.centerLeft,
-                                padding: const EdgeInsets.all(8),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                                backgroundColor: ev.categorie == 'TD'
-                                  ? Colors.green
-                                  : ev.categorie == 'TP'
-                                    ? Colors.orange
-                                    : ev.categorie == 'CM'
-                                      ? Colors.blue
-                                      : ev.categorie == 'CC'
-                                        ? Colors.red
-                                        : Colors.purple
-                              ),
-                              child: Stack(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 30, top: 5, bottom: 5),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        textMoyenP1(
-                                          text: ev.title,
-                                          textAlign: TextAlign.left
-                                        ),
-                                        Row(
-                                          children: [
-                                            const Icon(Icons.access_time, size: 18, color: Colors.black),
-                                            const SizedBox(width: 5),
-                                            textPetitP(text: time),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            const Icon(Icons.person, size: 18, color: Colors.black),
-                                            const SizedBox(width: 5),
-                                            textPetitP(text: ev.professeur),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            const Icon(Icons.place, size: 18, color: Colors.black),
-                                            const SizedBox(width: 5),
-                                            textPetitP(text: ev.salle),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  if (ev.categorie.isNotEmpty)
-                                    Positioned(
-                                      top: 8,
-                                      right: 0,
-                                      child: Container(
-                                        width: 30,
-                                        height: 25,
-                                        decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          borderRadius: BorderRadius.circular(10),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            ev.categorie,
+              child: !_weekVue
+                ? GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onHorizontalDragEnd: (DragEndDetails details) {
+                      final v = details.primaryVelocity ?? 0;
+                      if (v > 0) {
+                        _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1));
+                      } else if (v < 0) {
+                        _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1));
+                      }
+                    },
+                    child: ValueListenableBuilder<List<Event>>(
+                      valueListenable: _selectedEvents,
+                      builder: (context, value, _) {
+                        if (value.isEmpty) {
+                          return Center(child: Text('Aucun événement pour le ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}'));
+                        }
+                        return ListView.builder(
+                          padding: const EdgeInsets.all(16),
+                          itemCount: value.length,
+                          itemBuilder: (context, index) {
+                            final ev = value[index];
+                            final time = ev.start != null && ev.end != null
+                                ? '${DateFormat('HH:mm').format(ev.start!)} - '
+                                  '${DateFormat('HH:mm').format(ev.end!)}'
+                                : '';
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {
+                                    showDialog(
+                                      barrierColor: const Color.fromARGB(150, 0, 0, 0),
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          backgroundColor: Colors.white,
+                                          title: Text(
+                                            ev.title,
                                             style: const TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 16,
+                                              color: Colors.black,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold
                                             ),
                                             textAlign: TextAlign.center
                                           ),
+                                          content: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
+                                              const SizedBox(height: 5),
+                                              textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
+                                              const SizedBox(height: 5),
+                                              textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
+                                              const SizedBox(height: 5),
+                                              textMoyenP2(text: 'Du ${DateFormat('dd').format(ev.start!) } ${_months[int.parse(DateFormat('MM').format(ev.start!)) - 1]} ${DateFormat('yyyy').format(ev.start!)}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
+                                              const SizedBox(height: 5),
+                                              textMoyenP2(text: 'Au ${DateFormat('dd').format(ev.end!) } ${_months[int.parse(DateFormat('MM').format(ev.end!)) - 1]} ${DateFormat('yyyy').format(ev.end!)}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
+                                            ],
+                                          ),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text('Fermer'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    alignment: Alignment.centerLeft,
+                                    padding: const EdgeInsets.all(8),
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                                    backgroundColor: ev.categorie == 'TD'
+                                      ? Colors.green
+                                      : ev.categorie == 'TP'
+                                        ? Colors.orange
+                                        : ev.categorie == 'CM'
+                                          ? Colors.blue
+                                          : ev.categorie == 'CC'
+                                            ? Colors.red
+                                            : Colors.purple
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(right: 30),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            textMoyenP1(
+                                              text: ev.title,
+                                              textAlign: TextAlign.left
+                                            ),
+                                            Row(
+                                              children: [
+                                                const Icon(Icons.access_time, size: 18, color: Colors.black),
+                                                const SizedBox(width: 5),
+                                                textPetitP(text: time),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                const Icon(Icons.person, size: 18, color: Colors.black),
+                                                const SizedBox(width: 5),
+                                                textPetitP(text: ev.professeur),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                const Icon(Icons.place, size: 18, color: Colors.black),
+                                                const SizedBox(width: 5),
+                                                textPetitP(text: ev.salle),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                      )
-                                    )
-                                ],
-                              )
-                            ),
-                            const SizedBox(height: 10),
-                          ],
+                                      ),
+                                      if (ev.categorie.isNotEmpty)
+                                        Positioned(
+                                          top: 0,
+                                          right: 0,
+                                          child: Container(
+                                            width: 30,
+                                            height: 25,
+                                            decoration: BoxDecoration(
+                                              color: Colors.black,
+                                              borderRadius: BorderRadius.circular(10),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                ev.categorie,
+                                                style: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                ),
+                                                textAlign: TextAlign.center
+                                              ),
+                                            ),
+                                          )
+                                        )
+                                    ],
+                                  )
+                                ),
+                                const SizedBox(height: 10),
+                              ],
+                            );
+                          },
                         );
                       },
-                    );
-                  },
-                ),
-              ),
+                    ),
+                  )
+                : GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onHorizontalDragEnd: (DragEndDetails details) {
+                      final v = details.primaryVelocity ?? 0;
+                      if (v > 0) {
+                        _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 7), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 7));
+                      } else if (v < 0) {
+                        _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 7), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 7));
+                      }
+                    },
+                    child: ValueListenableBuilder<List<Event>>(
+                      valueListenable: _selectedEvents,
+                      builder: (context, value, _) {
+                        if (value.isEmpty) {
+                          final startOfWeek = _getStartOfWeek(_selectedDay ?? _focusedDay);
+                          final endOfWeek = _getEndOfWeek(_selectedDay ?? _focusedDay);
+                          return Center(
+                            child: Text(
+                              'Aucun événement pour la semaine du ${startOfWeek.day} ${_months[startOfWeek.month - 1]} au ${endOfWeek.day} ${_months[endOfWeek.month - 1]} ${endOfWeek.year}'
+                            )
+                          );
+                        }
+                        final Map<DateTime, List<Event>> eventsByDay = {};
+                        for (final ev in value) {
+                          final d = DateTime(ev.start!.year, ev.start!.month, ev.start!.day);
+                          eventsByDay.putIfAbsent(d, () => []).add(ev);
+                        }
+                        final days = eventsByDay.keys.toList()..sort();
+                        return SingleChildScrollView(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              for (final d in days)
+                                _DayColumn(day: d, events: eventsByDay[d]!, days: days.length),
+                            ],
+                          ),
+                        );
+                      },
+                    )
+                  )
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _DayColumn extends StatelessWidget {
+  final DateTime day;
+  final List<Event> events;
+  final int days;
+  static const List<String> _jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+  const _DayColumn({required this.day, required this.events, required this.days});
+
+  @override
+  Widget build(BuildContext context) {
+    final dayName  = _jours[day.weekday - 1];
+    final dayLabel = '${day.day.toString().padLeft(2, '0')}/${day.month.toString().padLeft(2, '0')}';
+    return Container(
+      width: (MediaQuery.of(context).size.width / days) - 24,
+      margin: const EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+            decoration: BoxDecoration(
+              color: const Color(0xFFF0F0F0),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text('$dayName $dayLabel',
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF3C3C3C),
+                )),
+          ),
+          const SizedBox(height: 8),
+          for (final ev in events) ...[
+            _EventTile(ev),
+            const SizedBox(height: 10),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _EventTile extends StatelessWidget {
+  final Event ev;
+  const _EventTile(this.ev);
+  static const List<String> _months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
+  @override
+  Widget build(BuildContext context) {
+    final time = ev.start != null && ev.end != null
+        ? '${DateFormat('HH:mm').format(ev.start!)} - '
+          '${DateFormat('HH:mm').format(ev.end!)}'
+        : '';
+    return ElevatedButton(
+      onPressed: () {
+        showDialog(
+          barrierColor: const Color.fromARGB(150, 0, 0, 0),
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              backgroundColor: Colors.white,
+              title: Text(
+                ev.title,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold
+                ),
+                textAlign: TextAlign.center
+              ),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
+                  const SizedBox(height: 5),
+                  textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
+                  const SizedBox(height: 5),
+                  textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
+                  const SizedBox(height: 5),
+                  textMoyenP2(text: 'Du ${DateFormat('dd').format(ev.start!) } ${_months[int.parse(DateFormat('MM').format(ev.start!)) - 1]} ${DateFormat('yyyy').format(ev.start!)}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
+                  const SizedBox(height: 5),
+                  textMoyenP2(text: 'Au ${DateFormat('dd').format(ev.end!) } ${_months[int.parse(DateFormat('MM').format(ev.end!)) - 1]} ${DateFormat('yyyy').format(ev.end!)}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Fermer'),
+                ),
+              ],
+            );
+          },
+        );
+      },
+      style: ElevatedButton.styleFrom(
+        alignment: Alignment.centerLeft,
+        padding: const EdgeInsets.all(8),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        backgroundColor: ev.categorie == 'TD'
+          ? Colors.green
+          : ev.categorie == 'TP'
+            ? Colors.orange
+            : ev.categorie == 'CM'
+              ? Colors.blue
+              : ev.categorie == 'CC'
+                ? Colors.red
+                : Colors.purple,
+      ),
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 30, top: 5, bottom: 5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                textMoyenP1(text: ev.title, textAlign: TextAlign.left),
+                Row(children: [
+                  const Icon(Icons.access_time, size: 18, color: Colors.black),
+                  const SizedBox(width: 5),
+                  textPetitP(text: time),
+                ]),
+                Row(children: [
+                  const Icon(Icons.person, size: 18, color: Colors.black),
+                  const SizedBox(width: 5),
+                  textPetitP(text: ev.professeur),
+                ]),
+                Row(children: [
+                  const Icon(Icons.place, size: 18, color: Colors.black),
+                  const SizedBox(width: 5),
+                  textPetitP(text: ev.salle),
+                ]),
+              ],
+            ),
+          ),
+          if (ev.categorie.isNotEmpty)
+            Positioned(
+              top: 8,
+              right: 0,
+              child: Container(
+                width: 30,
+                height: 25,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: Text(
+                    ev.categorie,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16
+                    ),
+                    textAlign: TextAlign.center
+                  ),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -724,7 +1000,6 @@ class _CalendarHeader extends StatelessWidget {
       month = _months[focusedDay.month - 1].substring(0, 4);
     }
     final year = focusedDay.year.toString();
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
