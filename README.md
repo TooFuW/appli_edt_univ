@@ -19,6 +19,7 @@ https://play.google.com/store/apps/details?id=nc.edt_unc.appli_edt_univ
 * Vue détaillée des créneaux horaires pour chaque jour (début/fin des cours).
 * Mode hors-ligne : mise en cache du dernier calendrier consulté pour une consultation sans connexion.
 * Multi-comptes : connexions à plusieurs compte en simultané pour passer rapidement d'un compte à l'autre même sans connexion
+* Version windows avec une vue hebdomadaire
 
 ## Licence
 
