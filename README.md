@@ -8,8 +8,16 @@
 
 ## Téléchargement
 
-Play Store uniquement (application en test fermé pour le moment, envoyez le mail de votre compte google connecté à votre Play Store pour y être ajouté) :
-https://play.google.com/store/apps/details?id=nc.edt_unc.appli_edt_univ
+[Dernière version](https://github.com/TooFuW/appli_edt_univ/releases/latest)
+
+**Version Android :**
+
+- Télécharger et installer `EDT_UNC_android.apk` (le Play Store affichera un warning qui sera à ignorer)
+- Ou m'envoyer à [eyrianmuet@proton.me](mailto:eyrianmuet@proton.me) l'adresse mail de votre compte Google pour accéder à la version en test fermé sur le Play Store
+
+**Version Windows :**
+
+- Télécharger et extraire `EDT_UNC_windows.zip` puis lancer `appli_edt_univ.exe`
 
 ## Fonctionnalités
 
@@ -17,7 +25,7 @@ https://play.google.com/store/apps/details?id=nc.edt_unc.appli_edt_univ
 * Plusieurs styles d'affichage du calendrier (hebdomadaire / mensuel).
 * Mouvements de navigation (swipe droite/gauche).
 * Vue détaillée des créneaux horaires pour chaque jour (début/fin des cours).
-* Mode hors-ligne : mise en cache du dernier calendrier consulté pour une consultation sans connexion.
+* Mode hors-ligne : stockage du dernier calendrier de chaque compte connecté pour une consultation sans connexion.
 * Multi-comptes : connexions à plusieurs compte en simultané pour passer rapidement d'un compte à l'autre même sans connexion
 * Version windows avec une vue hebdomadaire
 
