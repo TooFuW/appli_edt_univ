@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
+import 'package:appli_edt_univ/screens/comparaison_screen.dart';
 import 'package:appli_edt_univ/screens/login_screen.dart';
 import 'package:appli_edt_univ/theme.dart';
 import 'package:flutter/material.dart';
@@ -412,6 +413,18 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.zero,
             children: [
               ListTile(
+                leading: const Icon(Icons.group_outlined),
+                title: const Text('Comparer EDT'),
+                onTap: () {
+                  setState(() {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ComparaisonScreen()));
+                  });
+                },
+              ),
+              const Divider(
+                thickness: 1,
+              ),
+              ListTile(
                 leading: const Icon(Icons.refresh, color: Colors.blue,),
                 title: const Text('Recharger', style: TextStyle(color: Colors.blue),),
                 trailing: _isRefreshLoading
@@ -531,6 +544,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             _CalendarHeader(
               focusedDay: _focusedDay.toLocal(),
+              weekVue: _weekVue,
               onTodayButtonTap: () {
                 setState(() {
                   _onDaySelected(DateTime.now(), DateTime.now());
@@ -973,6 +987,7 @@ class _EventTile extends StatelessWidget {
 
 class _CalendarHeader extends StatelessWidget {
   final DateTime focusedDay;
+  final bool weekVue;
   final VoidCallback onLeftArrowTap;
   final VoidCallback onRightArrowTap;
   final VoidCallback onTodayButtonTap;
@@ -981,6 +996,7 @@ class _CalendarHeader extends StatelessWidget {
 
   _CalendarHeader({
     required this.focusedDay,
+    required this.weekVue,
     required this.onLeftArrowTap,
     required this.onRightArrowTap,
     required this.onTodayButtonTap,
@@ -1024,7 +1040,7 @@ class _CalendarHeader extends StatelessWidget {
             onPressed: onSwapButtonTap,
             tooltip: "Changer de vue",
           ),
-          IconButton(
+          weekVue ? const Spacer() : IconButton(
             icon: const Icon(Icons.check_box, size: 20),
             visualDensity: VisualDensity.compact,
             onPressed: onCheckButtonTap,
