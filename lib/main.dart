@@ -33,6 +33,8 @@ class MyApp extends StatelessWidget {
         future: _autoConnect(context),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
+            String error = "";
+            bool isLoading = false;
             return Scaffold(
               backgroundColor: Colors.white,
               body: Center(
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     textH2(text: "Connexion en cours..."),
-                    const SizedBox(height: 5,),
+                    const SizedBox(height: 5),
                     SizedBox(
                       height: 50,
                       width: 50,
@@ -50,26 +52,48 @@ class MyApp extends StatelessWidget {
                         backgroundColor: Colors.grey[300],
                       ),
                     ),
-                    const SizedBox(height: 5,),
-                    FutureBuilder<int>(
-                      future: Future.delayed(const Duration(seconds: 5), () => 5),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.done) {
-                          return textMoyenP1(text: "Encore en chargement...", bold: true);
+                    const SizedBox(height: 10),
+                    elevatedButton(
+                      isLoading: isLoading,
+                      onPressed: () async {
+                        String? userId = await getInfo("id");
+                        if (userId != null) {
+                          isLoading = true;
+                          String? calendar = await getInfo("calendar_$userId");
+                          if (calendar != null) {
+                            final iCalendar = ICalendar.fromString(calendar);
+                            final lastConnexionString = await getInfo('lastSave_$userId');
+                            final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
+                            isLoading = false;
+                            if (context.mounted) {
+                              Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                  builder: (_) => MyHomePage(
+                                    calendar: iCalendar,
+                                    id: userId,
+                                    offline: true,
+                                    lastConnexion: lastConnexion,
+                                  ),
+                                ),
+                                (Route<dynamic> route) => false
+                              );
+                            }
+                          }
+                          else {
+                            error = "Aucun calendrier sauvegardé pour $userId";
+                            isLoading = false;
+                          }
                         }
-                        return const SizedBox.shrink();
-                      },
-                    ),
-                    const SizedBox(height: 5,),
-                    FutureBuilder<int>(
-                      future: Future.delayed(const Duration(seconds: 10), () => 10),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.done) {
-                          return textMoyenP1(text: "Nous avons du mal à nous connecter...", bold: true);
+                        else {
+                          error = "Aucun compte connecté";
                         }
-                        return const SizedBox.shrink();
                       },
+                      text: "Se connecter sans internet"
                     ),
+                    const SizedBox(height: 5),
+                    error.isEmpty
+                      ? const SizedBox.shrink()
+                      : textError(text: error),
                   ],
                 ),
               )

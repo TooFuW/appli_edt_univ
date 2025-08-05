@@ -107,10 +107,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       isLoading: _isLoading
                     ),
                     sizedBoxPetite(),
-                    if (loginError.isNotEmpty)
-                      textError(text: loginError),
-                    if (loginError.isNotEmpty)
-                      sizedBoxPetite(),
+                    loginError.isEmpty
+                      ? sizedBoxPetite()
+                      : textError(text: loginError),
                     if (accounts.isNotEmpty)
                       textMoyenP2(
                         text: "Autres comptes (fonctionnent sans connexion) :",
