@@ -1,6 +1,5 @@
 import 'dart:collection';
 import 'dart:convert';
-import 'dart:io';
 import 'package:appli_edt_univ/screens/comparaison_screen.dart';
 import 'package:appli_edt_univ/screens/login_screen.dart';
 import 'package:appli_edt_univ/theme.dart';
@@ -54,43 +53,44 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    elevatedButton(
-                      isLoading: isLoading,
-                      onPressed: () async {
-                        String? userId = await getInfo("id");
-                        if (userId != null) {
-                          isLoading = true;
-                          String? calendar = await getInfo("calendar_$userId");
-                          if (calendar != null) {
-                            final iCalendar = ICalendar.fromString(calendar);
-                            final lastConnexionString = await getInfo('lastSave_$userId');
-                            final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
-                            isLoading = false;
-                            if (context.mounted) {
-                              Navigator.of(context).pushAndRemoveUntil(
-                                MaterialPageRoute(
-                                  builder: (_) => MyHomePage(
-                                    calendar: iCalendar,
-                                    id: userId,
-                                    offline: true,
-                                    lastConnexion: lastConnexion,
+                    if (!kIsWeb)
+                      elevatedButton(
+                        isLoading: isLoading,
+                        onPressed: () async {
+                          String? userId = await getInfo("id");
+                          if (userId != null) {
+                            isLoading = true;
+                            String? calendar = await getInfo("calendar_$userId");
+                            if (calendar != null) {
+                              final iCalendar = ICalendar.fromString(calendar);
+                              final lastConnexionString = await getInfo('lastSave_$userId');
+                              final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
+                              isLoading = false;
+                              if (context.mounted) {
+                                Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                    builder: (_) => MyHomePage(
+                                      calendar: iCalendar,
+                                      id: userId,
+                                      offline: true,
+                                      lastConnexion: lastConnexion,
+                                    ),
                                   ),
-                                ),
-                                (Route<dynamic> route) => false
-                              );
+                                  (Route<dynamic> route) => false
+                                );
+                              }
+                            }
+                            else {
+                              error = "Aucun calendrier sauvegardé pour $userId";
+                              isLoading = false;
                             }
                           }
                           else {
-                            error = "Aucun calendrier sauvegardé pour $userId";
-                            isLoading = false;
+                            error = "Aucun compte connecté";
                           }
-                        }
-                        else {
-                          error = "Aucun compte connecté";
-                        }
-                      },
-                      text: "Se connecter sans internet"
-                    ),
+                        },
+                        text: "Se connecter sans internet"
+                      ),
                     const SizedBox(height: 5),
                     error.isEmpty
                       ? const SizedBox.shrink()
@@ -235,7 +235,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _weekVue = MediaQuery.of(context).size.width > 800;
 
     // 1. Construire la map d'événements à partir de ICS
     _events = LinkedHashMap<DateTime, List<Event>>(
@@ -297,7 +296,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 2. Initialiser la sélection
     _selectedDay = _focusedDay;
-    _selectedEvents = ValueNotifier(MediaQuery.of(context).size.width > 800 ? _getEventsForWeek(_selectedDay!) : _getEventsForDay(_selectedDay!));
+    _selectedEvents = ValueNotifier([]);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _weekVue = MediaQuery.of(context).size.width > 800;
+    _selectedEvents.value = MediaQuery.of(context).size.width > 800 ? _getEventsForWeek(_selectedDay!) : _getEventsForDay(_selectedDay!);
   }
 
   @override
@@ -675,132 +681,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           itemCount: value.length,
                           itemBuilder: (context, index) {
                             final ev = value[index];
-                            final time = ev.start != null && ev.end != null
-                                ? '${DateFormat('HH:mm').format(ev.start!)} - '
-                                  '${DateFormat('HH:mm').format(ev.end!)}'
-                                : '';
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                ElevatedButton(
-                                  onPressed: () {
-                                    showDialog(
-                                      barrierColor: const Color.fromARGB(150, 0, 0, 0),
-                                      context: context,
-                                      builder: (BuildContext context) {
-                                        return AlertDialog(
-                                          backgroundColor: Colors.white,
-                                          title: Text(
-                                            ev.title,
-                                            style: const TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.bold
-                                            ),
-                                            textAlign: TextAlign.center
-                                          ),
-                                          content: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
-                                              const SizedBox(height: 5),
-                                              textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
-                                              const SizedBox(height: 5),
-                                              textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
-                                              const SizedBox(height: 5),
-                                              textMoyenP2(text: 'Du ${DateFormat('dd').format(ev.start!) } ${_months[int.parse(DateFormat('MM').format(ev.start!)) - 1]} ${DateFormat('yyyy').format(ev.start!)}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
-                                              const SizedBox(height: 5),
-                                              textMoyenP2(text: 'Au ${DateFormat('dd').format(ev.end!) } ${_months[int.parse(DateFormat('MM').format(ev.end!)) - 1]} ${DateFormat('yyyy').format(ev.end!)}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
-                                            ],
-                                          ),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text('Fermer'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    alignment: Alignment.centerLeft,
-                                    padding: const EdgeInsets.all(8),
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                                    backgroundColor: ev.categorie == 'TD'
-                                      ? Colors.green
-                                      : ev.categorie == 'TP'
-                                        ? Colors.orange
-                                        : ev.categorie == 'CM'
-                                          ? Colors.blue
-                                          : ev.categorie == 'CC'
-                                            ? Colors.red
-                                            : Colors.purple
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(right: 30),
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            textMoyenP1(
-                                              text: ev.title,
-                                              textAlign: TextAlign.left
-                                            ),
-                                            Row(
-                                              children: [
-                                                const Icon(Icons.access_time, size: 18, color: Colors.black),
-                                                const SizedBox(width: 5),
-                                                textPetitP(text: time),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                const Icon(Icons.person, size: 18, color: Colors.black),
-                                                const SizedBox(width: 5),
-                                                textPetitP(text: ev.professeur),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                const Icon(Icons.place, size: 18, color: Colors.black),
-                                                const SizedBox(width: 5),
-                                                textPetitP(text: ev.salle),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      if (ev.categorie.isNotEmpty)
-                                        Positioned(
-                                          top: 0,
-                                          right: 0,
-                                          child: Container(
-                                            width: 30,
-                                            height: 25,
-                                            decoration: BoxDecoration(
-                                              color: Colors.black,
-                                              borderRadius: BorderRadius.circular(10),
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                ev.categorie,
-                                                style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 16,
-                                                ),
-                                                textAlign: TextAlign.center
-                                              ),
-                                            ),
-                                          )
-                                        )
-                                    ],
-                                  )
-                                ),
+                                _EventTile(ev),
                                 const SizedBox(height: 10),
                               ],
                             );
