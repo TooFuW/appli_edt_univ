@@ -50,3 +50,4 @@ flutter_launcher_icons:
 
 # flutter build apk --release --obfuscate --split-debug-info=/Users/Utilisateur/Documents/appli_edt_univ/debug_temp
 # flutter build windows --release --obfuscate --split-debug-info=/Users/Utilisateur/Documents/appli_edt_univ/debug_temp
+# flutter build web --release --base-href "/appli_edt_univ/"
