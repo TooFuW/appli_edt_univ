@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:appli_edt_univ/screens/comparaison_screen.dart';
 import 'package:appli_edt_univ/screens/login_screen.dart';
 import 'package:appli_edt_univ/theme.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:icalendar_parser/icalendar_parser.dart';
 import 'package:intl/intl.dart';
@@ -112,7 +113,13 @@ class MyApp extends StatelessWidget {
   Future<Widget> _autoConnect(BuildContext context) async {
     String? userId = await getInfo("id");
     if (userId != null) {
-      var url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '$userId/ical'});
+      Uri url;
+      if (kIsWeb) {
+        url = Uri.parse('https://edt-univ-proxy.eyrianmuet.workers.dev/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '$userId/ical'});
+      }
+      else {
+        url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '$userId/ical'});
+      }
       try {
         // RECEPTION DE LA REPONSE
         var response = await http.get(url);
@@ -221,13 +228,14 @@ class _MyHomePageState extends State<MyHomePage> {
   late PageController _pageController;
 
   final List<String> _months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-  bool _weekVue = Platform.isWindows ? true : false;
+  late bool _weekVue;
 
   bool _isRefreshLoading = false;
 
   @override
   void initState() {
     super.initState();
+    _weekVue = MediaQuery.of(context).size.width > 800;
 
     // 1. Construire la map d'événements à partir de ICS
     _events = LinkedHashMap<DateTime, List<Event>>(
@@ -289,7 +297,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 2. Initialiser la sélection
     _selectedDay = _focusedDay;
-    _selectedEvents = ValueNotifier(Platform.isWindows ? _getEventsForWeek(_selectedDay!) : _getEventsForDay(_selectedDay!));
+    _selectedEvents = ValueNotifier(MediaQuery.of(context).size.width > 800 ? _getEventsForWeek(_selectedDay!) : _getEventsForDay(_selectedDay!));
   }
 
   @override
@@ -408,7 +416,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('EDT de ${widget.id}'),
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
-        actions: Platform.isWindows ? [
+        actions: MediaQuery.of(context).size.width > 800 ? [
           IconButton(
             icon: const Icon(Icons.table_chart, color: Colors.black,),
             tooltip: 'Mode semaine',
@@ -467,7 +475,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       _isRefreshLoading = true;
                     });
-                    var url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${widget.id}/ical'});
+                    Uri url;
+                    if (kIsWeb) {
+                      url = Uri.parse('https://edt-univ-proxy.eyrianmuet.workers.dev/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${widget.id}/ical'});
+                    }
+                    else {
+                      url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${widget.id}/ical'});
+                    }
                     try {
                       // RECEPTION DE LA REPONSE
                       var response = await http.get(url);

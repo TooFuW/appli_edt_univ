@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:appli_edt_univ/main.dart';
 import 'package:appli_edt_univ/theme.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:icalendar_parser/icalendar_parser.dart';
@@ -173,7 +174,13 @@ void _submitForm(BuildContext context) async {
       });
       loginError = "";
       // ENVOI DE LA REQUETE DE RECUPERATION DE L'EDT
-      var url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${_idController.text}/ical'});
+      Uri url;
+      if (kIsWeb) {
+        url = Uri.parse('https://edt-univ-proxy.eyrianmuet.workers.dev/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${_idController.text}/ical'});
+      }
+      else {
+        url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${_idController.text}/ical'});
+      }
       try {
         // RECEPTION DE LA REPONSE
         var response = await http.get(url);
