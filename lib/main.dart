@@ -251,9 +251,15 @@ class _MyHomePageState extends State<MyHomePage> {
       final start = dtStartUtc?.toLocal();
       final end = dtEndUtc?.toLocal();
       String? description;
-      final splitDesc = (e['description'] as String?)?.split('\\n').first.split(') -');
+      List<String>? splitDesc = (e['description'] as String?)?.split('\\n').first.split(') -');
       if (splitDesc != null && splitDesc.length > 1) {
         description = splitDesc[1];
+      }
+      else {
+        splitDesc = (e['description'] as String?)?.split('\\n').first.split(')-');
+        if (splitDesc != null && splitDesc.length > 1) {
+          description = splitDesc[1];
+        }
       }
       String categorie;
       if (description != null && (description.contains(" CC") || description.contains("CC "))) {
