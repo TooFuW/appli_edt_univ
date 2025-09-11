@@ -174,6 +174,7 @@ class Event {
   final String categorie;
   final String professeur;
   final String salle;
+  final String? description;
   final DateTime? start;
   final DateTime? end;
 
@@ -182,6 +183,7 @@ class Event {
     required this.categorie,
     required this.professeur,
     required this.salle,
+    this.description,
     this.start,
     this.end
   });
@@ -248,8 +250,16 @@ class _MyHomePageState extends State<MyHomePage> {
       final dtEndUtc = rawEnd?.toDateTime();
       final start = dtStartUtc?.toLocal();
       final end = dtEndUtc?.toLocal();
+      String? description;
+      final splitDesc = (e['description'] as String?)?.split('\\n').first.split(') -');
+      if (splitDesc != null && splitDesc.length > 1) {
+        description = splitDesc[1];
+      }
       String categorie;
-      if ((e['summary'] as String?)?.split(' ').first == "Cm" || (e['summary'] as String?)?.split(' ').first == "Td" || (e['summary'] as String?)?.split(' ').first == "Tp" || (e['summary'] as String?)?.split(' ').first == "Cc") {
+      if (description != null && (description.contains(" CC") || description.contains("CC "))) {
+        categorie = "CC";
+      }
+      else if ((e['summary'] as String?)?.split(' ').first == "Cm" || (e['summary'] as String?)?.split(' ').first == "Td" || (e['summary'] as String?)?.split(' ').first == "Tp" || (e['summary'] as String?)?.split(' ').first == "Cc") {
         categorie = (e['summary'] as String).split(' ').first.toUpperCase();
       }
       else {
@@ -258,9 +268,15 @@ class _MyHomePageState extends State<MyHomePage> {
       String title;
       if ((e['summary'] as String?)?.split('(').length == 1) {
         title = (e['summary'] as String).split('\\n').first.substring(0,2).toUpperCase() + (e['summary'] as String).split('\\n').first.substring(2);
+        if (categorie == "CC") {
+          title = title.replaceRange(0, 2, "CC");
+        }
       }
       else {
         title = (e['summary'] as String).split('(').first.substring(0,2).toUpperCase() + (e['summary'] as String).split('(').first.substring(2);
+        if (categorie == "CC") {
+          title = title.replaceRange(0, 2, "CC");
+        }
       }
       String professeur;
       if ((e['summary'] as String?)?.split('\\n').length == 1) {
@@ -288,6 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
         categorie: categorie,
         professeur: professeur,
         salle: salle,
+        description: description,
         start: start,
         end: end
       );
@@ -824,6 +841,15 @@ class _EventTile extends StatelessWidget {
                   textMoyenP2(text: 'Du ${DateFormat('dd').format(ev.start!) } ${_months[int.parse(DateFormat('MM').format(ev.start!)) - 1]} ${DateFormat('yyyy').format(ev.start!)}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
                   const SizedBox(height: 5),
                   textMoyenP2(text: 'Au ${DateFormat('dd').format(ev.end!) } ${_months[int.parse(DateFormat('MM').format(ev.end!)) - 1]} ${DateFormat('yyyy').format(ev.end!)}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
+                  if (ev.description != null && ev.description!.isNotEmpty)
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 5),
+                        textMoyenP2(text: 'Description: ${ev.description}', textAlign: TextAlign.left),
+                      ]
+                    )
                 ],
               ),
               actions: [
