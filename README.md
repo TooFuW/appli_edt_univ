@@ -1,3 +1,5 @@
+> ⚠️ **Obsolète depuis la mise à jour 2026 de l'EDT**
+
 <p align="center">
   <img src="assets/images/app_icon.png" alt="EDT UNC" width="100" height="100" />
 </p>
