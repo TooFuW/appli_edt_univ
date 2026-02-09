@@ -3,7 +3,7 @@ description: "Application de visionnage de l'emploi du temps de l'UNC."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.1.0+9
+version: 1.2.0+1
 
 environment:
   sdk: ">=3.6.0 <4.0.0"
@@ -50,6 +50,7 @@ flutter_launcher_icons:
     image_path: "assets/images/app_icon_transparent.png"
 
 # flutter build apk --release --obfuscate --split-debug-info=/Users/Utilisateur/Documents/appli_edt_univ/debug_temp
+# Build le bundle dans Android Studio
 # flutter build windows --release --obfuscate --split-debug-info=/Users/Utilisateur/Documents/appli_edt_univ/debug_temp
 # flutter build web --release --base-href "/appli_edt_univ/"
 # Copier le contenu de build/web dans le dossier /docs et push pour publier sur github pages
