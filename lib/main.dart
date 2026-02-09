@@ -112,14 +112,9 @@ class MyApp extends StatelessWidget {
 
   Future<Widget> _autoConnect(BuildContext context) async {
     String? userId = await getInfo("id");
-    if (userId != null) {
-      Uri url;
-      if (kIsWeb) {
-        url = Uri.parse('https://edt-univ-proxy.eyrianmuet.workers.dev/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '$userId/ical'});
-      }
-      else {
-        url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '$userId/ical'});
-      }
+    String? calendar = await getInfo("calendar_$userId");
+    if (userId != null && calendar != null) {
+      Uri url = Uri.parse(calendar);
       try {
         // RECEPTION DE LA REPONSE
         var response = await http.get(url);

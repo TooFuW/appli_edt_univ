@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:appli_edt_univ/main.dart';
 import 'package:appli_edt_univ/theme.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:icalendar_parser/icalendar_parser.dart';
@@ -23,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // Controllers
   final _idController = TextEditingController();
+  final _icsController = TextEditingController();
 
   bool _isLoading = false;
 
@@ -80,15 +80,57 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     textH1(text: "CONNECTEZ-VOUS"),
                     sizedBoxPetite(),
-                    textMoyenP2(text: "Il vous suffit de rentrer votre identifiant universitaire pour vous connecter."),
-                    textMoyenP2(text: "Votre identifiant correspond normalement à la première lettre de votre prénom suivi de votre nom."),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        textMoyenP2(text: "Pour vous connecter à votre emploi du temps, veuillez entrer votre lien de calendrier ICS."),
+                        IconButton(
+                          onPressed: () => showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: const Text("Comment récupérer le lien de calendrier ICS ?"),
+                                content: const Text("- Connectez-vous au site de l'EDT (https://edt.unc.nc/)\n- Sélectionnez le calendrier de votre choix\n- Cliquez sur le bouton de téléchargement puis sur celui nommé 'ICS' qui apparaîtra."),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.of(context).pop(),
+                                    child: const Text('Fermer'),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                          icon: const Icon(Icons.help, size: 18),
+                        ),
+                      ],
+                    ),
+                    textError(text: "ATTENTION, IL NE PEUT PAS Y AVOIR DEUX CALENDRIERS AVEC LE MÊME NOM, LE DERNIER UTILISÉ REMPLACERA LE PRÉCÉDENT."),
                     sizedBoxGrosse(),
-                    // Champs d'email
+                    // Champs de nommage
                     textFormField(
                       controller: _idController,
                       autofillHints: const [AutofillHints.username],
-                      hintText: "Identifiant universitaire",
+                      hintText: "Nom du calendrier (ex: 'Informatique', 'Yanis', ...)",
                       prefixIcon: const Icon(Icons.person),
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (value) {
+                        FocusScope.of(context).nextFocus();
+                      },
+                      keyboardType: TextInputType.name,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Veuillez nommer votre calendrier.';
+                        }
+                        return null;
+                      }
+                    ),
+                    sizedBoxPetite(),
+                    // Champs de lien ICS
+                    textFormField(
+                      controller: _icsController,
+                      autofillHints: const [AutofillHints.url],
+                      hintText: "Lien de calendrier ICS",
+                      prefixIcon: const Icon(Icons.calendar_month_rounded),
                       textInputAction: TextInputAction.done,
                       onFieldSubmitted: (value) {
                         _submitForm(context);
@@ -96,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.name,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Veuillez entrer votre identifiant universitaire.';
+                          return 'Veuillez entrer votre lien de calendrier ICS.';
                         }
                         return null;
                       }
@@ -128,7 +170,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           return GestureDetector(
                             behavior: HitTestBehavior.opaque,
                             onTap: () {
-                              _idController.text = accounts[index];
+                              _idController.text = accounts[index][0];
+                              _icsController.text = accounts[index][1];
                               _submitForm(context);
                             },
                             child: Padding(
@@ -137,12 +180,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 children: [
                                   CircleAvatar(
                                     radius: 25,
-                                    child: Text(accounts[index][0]),
+                                    child: Text(accounts[index][0][0].toUpperCase()),
                                   ),
                                   SizedBox(
                                     width: 60,
                                     child: Text(
-                                      accounts[index],
+                                      accounts[index][0],
                                       style: const TextStyle(fontSize: 14),
                                       textAlign: TextAlign.center,
                                       overflow: TextOverflow.ellipsis
@@ -174,13 +217,7 @@ void _submitForm(BuildContext context) async {
       });
       loginError = "";
       // ENVOI DE LA REQUETE DE RECUPERATION DE L'EDT
-      Uri url;
-      if (kIsWeb) {
-        url = Uri.parse('https://edt-univ-proxy.eyrianmuet.workers.dev/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${_idController.text}/ical'});
-      }
-      else {
-        url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${_idController.text}/ical'});
-      }
+      Uri url = Uri.parse(_icsController.text);
       try {
         // RECEPTION DE LA REPONSE
         var response = await http.get(url);
@@ -190,6 +227,7 @@ void _submitForm(BuildContext context) async {
           final icsString = utf8.decode(bytes);
           final iCalendar = ICalendar.fromString(icsString);
           await saveInfo('id', _idController.text);
+          await saveInfo('ics_${_idController.text}', _icsController.text);
           final idx = icsString.lastIndexOf('R');
           final toSave = (idx != -1 && idx < icsString.length - 1)
             ? icsString.substring(0, idx + 1)
@@ -197,17 +235,24 @@ void _submitForm(BuildContext context) async {
           await saveInfo('calendar_${_idController.text}', toSave);
           await saveInfo('lastSave_${_idController.text}', DateTime.now().toLocal().toString());
           String? accounts = await getInfo('accounts');
-          if (accounts == null) {
-            List<dynamic> accountsList = [];
-            accountsList.add(_idController.text);
+          if (accounts == null || accounts.runtimeType != List<List<String>>) {
+            List<List<String>> accountsList = [];
+            accountsList.add(<String>[_idController.text, _icsController.text]);
             await saveInfo('accounts', json.encode(accountsList));
           }
           else {
             List<dynamic> accountsList = json.decode(accounts);
-            if (!accountsList.contains(_idController.text)) {
-              accountsList.add(_idController.text);
-              await saveInfo('accounts', json.encode(accountsList));
+            if (!accountsList.any((account) => account[0] == _idController.text)) {
+              accountsList.add(<String>[_idController.text, _icsController.text]);
+            } else {
+              accountsList = accountsList.map((account) {
+                if (account[0] == _idController.text) {
+                  return <String>[_idController.text, _icsController.text];
+                }
+                return account;
+              }).toList();
             }
+            await saveInfo('accounts', json.encode(accountsList));
           }
           if (context.mounted) {
             Navigator.of(context).pushAndRemoveUntil(
@@ -218,7 +263,7 @@ void _submitForm(BuildContext context) async {
         }
         // Sinon
         else {
-          loginError = "Veuillez vérifier l'identifiant entré et réessayez.";
+          loginError = "Veuillez vérifier le lien de calendrier ICS entré et réessayez.";
         }
         setState(() {
           _isLoading = false;
@@ -227,7 +272,7 @@ void _submitForm(BuildContext context) async {
       // On gére le cas où il n'y a pas d'internet
       catch (e) {
         String? accounts = await getInfo('accounts');
-        if (accounts != null && json.decode(accounts).contains(_idController.text)) {
+        if (accounts != null && json.decode(accounts).any((account) => account[0] == _idController.text)) {
           String? calendar = await getInfo("calendar_${_idController.text}");
           if (calendar != null) {
             final iCalendar = ICalendar.fromString(calendar);
