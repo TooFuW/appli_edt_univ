@@ -1,9 +1,7 @@
 import 'dart:collection';
 import 'dart:convert';
-import 'package:appli_edt_univ/screens/comparaison_screen.dart';
 import 'package:appli_edt_univ/screens/login_screen.dart';
 import 'package:appli_edt_univ/theme.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:icalendar_parser/icalendar_parser.dart';
 import 'package:intl/intl.dart';
@@ -53,44 +51,43 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    if (!kIsWeb)
-                      elevatedButton(
-                        isLoading: isLoading,
-                        onPressed: () async {
-                          String? userId = await getInfo("id");
-                          if (userId != null) {
-                            isLoading = true;
-                            String? calendar = await getInfo("calendar_$userId");
-                            if (calendar != null) {
-                              final iCalendar = ICalendar.fromString(calendar);
-                              final lastConnexionString = await getInfo('lastSave_$userId');
-                              final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
-                              isLoading = false;
-                              if (context.mounted) {
-                                Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                    builder: (_) => MyHomePage(
-                                      calendar: iCalendar,
-                                      id: userId,
-                                      offline: true,
-                                      lastConnexion: lastConnexion,
-                                    ),
+                    elevatedButton(
+                      isLoading: isLoading,
+                      onPressed: () async {
+                        String? userId = await getInfo("id");
+                        if (userId != null) {
+                          isLoading = true;
+                          String? calendar = await getInfo("calendar_$userId");
+                          if (calendar != null) {
+                            final iCalendar = ICalendar.fromString(calendar);
+                            final lastConnexionString = await getInfo('lastSave_$userId');
+                            final lastConnexion = lastConnexionString != null ? DateTime.parse(lastConnexionString) : null;
+                            isLoading = false;
+                            if (context.mounted) {
+                              Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                  builder: (_) => MyHomePage(
+                                    calendar: iCalendar,
+                                    id: userId,
+                                    offline: true,
+                                    lastConnexion: lastConnexion,
                                   ),
-                                  (Route<dynamic> route) => false
-                                );
-                              }
-                            }
-                            else {
-                              error = "Aucun calendrier sauvegardé pour $userId";
-                              isLoading = false;
+                                ),
+                                (Route<dynamic> route) => false
+                              );
                             }
                           }
                           else {
-                            error = "Aucun compte connecté";
+                            error = "Aucun calendrier sauvegardé pour $userId";
+                            isLoading = false;
                           }
-                        },
-                        text: "Se connecter sans internet"
-                      ),
+                        }
+                        else {
+                          error = "Aucun compte connecté";
+                        }
+                      },
+                      text: "Se connecter sans internet"
+                    ),
                     const SizedBox(height: 5),
                     error.isEmpty
                       ? const SizedBox.shrink()
@@ -112,7 +109,7 @@ class MyApp extends StatelessWidget {
 
   Future<Widget> _autoConnect(BuildContext context) async {
     String? userId = await getInfo("id");
-    String? calendar = await getInfo("calendar_$userId");
+    String? calendar = await getInfo("ics_$userId");
     if (userId != null && calendar != null) {
       Uri url = Uri.parse(calendar);
       try {
@@ -469,18 +466,6 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.zero,
             children: [
               ListTile(
-                leading: const Icon(Icons.group_outlined),
-                title: const Text('Comparer EDT'),
-                onTap: () {
-                  setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ComparaisonScreen()));
-                  });
-                },
-              ),
-              const Divider(
-                thickness: 1,
-              ),
-              ListTile(
                 leading: const Icon(Icons.refresh, color: Colors.blue,),
                 title: const Text('Recharger', style: TextStyle(color: Colors.blue),),
                 trailing: _isRefreshLoading
@@ -499,13 +484,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       _isRefreshLoading = true;
                     });
-                    Uri url;
-                    if (kIsWeb) {
-                      url = Uri.parse('https://edt-univ-proxy.eyrianmuet.workers.dev/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${widget.id}/ical'});
-                    }
-                    else {
-                      url = Uri.parse('http://applis.univ-nc.nc/cgi-bin/WebObjects/EdtWeb.woa/2/wa/default').replace(queryParameters: {'login': '${widget.id}/ical'});
-                    }
+                    String? calendar = await getInfo("ics_${widget.id}");
+                    Uri url = calendar != null ? Uri.parse(calendar) : Uri();
                     try {
                       // RECEPTION DE LA REPONSE
                       var response = await http.get(url);
@@ -565,12 +545,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 title: const Text('Se déconnecter', style: TextStyle(color: Colors.red),),
                 onTap: () async {
                   await deleteInfo('id_${widget.id}');
+                  await deleteInfo('ics_${widget.id}');
                   await deleteInfo('calendar_${widget.id}');
                   await deleteInfo('lastSave_${widget.id}');
                   String? accounts = await getInfo('accounts');
                   if (accounts != null)  {
                     List<dynamic> accountsList = json.decode(accounts);
-                    accountsList.removeWhere((account) => account == widget.id);
+                    accountsList.removeWhere((account) => account[0] == widget.id);
                     await saveInfo('accounts', json.encode(accountsList));
                   }
                   if (context.mounted) {

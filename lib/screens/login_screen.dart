@@ -43,7 +43,9 @@ class _LoginScreenState extends State<LoginScreen> {
     String? accountsRaw = await getInfo('accounts');
     if (accountsRaw != null) {
       setState(() {
-        accounts = jsonDecode(accountsRaw);
+        accounts = (jsonDecode(accountsRaw) as List)
+            .map((item) => (item as List).cast<String>())
+            .toList();
       });
     } else {
       setState(() {
