@@ -10,8 +10,8 @@ const RESOURCES = {"assets/AssetManifest.bin": "a148f2e3f46856708487c17885b413ed
 "assets/assets/images/app_icon_transparent.png": "e30d0141c3a30e3fc104b91a5812d32f",
 "assets/assets/images/login_icon.png": "89a4e6b648da91604313d626c327371b",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/fonts/MaterialIcons-Regular.otf": "e02d68aa6f089ba39d23513631e43b11",
-"assets/NOTICES": "eba52138ec29ff4c754a1850e9560f34",
+"assets/fonts/MaterialIcons-Regular.otf": "54e78697184c19b4ed219751f4a82740",
+"assets/NOTICES": "39139cbcb7d6a4703bbb4c554cb5692f",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "33b7d9392238c04c131b6ce224e13711",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
 "canvaskit/canvaskit.js": "140ccb7d34d0a55065fbd422b843add6",
@@ -28,16 +28,16 @@ const RESOURCES = {"assets/AssetManifest.bin": "a148f2e3f46856708487c17885b413ed
 "canvaskit/skwasm_heavy.wasm": "8034ad26ba2485dab2fd49bdd786837b",
 "favicon.png": "121b03fc3833314308c6d1c0da9a4fa5",
 "flutter.js": "888483df48293866f9f41d3d9274a779",
-"flutter_bootstrap.js": "2cab55dc210d97019994769ad3045d8b",
+"flutter_bootstrap.js": "133243a9400ae88b52e4f554c5ed55d1",
 "icons/Icon-192.png": "6f50bf0c279a40040667f4a31559e865",
 "icons/Icon-512.png": "12cdebd94d3f77bfda6a53e7d3d17ead",
 "icons/Icon-maskable-192.png": "6f50bf0c279a40040667f4a31559e865",
 "icons/Icon-maskable-512.png": "12cdebd94d3f77bfda6a53e7d3d17ead",
-"index.html": "83b504339860399d8c549c640b0af515",
-"/": "83b504339860399d8c549c640b0af515",
-"main.dart.js": "1396a598232162f19f27bca7ff200b01",
-"manifest.json": "8d7af59234bae663f466218aa3e35d9b",
-"version.json": "967dfcb1856d736894463ce1c0d3493d"};
+"index.html": "5932749bccefba9d5dbc1d14098de32f",
+"/": "5932749bccefba9d5dbc1d14098de32f",
+"main.dart.js": "637fe80b0752596dc1548baa5ab2d4d7",
+"manifest.json": "f69ee53b29fa83acbe00c60a51e82075",
+"version.json": "0d66a16fbb3b0a40a44616e5a25e42d4"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
