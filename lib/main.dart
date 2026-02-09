@@ -236,7 +236,6 @@ class _MyHomePageState extends State<MyHomePage> {
       hashCode: _getHashCode,
     );
     for (var e in widget.calendar.data) {
-      print(e);
       if (widget.calendar.data.indexOf(e) > 0 &&
         widget.calendar.data[widget.calendar.data.indexOf(e) - 1]['dtstart'] == e['dtstart'] &&
         widget.calendar.data[widget.calendar.data.indexOf(e) - 1]['dtend'] == e['dtend'] &&
@@ -318,7 +317,7 @@ class _MyHomePageState extends State<MyHomePage> {
         categorie: categorie,
         professeur: professeur,
         salle: salle,
-        description: description,
+        description: desc,
         start: start,
         end: end
       );
@@ -742,6 +741,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               for (final d in days)
                                 _DayColumn(day: d, events: eventsByDay[d]!, days: days.length),
+                              const SizedBox(width: 5),
                             ],
                           ),
                         );
@@ -768,8 +768,8 @@ class _DayColumn extends StatelessWidget {
     final dayName  = _jours[day.weekday - 1];
     final dayLabel = '${day.day.toString().padLeft(2, '0')}/${day.month.toString().padLeft(2, '0')}';
     return Container(
-      width: (MediaQuery.of(context).size.width / days) - 24,
-      margin: const EdgeInsets.all(12),
+      width: (MediaQuery.of(context).size.width / days) - 5 - (5 / days),
+      margin: const EdgeInsets.only(left: 5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -830,22 +830,22 @@ class _EventTile extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Categorie: ${ev.categorie}', textAlign: TextAlign.left),
+                  if (ev.categorie.isNotEmpty) textMoyenP2(text: 'Catégorie: ${ev.categorie}', textAlign: TextAlign.left),
                   const SizedBox(height: 5),
                   textMoyenP2(text: 'Professeur: ${ev.professeur}', textAlign: TextAlign.left),
                   const SizedBox(height: 5),
                   textMoyenP2(text: 'Salle: ${ev.salle}', textAlign: TextAlign.left),
                   const SizedBox(height: 5),
-                  textMoyenP2(text: 'Du ${DateFormat('dd').format(ev.start!) } ${_months[int.parse(DateFormat('MM').format(ev.start!)) - 1]} ${DateFormat('yyyy').format(ev.start!)}, ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
+                  textMoyenP2(text: 'Du ${DateFormat('dd').format(ev.start!) } ${_months[int.parse(DateFormat('MM').format(ev.start!)) - 1]} ${DateFormat('yyyy').format(ev.start!)} à ${DateFormat('HH:mm').format(ev.start!)}', textAlign: TextAlign.left),
                   const SizedBox(height: 5),
-                  textMoyenP2(text: 'Au ${DateFormat('dd').format(ev.end!) } ${_months[int.parse(DateFormat('MM').format(ev.end!)) - 1]} ${DateFormat('yyyy').format(ev.end!)}, ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
+                  textMoyenP2(text: 'Au ${DateFormat('dd').format(ev.end!) } ${_months[int.parse(DateFormat('MM').format(ev.end!)) - 1]} ${DateFormat('yyyy').format(ev.end!)} à ${DateFormat('HH:mm').format(ev.end!)}', textAlign: TextAlign.left),
                   if (ev.description != null && ev.description!.isNotEmpty)
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 5),
-                        textMoyenP2(text: 'Description: ${ev.description}', textAlign: TextAlign.left),
+                        textMoyenP2(text: 'Description: ${ev.description?.replaceAll('\n', ' ')}', textAlign: TextAlign.left),
                       ]
                     )
                 ],
@@ -887,17 +887,17 @@ class _EventTile extends StatelessWidget {
                 Row(children: [
                   const Icon(Icons.access_time, size: 18, color: Colors.black),
                   const SizedBox(width: 5),
-                  textPetitP(text: time),
+                  Flexible(child: textPetitP(text: time, textAlign: TextAlign.left)),
                 ]),
                 Row(children: [
                   const Icon(Icons.person, size: 18, color: Colors.black),
                   const SizedBox(width: 5),
-                  textPetitP(text: ev.professeur),
+                  Flexible(child: textPetitP(text: ev.professeur, textAlign: TextAlign.left)),
                 ]),
                 Row(children: [
                   const Icon(Icons.place, size: 18, color: Colors.black),
                   const SizedBox(width: 5),
-                  textPetitP(text: ev.salle),
+                  Flexible(child: textPetitP(text: ev.salle, textAlign: TextAlign.left)),
                 ]),
               ],
             ),

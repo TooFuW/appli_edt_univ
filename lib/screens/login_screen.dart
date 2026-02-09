@@ -4,6 +4,7 @@ import 'package:appli_edt_univ/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:icalendar_parser/icalendar_parser.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key, this.debug});
@@ -82,29 +83,33 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     textH1(text: "CONNECTEZ-VOUS"),
                     sizedBoxPetite(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        textMoyenP2(text: "Pour vous connecter à votre emploi du temps, veuillez entrer votre lien de calendrier ICS."),
-                        IconButton(
-                          onPressed: () => showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: const Text("Comment récupérer le lien de calendrier ICS ?"),
-                                content: const Text("- Connectez-vous au site de l'EDT (https://edt.unc.nc/)\n- Sélectionnez le calendrier de votre choix\n- Cliquez sur le bouton de téléchargement puis sur celui nommé 'ICS' qui apparaîtra."),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () => Navigator.of(context).pop(),
-                                    child: const Text('Fermer'),
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
-                          icon: const Icon(Icons.help, size: 18),
-                        ),
-                      ],
+                    textMoyenP2(text: "Pour vous connecter à votre emploi du temps, veuillez entrer votre lien de calendrier ICS."),
+                    IconButton(
+                      onPressed: () => showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text("Comment récupérer le lien de calendrier ICS ?"),
+                            content: const Text("1) Connectez-vous au site de l'EDT (https://edt.unc.nc/)\n2) Sélectionnez le calendrier de votre choix\n3) Cliquez sur le bouton de téléchargement\n4) Copiez le lien en cliquant sur le bouton nommé 'ICS' qui apparaîtra dans une popup."),
+                            actions: [
+                              TextButton(
+                                onPressed: () async {
+                                  final url = Uri.parse("https://edt.unc.nc/");
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                                  }
+                                },
+                                child: const Text("Site de l'EDT"),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(),
+                                child: const Text('Fermer'),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                      icon: const Icon(Icons.help, size: 18),
                     ),
                     textError(text: "ATTENTION, IL NE PEUT PAS Y AVOIR DEUX CALENDRIERS AVEC LE MÊME NOM, LE DERNIER UTILISÉ REMPLACERA LE PRÉCÉDENT."),
                     sizedBoxGrosse(),

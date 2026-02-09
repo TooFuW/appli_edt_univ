@@ -121,8 +121,7 @@ Text textMoyenP2 (
 Text textPetitP (
   {required String text,
   TextAlign? textAlign,
-  bool bold = false,
-  int? maxLines}
+  bool bold = false,}
   ) {
   return Text(
     text,
@@ -134,8 +133,6 @@ Text textPetitP (
         : null,
     ),
     textAlign: textAlign ?? TextAlign.center,
-    maxLines: maxLines,
-    overflow: TextOverflow.ellipsis,
   );
 }
 
