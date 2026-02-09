@@ -236,12 +236,43 @@ class _MyHomePageState extends State<MyHomePage> {
       hashCode: _getHashCode,
     );
     for (var e in widget.calendar.data) {
+      print(e);
+      if (widget.calendar.data.indexOf(e) > 0 &&
+        widget.calendar.data[widget.calendar.data.indexOf(e) - 1]['dtstart'] == e['dtstart'] &&
+        widget.calendar.data[widget.calendar.data.indexOf(e) - 1]['dtend'] == e['dtend'] &&
+        widget.calendar.data[widget.calendar.data.indexOf(e) - 1]['summary'] == e['summary']
+      ) {
+        continue;
+      }
       final IcsDateTime? rawStart = e['dtstart'] as IcsDateTime?;
       final IcsDateTime? rawEnd = e['dtend'] as IcsDateTime?;
-      final dtStartUtc = rawStart?.toDateTime();
-      final dtEndUtc = rawEnd?.toDateTime();
-      final start = dtStartUtc?.toLocal();
-      final end = dtEndUtc?.toLocal();
+
+      DateTime? start;
+      DateTime? end;
+
+      if (rawStart != null) {
+        final utcStart = DateTime.utc(
+          int.parse(rawStart.dt.substring(0, 4)),
+          int.parse(rawStart.dt.substring(4, 6)),
+          int.parse(rawStart.dt.substring(6, 8)),
+          int.parse(rawStart.dt.substring(9, 11)),
+          int.parse(rawStart.dt.substring(11, 13)),
+          int.parse(rawStart.dt.substring(13, 15)),
+        );
+        start = utcStart.toLocal();
+      }
+
+      if (rawEnd != null) {
+        final utcEnd = DateTime.utc(
+          int.parse(rawEnd.dt.substring(0, 4)),
+          int.parse(rawEnd.dt.substring(4, 6)),
+          int.parse(rawEnd.dt.substring(6, 8)),
+          int.parse(rawEnd.dt.substring(9, 11)),
+          int.parse(rawEnd.dt.substring(11, 13)),
+          int.parse(rawEnd.dt.substring(13, 15)),
+        );
+        end = utcEnd.toLocal();
+      }
       String? description;
       List<String>? splitDesc = (e['description'] as String?)?.split('\\n').first.split(') -');
       if (splitDesc != null && splitDesc.length > 1) {
@@ -257,44 +288,29 @@ class _MyHomePageState extends State<MyHomePage> {
       if (description != null && (description.contains(" CC") || description.contains("CC "))) {
         categorie = "CC";
       }
-      else if ((e['summary'] as String?)?.split(' ').first == "Cm" || (e['summary'] as String?)?.split(' ').first == "Td" || (e['summary'] as String?)?.split(' ').first == "Tp" || (e['summary'] as String?)?.split(' ').first == "Cc") {
-        categorie = (e['summary'] as String).split(' ').first.toUpperCase();
+      else if ((e['summary'] as String?)?.split(' ').first == "[CM]" || (e['summary'] as String?)?.split(' ').first == "[TD]" || (e['summary'] as String?)?.split(' ').first == "[TP]" || (e['summary'] as String?)?.split(' ').first == "[CC]") {
+        categorie = (e['summary'] as String).split(' ').first.substring(1, 3).toUpperCase();
       }
       else {
         categorie = "";
       }
       String title;
-      if ((e['summary'] as String?)?.split('(').length == 1) {
-        title = (e['summary'] as String).split('\\n').first.substring(0,2).toUpperCase() + (e['summary'] as String).split('\\n').first.substring(2);
-        if (categorie == "CC") {
-          title = title.replaceRange(0, 2, "CC");
-        }
+      String? summary = e['summary'] as String?;
+      if (summary != null && summary.isNotEmpty) {
+        title = summary.substring(5);
       }
       else {
-        title = (e['summary'] as String).split('(').first.substring(0,2).toUpperCase() + (e['summary'] as String).split('(').first.substring(2);
-        if (categorie == "CC") {
-          title = title.replaceRange(0, 2, "CC");
-        }
+        title = "Cours inconnu";
       }
       String professeur;
-      if ((e['summary'] as String?)?.split('\\n').length == 1) {
+      String? desc = e['description'] as String?;
+      if (desc != null && desc.split('\\n')[desc.split('\\n').length - 2].substring(2).trim().isNotEmpty) {
+        professeur = desc.split('\\n')[desc.split('\\n').length - 2].substring(2).trim();
+      }
+      else {
         professeur = "Professeur inconnu";
       }
-      else {
-        professeur = (e['summary'] as String).split('\\n')[1].split("[").first;
-      }
-      String salle;
-      if ((e['summary'] as String?)?.split(': ').last.split("[").first != null) {
-        if ((e['summary'] as String).split(': ').last.split("[").first.length >= 2 && (e['summary'] as String).split(': ').last.split("[").first.length <= 17) {
-          salle = (e['summary'] as String).split(': ').last.split("[").first;
-        }
-        else {
-          salle = "Salle inconnue";
-        }
-      }
-      else {
-        salle = "Salle inconnue";
-      }
+      String salle = e['location'] as String? ?? "Salle inconnue";
       if (start == null) continue;
       final day = DateTime(start.year, start.month, start.day);
       final ev = Event(
