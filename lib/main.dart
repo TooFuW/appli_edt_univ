@@ -332,8 +332,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _weekVue = MediaQuery.of(context).size.width > 800;
-    _selectedEvents.value = MediaQuery.of(context).size.width > 800 ? _getEventsForWeek(_selectedDay!) : _getEventsForDay(_selectedDay!);
+    _weekVue = MediaQuery.of(context).size.width > 680;
+    _selectedEvents.value = MediaQuery.of(context).size.width > 680 ? _getEventsForWeek(_selectedDay!) : _getEventsForDay(_selectedDay!);
   }
 
   @override
@@ -452,7 +452,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('EDT de ${widget.id}'),
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
-        actions: MediaQuery.of(context).size.width > 800 ? [
+        actions: MediaQuery.of(context).size.width > 680 ? [
           IconButton(
             icon: const Icon(Icons.table_chart, color: Colors.black,),
             tooltip: 'Mode semaine',
@@ -584,173 +584,171 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Column(
-          children: [
-            if (widget.offline)
-              Container(
-                color: Colors.red,
-                width: double.infinity,
-                padding: const EdgeInsets.all(5),
-                child: Text(
-                  widget.lastConnexion != null
-                    ? 'Vous êtes hors-ligne depuis le ${DateFormat('dd/MM/yyyy à HH:mm').format(widget.lastConnexion!)}'
-                    : 'Vous êtes hors-ligne',
-                  style: const TextStyle(color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
+      body: Column(
+        children: [
+          if (widget.offline)
+            Container(
+              color: Colors.red,
+              width: double.infinity,
+              padding: const EdgeInsets.all(5),
+              child: Text(
+                widget.lastConnexion != null
+                  ? 'Vous êtes hors-ligne depuis le ${DateFormat('dd/MM/yyyy à HH:mm').format(widget.lastConnexion!)}'
+                  : 'Vous êtes hors-ligne',
+                style: const TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
               ),
-            _CalendarHeader(
-              focusedDay: _focusedDay.toLocal(),
-              weekVue: _weekVue,
-              onTodayButtonTap: () {
-                setState(() {
-                  _onDaySelected(DateTime.now(), DateTime.now());
-                });
-              },
-              onSwapButtonTap: () {
-                if (_calendarFormat == CalendarFormat.week) {
-                  setState(() => _calendarFormat = CalendarFormat.month);
-                }
-                else {
-                  setState(() => _calendarFormat = CalendarFormat.week);
-                }
-              },
-              onCheckButtonTap: () {
-                setState(() {
-                  if (!_weekVue && _rangeSelectionMode == RangeSelectionMode.toggledOff) {
-                    _onRangeSelected(_selectedDay, null, _focusedDay);
-                  } else {
-                    _onDaySelected(_focusedDay, _focusedDay);
-                  }
-                });
-              },
-              onLeftArrowTap: () {
-                _pageController.previousPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeOut,
-                );
-              },
-              onRightArrowTap: () {
-                _pageController.nextPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeOut,
-                );
-              },
             ),
-            TableCalendar<Event>(
-              onCalendarCreated: (controller) => _pageController = controller,
-              headerVisible: false,
-              calendarStyle: CalendarStyle(
-                markerMargin: const EdgeInsets.only(left: 0.3, right: 0.3, top: 2),
-                selectedDecoration: const BoxDecoration(color: Color.fromARGB(255, 67, 95, 255), shape: BoxShape.circle),
-                todayDecoration: const BoxDecoration(color: Color.fromARGB(255, 151, 160, 209), shape: BoxShape.circle),
-                rangeStartDecoration: BoxDecoration(color: const Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 1)),
-                rangeEndDecoration: BoxDecoration(color: const Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 1)),
-              ),
-              locale: 'fr_FR',
-              firstDay: DateTime.utc(DateTime.now().year, 1, 1),
-              lastDay: DateTime.utc(DateTime.now().year + 1, 12, 31),
-              focusedDay: _focusedDay,
-              selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
-              rangeStartDay: _rangeStart,
-              rangeEndDay: _rangeEnd,
-              calendarFormat: _calendarFormat,
-              startingDayOfWeek: StartingDayOfWeek.monday,
-              rangeSelectionMode: _rangeSelectionMode,
-              eventLoader: _getEventsForDay,
-              onDaySelected: _onDaySelected,
-              onRangeSelected: _onRangeSelected,
-              onFormatChanged: (_) {
-                if (_calendarFormat == CalendarFormat.week) {
-                  setState(() => _calendarFormat = CalendarFormat.month);
+          _CalendarHeader(
+            focusedDay: _focusedDay.toLocal(),
+            weekVue: _weekVue,
+            onTodayButtonTap: () {
+              setState(() {
+                _onDaySelected(DateTime.now(), DateTime.now());
+              });
+            },
+            onSwapButtonTap: () {
+              if (_calendarFormat == CalendarFormat.week) {
+                setState(() => _calendarFormat = CalendarFormat.month);
+              }
+              else {
+                setState(() => _calendarFormat = CalendarFormat.week);
+              }
+            },
+            onCheckButtonTap: () {
+              setState(() {
+                if (!_weekVue && _rangeSelectionMode == RangeSelectionMode.toggledOff) {
+                  _onRangeSelected(_selectedDay, null, _focusedDay);
+                } else {
+                  _onDaySelected(_focusedDay, _focusedDay);
                 }
-                else {
-                  setState(() => _calendarFormat = CalendarFormat.week);
-                }
-              },
-              onPageChanged: (focusedDay) => _focusedDay = focusedDay,
+              });
+            },
+            onLeftArrowTap: () {
+              _pageController.previousPage(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeOut,
+              );
+            },
+            onRightArrowTap: () {
+              _pageController.nextPage(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeOut,
+              );
+            },
+          ),
+          TableCalendar<Event>(
+            onCalendarCreated: (controller) => _pageController = controller,
+            headerVisible: false,
+            calendarStyle: CalendarStyle(
+              markerMargin: const EdgeInsets.only(left: 0.3, right: 0.3, top: 2),
+              selectedDecoration: const BoxDecoration(color: Color.fromARGB(255, 67, 95, 255), shape: BoxShape.circle),
+              todayDecoration: const BoxDecoration(color: Color.fromARGB(255, 151, 160, 209), shape: BoxShape.circle),
+              rangeStartDecoration: BoxDecoration(color: const Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 1)),
+              rangeEndDecoration: BoxDecoration(color: const Color(0xFF6699FF), shape: BoxShape.circle, border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 1)),
             ),
-            const SizedBox(height: 8),
-            Expanded(
-              child: !_weekVue
-                ? GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onHorizontalDragEnd: (DragEndDetails details) {
-                      final v = details.primaryVelocity ?? 0;
-                      if (v > 0) {
-                        _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1));
-                      } else if (v < 0) {
-                        _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1));
+            locale: 'fr_FR',
+            firstDay: DateTime.utc(DateTime.now().year, 1, 1),
+            lastDay: DateTime.utc(DateTime.now().year + 1, 12, 31),
+            focusedDay: _focusedDay,
+            selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
+            rangeStartDay: _rangeStart,
+            rangeEndDay: _rangeEnd,
+            calendarFormat: _calendarFormat,
+            startingDayOfWeek: StartingDayOfWeek.monday,
+            rangeSelectionMode: _rangeSelectionMode,
+            eventLoader: _getEventsForDay,
+            onDaySelected: _onDaySelected,
+            onRangeSelected: _onRangeSelected,
+            onFormatChanged: (_) {
+              if (_calendarFormat == CalendarFormat.week) {
+                setState(() => _calendarFormat = CalendarFormat.month);
+              }
+              else {
+                setState(() => _calendarFormat = CalendarFormat.week);
+              }
+            },
+            onPageChanged: (focusedDay) => _focusedDay = focusedDay,
+          ),
+          const SizedBox(height: 8),
+          Expanded(
+            child: !_weekVue
+              ? GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onHorizontalDragEnd: (DragEndDetails details) {
+                    final v = details.primaryVelocity ?? 0;
+                    if (v > 0) {
+                      _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 1));
+                    } else if (v < 0) {
+                      _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 1));
+                    }
+                  },
+                  child: ValueListenableBuilder<List<Event>>(
+                    valueListenable: _selectedEvents,
+                    builder: (context, value, _) {
+                      if (value.isEmpty) {
+                        return Center(child: Text('Aucun événement pour le ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}'));
                       }
-                    },
-                    child: ValueListenableBuilder<List<Event>>(
-                      valueListenable: _selectedEvents,
-                      builder: (context, value, _) {
-                        if (value.isEmpty) {
-                          return Center(child: Text('Aucun événement pour le ${_focusedDay.day} ${_months[_focusedDay.month - 1]} ${_focusedDay.year}'));
-                        }
-                        return ListView.builder(
-                          padding: const EdgeInsets.all(16),
-                          itemCount: value.length,
-                          itemBuilder: (context, index) {
-                            final ev = value[index];
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                _EventTile(ev),
-                                const SizedBox(height: 10),
-                              ],
-                            );
-                          },
-                        );
-                      },
-                    ),
-                  )
-                : GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onHorizontalDragEnd: (DragEndDetails details) {
-                      final v = details.primaryVelocity ?? 0;
-                      if (v > 0) {
-                        _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 7), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 7));
-                      } else if (v < 0) {
-                        _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 7), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 7));
-                      }
-                    },
-                    child: ValueListenableBuilder<List<Event>>(
-                      valueListenable: _selectedEvents,
-                      builder: (context, value, _) {
-                        if (value.isEmpty) {
-                          final startOfWeek = _getStartOfWeek(_selectedDay ?? _focusedDay);
-                          final endOfWeek = _getEndOfWeek(_selectedDay ?? _focusedDay);
-                          return Center(
-                            child: Text(
-                              'Aucun événement pour la semaine du ${startOfWeek.day} ${_months[startOfWeek.month - 1]} au ${endOfWeek.day} ${_months[endOfWeek.month - 1]} ${endOfWeek.year}'
-                            )
-                          );
-                        }
-                        final Map<DateTime, List<Event>> eventsByDay = {};
-                        for (final ev in value) {
-                          final d = DateTime(ev.start!.year, ev.start!.month, ev.start!.day);
-                          eventsByDay.putIfAbsent(d, () => []).add(ev);
-                        }
-                        final days = eventsByDay.keys.toList()..sort();
-                        return SingleChildScrollView(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                      return ListView.builder(
+                        padding: const EdgeInsets.all(16),
+                        itemCount: value.length,
+                        itemBuilder: (context, index) {
+                          final ev = value[index];
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              for (final d in days)
-                                _DayColumn(day: d, events: eventsByDay[d]!, days: days.length),
-                              const SizedBox(width: 5),
+                              _EventTile(ev),
+                              const SizedBox(height: 10),
                             ],
-                          ),
+                          );
+                        },
+                      );
+                    },
+                  ),
+                )
+              : GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onHorizontalDragEnd: (DragEndDetails details) {
+                    final v = details.primaryVelocity ?? 0;
+                    if (v > 0) {
+                      _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 7), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day - 7));
+                    } else if (v < 0) {
+                      _onDaySelected(DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 7), DateTime(_focusedDay.year, _focusedDay.month, _focusedDay.day + 7));
+                    }
+                  },
+                  child: ValueListenableBuilder<List<Event>>(
+                    valueListenable: _selectedEvents,
+                    builder: (context, value, _) {
+                      if (value.isEmpty) {
+                        final startOfWeek = _getStartOfWeek(_selectedDay ?? _focusedDay);
+                        final endOfWeek = _getEndOfWeek(_selectedDay ?? _focusedDay);
+                        return Center(
+                          child: Text(
+                            'Aucun événement pour la semaine du ${startOfWeek.day} ${_months[startOfWeek.month - 1]} au ${endOfWeek.day} ${_months[endOfWeek.month - 1]} ${endOfWeek.year}'
+                          )
                         );
-                      },
-                    )
+                      }
+                      final Map<DateTime, List<Event>> eventsByDay = {};
+                      for (final ev in value) {
+                        final d = DateTime(ev.start!.year, ev.start!.month, ev.start!.day);
+                        eventsByDay.putIfAbsent(d, () => []).add(ev);
+                      }
+                      final days = eventsByDay.keys.toList()..sort();
+                      return SingleChildScrollView(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            for (final d in days)
+                              _DayColumn(day: d, events: eventsByDay[d]!, days: days.length),
+                            const SizedBox(width: 5),
+                          ],
+                        ),
+                      );
+                    },
                   )
-            ),
-          ],
-        ),
+                )
+          ),
+        ],
       ),
     );
   }
