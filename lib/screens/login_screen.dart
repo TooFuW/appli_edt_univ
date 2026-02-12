@@ -42,13 +42,20 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _loadAccounts() async {
     String? accountsRaw = await getInfo('accounts');
-    if (accountsRaw != null) {
-      setState(() {
-        accounts = (jsonDecode(accountsRaw) as List)
-            .map((item) => (item as List).cast<String>())
-            .toList();
-      });
-    } else {
+    try {
+      if (accountsRaw != null && jsonDecode(accountsRaw).isNotEmpty) {
+        setState(() {
+          accounts = (jsonDecode(accountsRaw) as List)
+              .map((item) => (item as List).cast<String>())
+              .toList();
+        });
+      } else {
+        setState(() {
+          accounts = [];
+        });
+      }
+    } catch (e) {
+      await saveInfo('accounts', '[]');
       setState(() {
         accounts = [];
       });
@@ -262,7 +269,7 @@ void _submitForm(BuildContext context) async {
           await saveInfo('calendar_${_idController.text}', toSave);
           await saveInfo('lastSave_${_idController.text}', DateTime.now().toLocal().toString());
           String? accounts = await getInfo('accounts');
-          if (accounts == null || accounts.runtimeType != List<List<String>>) {
+          if (accounts == null) {
             List<List<String>> accountsList = [];
             accountsList.add(<String>[_idController.text, _icsController.text]);
             await saveInfo('accounts', json.encode(accountsList));
