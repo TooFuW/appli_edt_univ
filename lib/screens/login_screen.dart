@@ -89,8 +89,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         context: context,
                         builder: (context) {
                           return AlertDialog(
+                            scrollable: true,
                             title: const Text("Comment récupérer le lien de calendrier ICS ?"),
-                            content: const Text("1) Connectez-vous au site de l'EDT (https://edt.unc.nc/)\n2) Sélectionnez le calendrier de votre choix\n3) Cliquez sur le bouton de téléchargement\n4) Copiez le lien en cliquant sur le bouton nommé 'ICS' qui apparaîtra dans une popup."),
+                            content: const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              spacing: 10,
+                              children: [
+                                Text("1) Connectez-vous au site de l'EDT (Lien cliquable en bas)"),
+                                Text("2) Sélectionnez le calendrier de votre choix"),
+                                Image(image: AssetImage("assets/images/tuto1.jpg"), height: 300),
+                                Text("3) Cliquez sur le bouton de téléchargement"),
+                                Image(image: AssetImage("assets/images/tuto2.jpg"), height: 300),
+                                Text("4) Copiez le lien en cliquant sur le bouton nommé 'ICS' qui apparaîtra dans une popup."),
+                                Image(image: AssetImage("assets/images/tuto3.jpg"), height: 300),
+                              ],
+                            ),
                             actions: [
                               TextButton(
                                 onPressed: () async {
@@ -109,7 +122,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                       ),
-                      icon: const Icon(Icons.help, size: 18),
+                      icon: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        spacing: 5,
+                        children: [
+                          Text("Besoin d'aide"),
+                          Icon(Icons.help, size: 18),
+                        ],
+                      ),
                     ),
                     textError(text: "ATTENTION, IL NE PEUT PAS Y AVOIR DEUX CALENDRIERS AVEC LE MÊME NOM, LE DERNIER UTILISÉ REMPLACERA LE PRÉCÉDENT."),
                     sizedBoxGrosse(),
