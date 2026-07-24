@@ -85,7 +85,7 @@ class MyApp extends StatelessWidget {
                         else {
                           error = "Aucun compte connecté";
                         }
-                      },
+                                            },
                       text: "Se connecter sans internet"
                     ),
                     const SizedBox(height: 5),
